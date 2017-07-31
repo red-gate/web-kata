@@ -14,6 +14,23 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
 * node: `v7.8.0`
 * yarn: `v0.27.5`
 
+## Katas:
+
+### Introduction to a simple React App
+
+#### Install:
+
+* `cd app1`
+* `yarn`
+* `yarn start`
+
+This will start the web app development server usually at `http://localhost:3000/`
+
+#### Change some code:
+
+Go to App.js and change the message. The app should re build it self and reload the content with your changes.
+
+### Todo:
 
 * 1- simple repo
 ~~~
