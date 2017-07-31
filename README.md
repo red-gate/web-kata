@@ -2,7 +2,19 @@ web-kata
 =====
 Kata for Single-Page applications. In React, TypeScript and Javascript.
 
-# Todo:
+
+<!-- TOC -->
+
+- [Requirements:](#requirements)
+- [Versions used:](#versions-used)
+- [Katas:](#katas)
+    - [Introduction to a simple React App](#introduction-to-a-simple-react-app)
+        - [Install:](#install)
+        - [Change some code:](#change-some-code)
+    - [Todo:](#todo)
+
+<!-- /TOC -->
+
 ## Requirements:
 
 * [node](https://nodejs.org/en/)
