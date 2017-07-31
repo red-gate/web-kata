@@ -8,6 +8,12 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
 * [node](https://nodejs.org/en/)
 * [yarn](https://yarnpkg.com/en/docs/install)
 
+## Versions used:
+
+* npm: `4.5.0`
+* node: `v7.8.0`
+* yarn: `v0.27.5`
+
 
 * 1- simple repo
 ~~~
