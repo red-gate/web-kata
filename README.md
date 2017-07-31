@@ -1,7 +1,13 @@
-# web-kata
+web-kata
+=====
 Kata for Single-Page applications. In React, TypeScript and Javascript.
 
 # Todo:
+## Requirements:
+
+* [node](https://nodejs.org/en/)
+* [yarn](https://yarnpkg.com/en/docs/install)
+
 
 * 1- simple repo
 ~~~
