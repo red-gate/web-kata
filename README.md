@@ -7,11 +7,18 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
 
 - [Requirements:](#requirements)
 - [Versions used:](#versions-used)
+- [Intructions for any Kata:](#intructions-for-any-kata)
+    - [Run the app:](#run-the-app)
+    - [Change some code:](#change-some-code)
 - [Katas:](#katas)
-    - [Introduction to a simple React App](#introduction-to-a-simple-react-app)
-        - [Install:](#install)
-        - [Change some code:](#change-some-code)
-    - [Todo:](#todo)
+    - [1- Introduction to a simple React App](#1--introduction-to-a-simple-react-app)
+    - [2- Add and remove objects [todo]](#2--add-and-remove-objects-todo)
+    - [3- Filter, show and hide objects [todo]](#3--filter-show-and-hide-objects-todo)
+    - [4- Add router to an app [todo]](#4--add-router-to-an-app-todo)
+    - [5- REST API calls into web app [todo]](#5--rest-api-calls-into-web-app-todo)
+    - [6- Redux [todo]](#6--redux-todo)
+    - [7- SignalR - Redux [todo]](#7--signalr---redux-todo)
+    - [8- TypeScript  [todo]](#8--typescript--todo)
 
 <!-- /TOC -->
 
@@ -26,11 +33,9 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
 * node: `v7.8.0`
 * yarn: `v0.27.5`
 
-## Katas:
+## Intructions for any Kata:
 
-### Introduction to a simple React App
-
-#### Install:
+### Run the app:
 
 * `cd app1`
 * `yarn`
@@ -38,24 +43,22 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
 
 This will start the web app development server usually at `http://localhost:3000/`
 
-#### Change some code:
+### Change some code:
 
-Go to App.js and change the message. The app should re build it self and reload the content with your changes.
+Go to `App.js` and change the message. The app should re build itself and reload the content with your changes.
 
-### Todo:
+## Katas:
 
-* 1- simple repo
-~~~
-npm install -g create-react-app
-create-react-app my-app
+### 1- Introduction to a simple React App
 
-cd my-app
-npm start
+[Kata 1](kata1.md)
 
-do some stuff ……… (exercise here)
-~~~
-* 2- REST API call exercise (dotnet core server)
-* 3- Redux
-* 4- SignalR ??
-* 5- translate to TypeScript
+### 2- Add and remove objects [todo]
+### 3- Filter, show and hide objects [todo]
+### 4- Add router to an app [todo]
+### 5- REST API calls into web app [todo]
+### 6- Redux [todo]
+### 7- SignalR - Redux [todo]
+### 8- TypeScript  [todo]
+
 
