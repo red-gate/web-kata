@@ -7,7 +7,7 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
 
 - [Requirements:](#requirements)
 - [Versions used:](#versions-used)
-- [Intructions for any Kata:](#intructions-for-any-kata)
+- [Instructions for any Kata:](#instructions-for-any-kata)
     - [Run the app:](#run-the-app)
     - [Change some code:](#change-some-code)
 - [Katas:](#katas)
@@ -33,7 +33,7 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
 * node: `v7.8.0`
 * yarn: `v0.27.5`
 
-## Intructions for any Kata:
+## Instructions for any Kata:
 
 ### Run the app:
 
