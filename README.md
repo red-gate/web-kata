@@ -19,6 +19,7 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
     - [6- Redux [todo]](#6--redux-todo)
     - [7- SignalR - Redux [todo]](#7--signalr---redux-todo)
     - [8- TypeScript  [todo]](#8--typescript--todo)
+- [Resources:](#resources)
 
 <!-- /TOC -->
 
@@ -60,5 +61,11 @@ Go to `App.js` and change the message. The app should re build itself and reload
 ### 6- Redux [todo]
 ### 7- SignalR - Redux [todo]
 ### 8- TypeScript  [todo]
+
+## Resources:
+
+* [create your own React app](https://github.com/facebookincubator/create-react-app)
+* [React docs](https://facebook.github.io/react/docs/hello-world.html)
+
 
 
