@@ -1,5 +1,7 @@
 # React App Kata 1
 
+Code for **Kata 1** is available in the `app1` folder.
+
 ## Learning aims
 
 ### 1 - create a small program using Object Calisthenics
