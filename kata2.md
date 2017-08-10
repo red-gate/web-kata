@@ -15,7 +15,7 @@ Write the JavaScript/React code to:
 * Be able to remove products from the list of products
 
 
-1. Move the `data.products` passed to the `<Products>` component to a `state` property in `App.js`
+1. Move the `data.products` passed to the `<Products>` component to a `state` property in `App.js` and pass `this.state.products` to `<Products>` instead
     * [constructors in React](https://facebook.github.io/react/docs/react-component.html#constructor)
 2. Add a Form to add new products within the `add-product` div. It should contain:
     * `label` for product name
