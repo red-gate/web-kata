@@ -6,12 +6,12 @@ Code for **Kata 2** is available in the `app2` folder.
 
 The idea here is understand the concept of a `state` and callbacks in a React component.
 
-How the `state` work and `how` to modify it.
+How `state` works and how to modify it.
 
 ## Task
 
 Write the JavaScript/React code to: 
-* Add new products to the listed products.
+* Add new products to the listed products
 * Be able to remove products from the list of products
 
 
