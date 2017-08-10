@@ -30,7 +30,7 @@ Write the JavaScript/React code to:
 3. Add a function to remove a product in `App.js` 
     * you could use underscore function [filter](http://underscorejs.org/#filter) to create a new array of products
     * underscore is already available in the project and imported.
-4. Pass the `removeProduct` function as a property to the `<Products>` component and to the `<Product>` component and call it onClick of `remove`
+4. Make the remove product function available to use in all `<Product>` components and use it when the div with the `remove` class is clicked.
 5. Test that you can add products and remove them from the app.
 
 # Recommendations:
