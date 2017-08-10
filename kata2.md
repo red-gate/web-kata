@@ -1,4 +1,4 @@
-# React App Kata 1
+# React App Kata 2
 
 Code for **Kata 2** is available in the `app2` folder.
 
@@ -33,7 +33,7 @@ Write the JavaScript/React code to:
 4. Make the remove product function available to use in all `<Product>` components and use it when the div with the `remove` class is clicked.
 5. Test that you can add products and remove them from the app.
 
-# Recommendations:
+# Resources:
 
 * [Forms](https://facebook.github.io/react/docs/forms.html)
 * [Handling Multiple Inputs in Forms](https://facebook.github.io/react/docs/forms.html#handling-multiple-inputs)
