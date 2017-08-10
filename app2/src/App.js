@@ -10,10 +10,9 @@ class App extends Component {
         <div className="App-header">
           <h2>Kata 2- Add and remove objects</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Products products={data.products} />
+        <div className='products-container'>
+          <Products products={data.products} />
+        </div>
       </div>
     )
   }
