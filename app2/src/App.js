@@ -1,3 +1,4 @@
+import _ from 'underscore'
 import React, { Component } from 'react'
 import './App.css'
 import data from './data.js'
