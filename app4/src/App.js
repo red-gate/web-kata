@@ -48,34 +48,32 @@ class App extends Component {
       this
     )
 
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Kata 4- Add router to an app</h2>
-        </div>
-        <div className='filter-products'>
-          <form onChange={this.handleFilterProducts}>
-            <label>filter by product name:
-              <input type='text' name='name' />
-            </label>
-          </form>
-        </div>
-        <div className='add-product'>
-          <form onSubmit={this.handleAddProduct}>
-            <label>product name:
-              <input type='text' name='name' />
-            </label>
-            <label>description:
-              <input type='text' name='description'/>
-            </label>
-            <input type='submit' value='add product' />
-          </form>
-        </div>
-        <div className='products-container'>
-          <Products products={filteredProducts} removeProduct={this.removeProduct} />
-        </div>
+    return <div className="App">
+      <div className="App-header">
+        <h2>Kata 4- Add router to an app</h2>
       </div>
-    )
+      <div className='filter-products'>
+        <form onChange={this.handleFilterProducts}>
+          <label>filter by product name:
+            <input type='text' name='name' />
+          </label>
+        </form>
+      </div>
+      <div className='add-product'>
+        <form onSubmit={this.handleAddProduct}>
+          <label>product name:
+            <input type='text' name='name' />
+          </label>
+          <label>description:
+            <input type='text' name='description'/>
+          </label>
+          <input type='submit' value='add product' />
+        </form>
+      </div>
+      <div className='products-container'>
+        <Products products={filteredProducts} removeProduct={this.removeProduct} />
+      </div>
+    </div>
   }
 }
 
