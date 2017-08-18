@@ -1,0 +1,19 @@
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.products-container{
+  display: flex;
+  justify-content: center;
+  padding-top: 3em;
+}
+
+.add-product{
+  padding-top: 3em;
+  display: flex;
+  justify-content: center;
+}
