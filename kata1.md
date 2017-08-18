@@ -1,6 +1,6 @@
 # React App Kata 1
 
-Code for **Kata 1** is available in the `app1` folder.
+Code for **Kata 1** is available in the [app1](app1) folder.
 
 ## Learning aims
 
