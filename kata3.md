@@ -6,7 +6,6 @@ Code for **Kata 3** is available in the `app3` folder.
 
 The idea here is enforce the concept of a `state`, callbacks and React lifecycles in React.
 
-
 ## Task
 
 Write the JavaScript/React code to: 
@@ -23,5 +22,19 @@ Write the JavaScript/React code to:
 3. Filter products in the `render` method based on filter input.
     * you could you [filter](http://underscorejs.org/#filter) to do this.
 
+### Show / Hide products:
+
+The idea is to have products be collapsible. 
+1. Change the `Product` component so that descriptions are not shown.
+    * do this by checking an product state property (for example: `showDescription`)
+    * a very common pattern in React is [conditional rendering](https://facebook.github.io/react/docs/conditional-rendering.html), here are some examples:
+        * {condition? <div>foo</div>: null}
+        * {condition? <div>foo</div>: <div>bar</div>}
+        * {condition && <div>hello</div>}
+2. Add a `+` or `-` component next to the product name and toggle it on click
+    * it should show or hide the product description.
+3. listen to `onClick` on the component you just created and update your flag accordingly.
 
 # Resources:
+
+* [conditional rendering](https://facebook.github.io/react/docs/conditional-rendering.html)
