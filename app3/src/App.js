@@ -32,28 +32,26 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Kata 3- Filter, show and hide objects</h2>
-        </div>
-        <div className='filter-products'>Filter products here...</div>
-        <div className='add-product'>
-          <form onSubmit={this.handleAddProduct}>
-            <label>product name:
-              <input type='text' name='name' />
-            </label>
-            <label>description:
-              <input type='text' name='description'/>
-            </label>
-            <input type='submit' value='add product' />
-          </form>
-        </div>
-        <div className='products-container'>
-          <Products products={this.state.products} removeProduct={this.removeProduct} />
-        </div>
+    return <div className="App">
+      <div className="App-header">
+        <h2>Kata 3- Filter, show and hide objects</h2>
       </div>
-    )
+      <div className='filter-products'>Filter products here...</div>
+      <div className='add-product'>
+        <form onSubmit={this.handleAddProduct}>
+          <label>product name:
+            <input type='text' name='name' />
+          </label>
+          <label>description:
+            <input type='text' name='description'/>
+          </label>
+          <input type='submit' value='add product' />
+        </form>
+      </div>
+      <div className='products-container'>
+        <Products products={this.state.products} removeProduct={this.removeProduct} />
+      </div>
+    </div>
   }
 }
 
