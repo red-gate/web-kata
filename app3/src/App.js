@@ -41,10 +41,10 @@ class App extends Component {
         <div className='add-product'>
           <form onSubmit={this.handleAddProduct}>
             <label>product name:
-            <input type='text' name='name' />
+              <input type='text' name='name' />
             </label>
             <label>description:
-            <input type='text' name='description'/>
+              <input type='text' name='description'/>
             </label>
             <input type='submit' value='add product' />
           </form>
