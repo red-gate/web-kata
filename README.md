@@ -13,7 +13,7 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
 - [Katas:](#katas)
     - [1- Introduction to a simple React App](#1--introduction-to-a-simple-react-app)
     - [2- Add and remove objects](#2--add-and-remove-objects)
-    - [3- Filter, show and hide objects [todo]](#3--filter-show-and-hide-objects-todo)
+    - [3- Filter, show and hide objects](#3--filter-show-and-hide-objects)
     - [4- Add router to an app [todo]](#4--add-router-to-an-app-todo)
     - [5- REST API calls into web app [todo]](#5--rest-api-calls-into-web-app-todo)
     - [6- Redux [todo]](#6--redux-todo)
@@ -58,7 +58,10 @@ Go to `App.js` and change the message. The app should re build itself and reload
 
 [Kata 2](kata2.md)
 
-### 3- Filter, show and hide objects [todo]
+### 3- Filter, show and hide objects
+
+[Kata 3](kata3.md)
+
 ### 4- Add router to an app [todo]
 ### 5- REST API calls into web app [todo]
 ### 6- Redux [todo]
