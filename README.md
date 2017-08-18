@@ -17,8 +17,9 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
     - [4- Add router to an app [todo]](#4--add-router-to-an-app-todo)
     - [5- REST API calls into web app [todo]](#5--rest-api-calls-into-web-app-todo)
     - [6- Redux [todo]](#6--redux-todo)
-    - [7- SignalR - Redux [todo]](#7--signalr---redux-todo)
-    - [8- TypeScript  [todo]](#8--typescript--todo)
+    - [7 Redux and React-router](#7-redux-and-react-router)
+    - [8- SignalR - Redux [todo]](#8--signalr---redux-todo)
+    - [9- TypeScript  [todo]](#9--typescript--todo)
 - [Resources:](#resources)
 
 <!-- /TOC -->
@@ -65,8 +66,9 @@ Go to `App.js` and change the message. The app should re build itself and reload
 ### 4- Add router to an app [todo]
 ### 5- REST API calls into web app [todo]
 ### 6- Redux [todo]
-### 7- SignalR - Redux [todo]
-### 8- TypeScript  [todo]
+### 7 Redux and React-router
+### 8- SignalR - Redux [todo]
+### 9- TypeScript  [todo]
 
 ## Resources:
 
