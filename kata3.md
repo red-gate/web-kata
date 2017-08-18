@@ -4,7 +4,7 @@ Code for **Kata 3** is available in the [app3](app3) folder.
 
 ## Learning aims
 
-The idea here is enforce the concept of a `state`, callbacks and React lifecycles in React.
+The idea here is to keep learning the concept of `state`, `props`, `callbacks` and React lifecycles in React.
 
 ## Task
 
