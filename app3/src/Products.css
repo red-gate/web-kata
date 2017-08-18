@@ -11,6 +11,7 @@
     padding-right: 1em;
     padding-bottom: 1em;
     justify-content: space-between;
+    min-width: 40vw;
 }
 
 .product:hover{
@@ -20,6 +21,8 @@
 .product .name{
     font-weight: bold;
     font-size: 14pt;
+    display: flex;
+    flex-direction: row;
 }
 
 .product .desc{
