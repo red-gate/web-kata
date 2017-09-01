@@ -14,7 +14,7 @@ Write the JavaScript/React code to:
 * Show/Hide product descriptions
 
 ### Filter products:
-1. Add a `Form` to filter products within the `filter-products` div. It should contain:
+1. Add a `<form>` to filter products within the `filter-products` div. It should contain:
     * `label` for product name
     * `input` for filtering by name
 2. Add a handler function for the `onChange` event of the form. The function should:

@@ -17,16 +17,18 @@ Write the JavaScript/React code to:
 
 1. Move the `data.products` passed to the `<Products>` component to a `state` property in `App.js` and pass `this.state.products` to `<Products>` instead
     * [constructors in React](https://facebook.github.io/react/docs/react-component.html#constructor)
-2. Add a `Form` to add new products within the `add-product` div. It should contain:
+2. Add a `<form>` to add new products within the `add-product` div. It should contain:
     * `label` for product name
     * `input` for product name
     * `label` for description
     * `input` for description
     * a submit button
 2. Add a handler function for the `onSubmit` event of the form. The function should:
-    * get `name` and `description` from the event
+    * get `name` and `description` from the event    
     * update the products array in the state with a new product. ([Using State Correctly](https://facebook.github.io/react/docs/state-and-lifecycle.html#using-state-correctly))
     * keep in mind that [State Updates are Merged](https://facebook.github.io/react/docs/state-and-lifecycle.html#state-updates-are-merged)
+    * [Forms](https://facebook.github.io/react/docs/forms.html)
+    * [Handling Events](https://facebook.github.io/react/docs/handling-events.html)
 3. Add a function to remove a product in `App.js` 
     * you could use underscore function [filter](http://underscorejs.org/#filter) to create a new array of products
     * underscore is already available in the project and imported.
