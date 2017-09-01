@@ -35,6 +35,8 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
 * node: `v7.8.0`
 * yarn: `v0.27.5`
 
+> :information_source: if you need to keep a different version of Node.js on your machine, you can use [nvm](https://github.com/coreybutler/nvm-windows) to manage different versions of Node.js.
+
 ## Instructions for any Kata:
 
 ### Run the app:
