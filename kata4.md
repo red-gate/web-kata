@@ -21,13 +21,12 @@ Write the JavaScript/React code to:
     * [BrowserRouter](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/BrowserRouter.md)
 3. Create hard links in the `ProductMenu` component to link to `/products/productName` e.g: `/products/ReadyRoll`
     * [Link in react-router-dom](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/Link.md)
-4. Listen to url changes in the `<ProductContainer>` component
+4. Make the `<ProductContainer>` render **ONLY** when the location changes to a product name. i.e: when the URL is `localhost:3000/products/ReadyRoll`, render `<ProductContainer>`.
     * [Route in react-router-dom](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md)
-5. add a `productName` in the `<productContainer>` component and initialize it from the route.
+5. Show the product name given by the URL in the `<ProductContainer>`
     * [Access Route Params in React Router v4](https://jaketrent.com/post/access-route-params-react-router-v4/)
-6. Find the correct product and display it.
-7. `<productContainer>` component does not get re created on url changes so you will need to handle property changes.
-    * [component lifecycle](https://facebook.github.io/react/docs/react-component.html#the-component-lifecycle)
+    * [Using parameters in Route path](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md#component)   
+8. Inside `<ProductContainer>` find the correct product from `data.produdcts` and display it using the `<Product>` component.
 
 # Resources:
 
