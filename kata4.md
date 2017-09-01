@@ -19,7 +19,7 @@ Write the JavaScript/React code to:
     * [yarn add](https://yarnpkg.com/lang/en/docs/cli/add/)
 2. Add `BrowserRouter` to your root component
     * [BrowserRouter](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/BrowserRouter.md)
-3. Create hard links in the `ProductMenu` component to link to `/products/productName` e.g: `/products/ReadyRoll`
+3. Create hard links in the `ProductItem` component to link to `/products/productName` e.g: `/products/ReadyRoll`
     * [Link in react-router-dom](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/Link.md)
 4. Make the `<ProductContainer>` render **ONLY** when the location changes to a product name. i.e: when the URL is `localhost:3000/products/ReadyRoll`, render `<ProductContainer>`.
     * [Route in react-router-dom](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md)
