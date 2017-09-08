@@ -1,7 +1,6 @@
-web-kata
-=====
-Kata for Single-Page applications. In React, TypeScript and Javascript.
+# web-kata
 
+Kata for Single-Page applications. In React, TypeScript and Javascript.
 
 <!-- TOC -->
 
@@ -24,12 +23,12 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
 
 <!-- /TOC -->
 
-## Requirements:
+## Requirements
 
 * [node](https://nodejs.org/en/)
 * [yarn](https://yarnpkg.com/en/docs/install)
 
-## Versions used:
+## Versions used
 
 * npm: `4.5.0`
 * node: `v7.8.0`
@@ -37,21 +36,21 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
 
 > :information_source: if you need to keep a different version of Node.js on your machine, you can use [nvm](https://github.com/coreybutler/nvm-windows) to manage different versions of Node.js.
 
-## Instructions for any Kata:
+## Instructions for any Kata
 
-### Run the app:
+### Run the app
 
 * `cd app1`
 * `yarn`
 * `yarn start`
 
-This will start the web app development server usually at `http://localhost:3000/`
+This will start the web app development server usually at `http://localhost:3000/`.
 
-### Change some code:
+### Change some code
 
 Go to `App.js` and change the message. The app should re build itself and reload the content with your changes.
 
-## Katas:
+## Katas
 
 ### 1- Introduction to a simple React App
 
@@ -82,6 +81,3 @@ Go to `App.js` and change the message. The app should re build itself and reload
 
 * [create your own React app](https://github.com/facebookincubator/create-react-app)
 * [React docs](https://facebook.github.io/react/docs/hello-world.html)
-
-
-
