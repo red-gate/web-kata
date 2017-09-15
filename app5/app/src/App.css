@@ -1,13 +1,14 @@
-.App {
-}
-
 .App-header {
   background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
+  text-align: center;
 }
 
-.App-intro {
-  font-size: large;
+.products-container{
+  display: flex;
+  justify-content: center;
+  padding-top: 3em;
 }
+
