@@ -39,6 +39,7 @@ Write the JavaScript/React code to:
 
 * List all products in home page when the app is loaded.
     * you can use technologies like [jQuery.ajax](http://api.jquery.com/jquery.ajax/) or [fetch](https://github.github.io/fetch/)
+    * to add a package do [yarn add](https://yarnpkg.com/lang/en/docs/cli/add/)
 * Navigate to each product page
 * Have hard links on products names
 * Request product details when someone selected a products.
