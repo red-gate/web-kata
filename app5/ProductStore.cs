@@ -7,6 +7,7 @@ using app5.Models;
 
 namespace app5
 {
+    // Note: this store is not thread safe
     public class ProductStore
     {
         public ProductStore()
@@ -22,7 +23,21 @@ namespace app5
                 }
             };
         }
-        
-        public IEnumerable<Product> Products {get;set;}
+
+        public IEnumerable<Product> Products { get; set; }
+
+        public void AddProduct(Product p)
+        {
+            Products.Append(p);
+        }
+
+        public void RemoveProduct(string name){
+            var products = Products.ToList();
+            var product = products.Where(p => p.Name == name).SingleOrDefault();
+            if(product != null){
+                products.Remove(product);
+                Products = products;
+            }
+        }
     }
 }
