@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using app5.Models;
 
-namespace app5.Controllers
+namespace app5
 {
     public class ProductStore
     {

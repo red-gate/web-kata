@@ -11,9 +11,9 @@ namespace app5.Controllers
     public class ProductsController : Controller
     {
         private readonly ProductStore _productStore;
-        public ProductsController()
+        public ProductsController(ProductStore productStore)
         {
-            _productStore = new ProductStore();
+            _productStore = productStore;
         }
         
         // GET api/values
