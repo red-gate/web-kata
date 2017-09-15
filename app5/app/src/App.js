@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = { products: data.products }
-  }  
+  }
 
   render() {
     return <div className="App">

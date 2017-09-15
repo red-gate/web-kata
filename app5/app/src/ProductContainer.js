@@ -20,7 +20,7 @@ class ProductContainer extends Component {
       })
     }
   }
-  
+
   render() {
     const p = _.find(this.state.products, p => p.name === this.state.productName)
     return <div className='product-container'>
