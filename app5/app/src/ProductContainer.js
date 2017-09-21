@@ -8,8 +8,7 @@ class ProductContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      productName: this.props.match.params.productName,
-      products: data.products
+      productName: this.props.match.params.productName
     }
   }
 
@@ -22,7 +21,7 @@ class ProductContainer extends Component {
   }
 
   render() {
-    const p = _.find(this.state.products, p => p.name === this.state.productName)
+    const p = _.find(this.props.products, p => p.name === this.state.productName)
     return <div className='product-container'>
       <Product product={p} />
     </div>
