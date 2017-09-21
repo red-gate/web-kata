@@ -13,5 +13,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
   </ItemGroup>
-
+  <PropertyGroup>
+    <DefaultItemExcludes>app\node_modules\**;$(DefaultItemExcludes)</DefaultItemExcludes>
+  </PropertyGroup>
 </Project>
