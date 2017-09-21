@@ -19,10 +19,10 @@ You will need **2** terminals
 
 1) Web API server
 
-* go to ./app5
-* run dotnet restore
-* run dotnet build
-* run dotnet run
+* go to `./app5`
+* run `dotnet restore`
+* run `dotnet build`
+* run `dotnet run`
 
 This should build the web api server and serve it at `http:\\localhost:5000`
 
