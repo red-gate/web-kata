@@ -38,7 +38,6 @@ namespace app5
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
             app.UseMvc();
         }
     }
