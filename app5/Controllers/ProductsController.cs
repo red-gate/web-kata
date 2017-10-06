@@ -8,7 +8,7 @@ using app5;
 
 namespace app5.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     public class ProductsController : Controller
     {
         private readonly ProductStore _productStore;
@@ -16,28 +16,26 @@ namespace app5.Controllers
         {
             _productStore = productStore;
         }
-        
-        // GET api/products
+
+        // GET api/products/get
         [HttpGet]
         public IEnumerable<Product> Get()
-        {     
+        {
             return _productStore.Products;
         }
 
+        // POST api/products/add
         [HttpPost]
-        public  IEnumerable<Product> Add(string name, string description){
-            _productStore.AddProduct(
-                new Product{
-                    Name = name,
-                    Description = description
-                }
-            );
+        public IEnumerable<Product> Add([FromBody]Product newProduct)
+        {
+            _productStore.AddProduct(newProduct);
             return _productStore.Products;
         }
 
-        // DELETE api/products/ReadyRoll
+        // DELETE api/products/delete/ReadyRoll
         [HttpDelete("{name}")]
-        public void Delete(string name){
+        public void Delete(string name)
+        {
             _productStore.RemoveProduct(name);
         }
     }
