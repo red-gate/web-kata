@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import _ from 'underscore'
-import data from './data.js'
 import './ProductContainer.css'
 import Product from './Product.js'
 
@@ -21,7 +19,7 @@ class ProductContainer extends Component {
   }
 
   render() {
-    const p = _.find(this.props.products, p => p.name === this.state.productName)
+    const p = this.props.products.find(p => p.name === this.state.productName)
     return <div className='product-container'>
       <Product product={p} />
     </div>

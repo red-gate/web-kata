@@ -11,7 +11,7 @@ The idea here is to learn how a web app can interact with a backend server throu
 
 ## Requirements:
 
-* [dotnet core](https://www.microsoft.com/net/core)
+* [dotnet core v2.0](https://www.microsoft.com/net/core)
 
 ## Get started:
 
@@ -28,8 +28,8 @@ This should build the web api server and serve it at `http:\\localhost:5000`
 
 2) Web app
 
-* go to ./app5/app/
-* follow the instructions in the `README`.
+* go to `./app5/app/`
+* follow the instructions in the [README](README.md).
 
 ## Task
 
