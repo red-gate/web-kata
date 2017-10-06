@@ -30,7 +30,8 @@ Write the JavaScript/React code to:
     * [Forms](https://facebook.github.io/react/docs/forms.html)
     * [Handling Events](https://facebook.github.io/react/docs/handling-events.html)
 3. Add a function to remove a product in `App.js` 
-    * you could use underscore function [filter](http://underscorejs.org/#filter) to create a new array of products
+    * You can use the [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) function available in arrays 
+    * Or you could use underscore function [filter](http://underscorejs.org/#filter) to create a new array of products
     * underscore is already available in the project and imported.
 4. Make the remove product function available to use in all `<Product>` components and use it when the div with the `remove` class is clicked.
 5. Test that you can add products and remove them from the app.
