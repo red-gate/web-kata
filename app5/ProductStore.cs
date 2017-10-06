@@ -90,7 +90,7 @@ namespace app5
                 {
                     new Product
                     {
-                        Name= "SQL Bakup",
+                        Name= "SQL Backup",
                         Description = "Compresses, strengthens, and encrypts backups"
                     }
                 },

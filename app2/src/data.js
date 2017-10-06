@@ -30,7 +30,7 @@ export default {
             new: true
         },
         {
-            name: 'SQL Bakup',
+            name: 'SQL Backup',
             description : 'Compresses, strengthens, and encrypts backups'
         },
         {

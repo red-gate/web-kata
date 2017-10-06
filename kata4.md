@@ -10,7 +10,7 @@ The idea here is learn how to add a router to our react app.
 
 You are given an app that lists all redgate products by name.
 
-Write the JavaScript/React code to: 
+Write the JavaScript/React code to:
 
 * Navigate to each product page
 * Be able to share hard links of any product page
@@ -25,9 +25,9 @@ Write the JavaScript/React code to:
     * [Route in react-router-dom](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md)
 5. Show the product name given by the URL in the `<ProductContainer>`
     * [Access Route Params in React Router v4](https://jaketrent.com/post/access-route-params-react-router-v4/)
-    * [Using parameters in Route path](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md#component)   
+    * [Using parameters in Route path](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md#component)
 6. Inside `<ProductContainer>` find the correct product from `data.produdcts` and display it using the `<Product>` component.
 
-# Resources:
+## Resources
 
 * [A Simple React Router v4 Tutorial](https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf)
