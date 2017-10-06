@@ -35,7 +35,13 @@ This should build the web api server and serve it at `http:\\localhost:5000`
 
 You are given a server that exposes the following REST endpoints.
 
-Write the JavaScript/React code to: 
+|description| method | api call | notes
+|---|----|---|----|
+|list all products| `GET` | `http:localhost:3000/api/products`||
+|delete product| `DELETE`| `http:localhost:3000/api/products/readyroll`||
+|add product| `POST` | `http:localhost:3000/api/products/add` | `json/application` with body `{name: 'product1', description: 'product description here'}`|
+
+Write the JavaScript/React code to:
 
 * List all products in home page when the app is loaded.
     * you can use technologies like [jQuery.ajax](http://api.jquery.com/jquery.ajax/) or [fetch](https://github.github.io/fetch/)
@@ -46,4 +52,4 @@ Write the JavaScript/React code to:
 * Changes to the data should persist through sessions:
     * Be able to remove a product
     * Be able to add a product
-    * If you refresh the browser product changes should persist (this was not the case before)
+    * If you refresh the browser product changes should persist (**Note** this was not the case before)
