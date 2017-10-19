@@ -20,7 +20,7 @@ Write the JavaScript/React code to:
 2. Add a handler function for the `onChange` event of the form. The function should:
     * save the product `name` from the event in a `state` property.
 3. Filter products in the `render` method based on filter input.
-    * you could you [filter](http://underscorejs.org/#filter) to do this.
+    * you could do [filter with javascript array object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) or [filter with underscore](http://underscorejs.org/#filter) to do this.
 
 ### Show / Hide products:
 
