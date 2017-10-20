@@ -32,7 +32,7 @@ You will need **2** terminals
 * follow the instructions in the [README](README.md#run-the-app).
 * your app should be running at port **3000**
 
-## Task
+## REST API
 
 You are given a server that exposes the following `REST` endpoints.
 
@@ -42,7 +42,12 @@ You are given a server that exposes the following `REST` endpoints.
 |delete product| `DELETE`| `http:localhost:3000/api/products/delete/readyroll`||
 |add product| `POST` | `http:localhost:3000/api/products/add` | `json/application` with body `{name: 'product1', description: 'product description here'}`|
 
-**Note:** there is a proxy between the web server(port `5000`) and the app server (port `3000`) so that in the app you can use `/api/products/get`. This then gets resolved to `localhost:5000/api/products/get` behind the scenes.
+Notes:
+
+1. There is a proxy between the web server(port `5000`) and the app server (port `3000`) so that in the app you can use `/api/products/get`. This then gets resolved to `localhost:5000/api/products/get` behind the scenes.
+1. `delete` and `add` api calls return the list of products so that you can update the products data right away instead of calling `/api/products/get` again.
+
+## Task
 
 Write the JavaScript/React code to:
 
@@ -53,13 +58,13 @@ Write the JavaScript/React code to:
     * after this you should be able to
         * Navigate to each product page
         * Have hard links on products names
-1. Add a remove button so that the user can remove a product from the list
+1. Add a remove button so that the user can remove a product from the list.
     * you should use the REST api for this, `/api/products/delete/productname` (see above for details)
 1. Add a form so that user is able to add a new product to the list.
-    * you should use the REST api for thism `/api/products/add` (see above for details)
+    * you should use the REST api for this `/api/products/add` (see above for details)
 1. Changes to the data should persist through sessions:
     * delete a product
-    * add a product
+    * add a new product
     * open a new tab with the app
     * verify the removed product is not present
     * verify the added product is present
