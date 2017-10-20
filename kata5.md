@@ -4,8 +4,8 @@ Code for **Kata 5** is available in the [app5](app5) folder.
 
 ## Learning aims
 
-Up to now all data work has used the `data.js` file to focus on frontend work.
-We are now moving the data to a backend server ins [aspnet core](https://www.microsoft.com/net/core).
+Up to now all data manipulation used the `data.js` file to focus on frontend work.
+We are now moving the data to a backend server in [aspnet core](https://www.microsoft.com/net/core).
 
 The idea here is to learn how a web app can interact with a backend server through REST API calls.
 
@@ -51,7 +51,7 @@ Notes:
 
 Write the JavaScript/React code to:
 
-1. List all products in home page when the app is loaded using the REST api.
+1. List all products in the homepage when the app is loaded using the REST api.
     * you can use technologies like [fetch](https://github.github.io/fetch/) or [jQuery.ajax](http://api.jquery.com/jquery.ajax/)
     * to add a package do [yarn add](https://yarnpkg.com/lang/en/docs/cli/add/)
     * eg: `yarn add whatwg-fetch`
