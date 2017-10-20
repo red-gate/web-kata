@@ -69,7 +69,7 @@ Go to `App.js` and change the message. The app should re build itself and reload
 
 [Kata 4](kata4.md)
 
-### 5- interaction with backend server through REST API calls [in progress]
+### 5- interaction with backend server through REST API calls
 
 [Kata 5](kata5.md)
 
