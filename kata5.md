@@ -47,8 +47,9 @@ You are given a server that exposes the following `REST` endpoints.
 Write the JavaScript/React code to:
 
 * List all products in home page when the app is loaded.
-  * you can use technologies like [jQuery.ajax](http://api.jquery.com/jquery.ajax/) or [fetch](https://github.github.io/fetch/)
+  * you can use technologies like [fetch](https://github.github.io/fetch/) or [jQuery.ajax](http://api.jquery.com/jquery.ajax/)
   * to add a package do [yarn add](https://yarnpkg.com/lang/en/docs/cli/add/)
+  * eg: `yarn add whatwg-fetch`
 * Navigate to each product page
 * Have hard links on products names
 * Request product details when someone selected a products.
@@ -56,3 +57,9 @@ Write the JavaScript/React code to:
     * Be able to remove a product
     * Be able to add a product
     * If you refresh the browser product changes should persist (**Note** this was not the case before)
+
+
+## Resources
+
+* [github fetch](https://github.com/github/fetch)
+* [fetch docs](https://github.github.io/fetch/)
