@@ -34,9 +34,10 @@ namespace app5.Controllers
 
         // DELETE api/products/delete/ReadyRoll
         [HttpDelete("{name}")]
-        public void Delete(string name)
+        public IEnumerable<Product> Delete(string name)
         {
             _productStore.RemoveProduct(name);
+            return _productStore.Products;
         }
     }
 }
