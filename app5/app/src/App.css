@@ -12,3 +12,9 @@
   padding-top: 3em;
 }
 
+.products-add-product{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2em;
+}
