@@ -18,6 +18,7 @@ class App extends Component {
       <div className="App-header">
         <h2>Kata 5 - Interaction with backend server through REST API calls</h2>
       </div>
+      <div className='products-add-product'>add product here</div>
       <div className='products-container'>
         <ProductMenu products={this.state.products} />
         <Route exact path='/products/:productName' component={
