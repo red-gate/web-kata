@@ -46,18 +46,23 @@ You are given a server that exposes the following `REST` endpoints.
 
 Write the JavaScript/React code to:
 
-* List all products in home page when the app is loaded.
-  * you can use technologies like [fetch](https://github.github.io/fetch/) or [jQuery.ajax](http://api.jquery.com/jquery.ajax/)
-  * to add a package do [yarn add](https://yarnpkg.com/lang/en/docs/cli/add/)
-  * eg: `yarn add whatwg-fetch`
-* Navigate to each product page
-* Have hard links on products names
-* Request product details when someone selected a products.
-* Changes to the data should persist through sessions:
-    * Be able to remove a product
-    * Be able to add a product
-    * If you refresh the browser product changes should persist (**Note** this was not the case before)
-
+1. List all products in home page when the app is loaded using the REST api.
+    * you can use technologies like [fetch](https://github.github.io/fetch/) or [jQuery.ajax](http://api.jquery.com/jquery.ajax/)
+    * to add a package do [yarn add](https://yarnpkg.com/lang/en/docs/cli/add/)
+    * eg: `yarn add whatwg-fetch`
+    * after this you should be able to
+        * Navigate to each product page
+        * Have hard links on products names
+1. Add a remove button so that the user can remove a product from the list
+    * you should use the REST api for this, `/api/products/delete/productname` (see above for details)
+1. Add a form so that user is able to add a new product to the list.
+    * you should use the REST api for thism `/api/products/add` (see above for details)
+1. Changes to the data should persist through sessions:
+    * delete a product
+    * add a product
+    * open a new tab with the app
+    * verify the removed product is not present
+    * verify the added product is present
 
 ## Resources
 
