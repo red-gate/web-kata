@@ -15,10 +15,10 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
         - [2- Add and remove objects](#2--add-and-remove-objects)
         - [3- Filter, show and hide objects](#3--filter-show-and-hide-objects)
         - [4- Add router to an app](#4--add-router-to-an-app)
-        - [5- interaction with backend server through REST API calls [in progress]](#5--interaction-with-backend-server-through-rest-api-calls-in-progress)
+        - [5- interaction with backend server through REST API calls](#5--interaction-with-backend-server-through-rest-api-calls)
         - [6- Redux [todo]](#6--redux-todo)
         - [7 Redux and React-router](#7-redux-and-react-router)
-        - [8- SignalR - Redux [todo]](#8--signalr---redux-todo)
+        - [8- ... [todo]](#8---todo)
         - [9- TypeScript  [todo]](#9--typescript--todo)
     - [Resources](#resources)
 
@@ -77,7 +77,7 @@ Go to `App.js` and change the message. The app should re build itself and reload
 
 ### 7 Redux and React-router
 
-### 8- SignalR - Redux [todo]
+### 8- ... [todo]
 
 ### 9- TypeScript  [todo]
 
