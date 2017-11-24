@@ -75,6 +75,8 @@ Go to `App.js` and change the message. The app should re build itself and reload
 
 ### 6- Redux [todo]
 
+[Kata 6](kata6.md)
+
 ### 7 Redux and React-router
 
 ### 8- ... [todo]
