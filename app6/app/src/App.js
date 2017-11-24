@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return <div className="App">
       <div className="App-header">
-        <h2>Kata 5 - Interaction with backend server through REST API calls</h2>
+        <h2>Kata 6 - Redux</h2>
       </div>
       <div className='products-add-product'>add product here</div>
       <div className='products-container'>

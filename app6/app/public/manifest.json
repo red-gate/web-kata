@@ -1,6 +1,6 @@
 {
-  "short_name": "Kata 5",
-  "name": "Kata 5 - interaction with backend server through REST API calls",
+  "short_name": "Kata 6",
+  "name": "Kata 6 - redux",
   "icons": [
     {
       "src": "favicon.ico",
