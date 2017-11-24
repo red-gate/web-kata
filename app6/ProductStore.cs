@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using app5.Models;
+using app6.Models;
 
-namespace app5
+namespace app6
 {
     // Note: this store is not thread safe
     public class ProductStore

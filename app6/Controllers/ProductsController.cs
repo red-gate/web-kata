@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using app5.Models;
-using app5;
+using app6.Models;
+using app6;
 
-namespace app5.Controllers
+namespace app6.Controllers
 {
     [Route("api/[controller]/[action]")]
     public class ProductsController : Controller

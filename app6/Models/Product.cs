@@ -1,4 +1,4 @@
-namespace app5.Models
+namespace app6.Models
 {
     public class Product
     {
