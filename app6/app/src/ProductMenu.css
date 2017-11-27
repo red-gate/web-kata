@@ -27,3 +27,7 @@
     display: flex;
     flex-direction: row;
 }
+
+.product-item-remove{
+    cursor: pointer;
+}

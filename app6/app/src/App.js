@@ -29,6 +29,20 @@ class App extends Component {
     })
   }
 
+  onProductRemove(productName){
+    fetch('/api/products/delete/'+productName, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin'
+    }).then(r => {
+      return r.json()
+    }).then(json => {
+      this.setState({products: json})
+    })
+  }
+
   render() {
     return <div className="App">
       <div className="App-header">
@@ -36,7 +50,9 @@ class App extends Component {
       </div>
       <div className='products-add-product'>add product here</div>
       <div className='products-container'>
-        <ProductMenu products={this.state.products} />
+        <ProductMenu
+          products={this.state.products}
+          onProductRemove={n => this.onProductRemove(n)} />
         <Route exact path='/products/:productName' component={
           props => <ProductContainer {...props} products={this.state.products} />
         } />
