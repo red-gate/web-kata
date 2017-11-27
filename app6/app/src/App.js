@@ -9,6 +9,24 @@ class App extends Component {
 
   constructor(props) {
     super(props)
+    this.state = {
+      products:[]
+    }
+    this.fetchProducts()
+  }
+
+  fetchProducts(){
+    fetch('/api/products/get',{
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin'
+    }).then(r => {
+      return r.json()
+    }).then(json => {
+      this.setState({products: json})
+    })
   }
 
   render() {
