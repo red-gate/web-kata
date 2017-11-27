@@ -38,9 +38,9 @@ You are given a server that exposes the following `REST` endpoints.
 
 |description| method | api call | notes
 |---|----|---|----|
-|list all products| `GET` | `http:localhost:3000/api/products/get`||
-|delete product| `DELETE`| `http:localhost:3000/api/products/delete/readyroll`||
-|add product| `POST` | `http:localhost:3000/api/products/add` | `json/application` with body `{name: 'product1', description: 'product description here'}`|
+|list all products| `GET` | `http:localhost:5000/api/products/get`||
+|delete product| `DELETE`| `http:localhost:5000/api/products/delete/readyroll`||
+|add product| `POST` | `http:localhost:5000/api/products/add` | `json/application` with body `{name: 'product1', description: 'product description here'}`|
 
 Notes:
 
