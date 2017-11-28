@@ -13,6 +13,7 @@ class App extends Component {
       products:[]
     }
     this.fetchProducts()
+    this.handleAddProduct = this.handleAddProduct.bind(this)
   }
 
   fetchProducts(){
@@ -43,12 +44,43 @@ class App extends Component {
     })
   }
 
+  handleAddProduct(event){
+    event.preventDefault()
+    const newProduct = {
+      name: event.target.name.value,
+      description: event.target.description.value
+    }
+
+    fetch('api/products/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify(newProduct)
+    }).then(r => {
+      return r.json()
+    }).then(json => {
+      this.setState({products: json})
+    })
+  }
+
   render() {
     return <div className="App">
       <div className="App-header">
         <h2>Kata 6 - Redux</h2>
       </div>
-      <div className='products-add-product'>add product here</div>
+      <div className='products-add-product'>
+        <form onSubmit={this.handleAddProduct}>
+          <label>product name:
+            <input type='text' name='name' />
+          </label>
+          <label>description:
+            <input type='text' name='description'/>
+          </label>
+          <input type='submit' value='add product' />
+        </form>
+      </div>
       <div className='products-container'>
         <ProductMenu
           products={this.state.products}
