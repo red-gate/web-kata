@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
 import { Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 
 import ProductMenu from './ProductMenu.js'
 import ProductContainer from './ProductContainer.js'
 import './App.css'
+
+import { fetchWebServerVersion } from './modules/versions'
 
 class App extends Component {
 
@@ -13,6 +18,9 @@ class App extends Component {
       products:[]
     }
     this.fetchProducts()
+
+    this.props.fetchWebServerVersion()
+
     this.handleAddProduct = this.handleAddProduct.bind(this)
   }
 
@@ -69,6 +77,7 @@ class App extends Component {
     return <div className="App">
       <div className="App-header">
         <h2>Kata 6 - Redux</h2>
+        <pre>v{this.props.version}</pre>
       </div>
       <div className='products-add-product'>
         <form onSubmit={this.handleAddProduct}>
@@ -93,4 +102,12 @@ class App extends Component {
   }
 }
 
-export default App
+const mapStateToProps = state => ({
+  version: state.versions.version
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  fetchWebServerVersion
+}, dispatch)
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
