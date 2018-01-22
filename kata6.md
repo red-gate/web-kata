@@ -4,7 +4,7 @@ Code for **Kata 6** is available in the [app6](app6) folder.
 
 ## Learning aims
 
-The idea here is to start using Redux for our app. Understand it's main concepts.
+The idea here is to start using Redux for our app and understand it's main concepts.
 
 ## Requirements
 
@@ -31,11 +31,12 @@ You will need **2** terminals
 
 ## Task
 
-Redux is alredy installed and working in this application. Your goal is to switch the app code into using Redux.
+[Redux](https://redux.js.org) is alredy installed and working in this application. Your goal is to switch the app code into using Redux.
 
 Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before we start.
 
 1. actions
+
     [Actions](https://redux.js.org/docs/basics/Actions.html) are sets of information that is sent to your application.
     An action has a `type` (mandatory) and a `payload` (optional).
 
@@ -105,6 +106,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
     ```
 
 1. the store
+
     The [store](https://redux.js.org/docs/api/Store.html) contains all the state of your application.
 
     Ours is defined at `/src/store.js`
@@ -201,6 +203,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
         ```
 
         __Remark 1__: Notice the line `version: state.versions.version` where we connect the data from the store as a property of the component so that it can be used as `this.props.version` directly.
+
         __Remark 2__: Notice the mapDispatchToProps, where we add the `fetchWebServerVersion` function. So that we can call `this.props.fetchWebServerVersion` and that all calls with `dispatch` for example `dispatch({ type: WEB_SERVER_VERSION_REQUESTED })` get properly fired.
 
     * use the version data in our component
