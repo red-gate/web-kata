@@ -74,8 +74,8 @@ class App extends Component {
   }
 
   render() {
-    return <div className="App">
-      <div className="App-header">
+    return <div className='App'>
+      <div className='App-header'>
         <h2>Kata 6 - Redux</h2>
         <pre>v{this.props.version}</pre>
       </div>
