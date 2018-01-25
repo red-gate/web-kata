@@ -16,10 +16,15 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
         - [3- Filter, show and hide objects](#3--filter-show-and-hide-objects)
         - [4- Add router to an app](#4--add-router-to-an-app)
         - [5- interaction with backend server through REST API calls](#5--interaction-with-backend-server-through-rest-api-calls)
-        - [6- Redux [todo]](#6--redux-todo)
-        - [7 Redux and React-router](#7-redux-and-react-router)
-        - [8- ... [todo]](#8---todo)
-        - [9- TypeScript  [todo]](#9--typescript--todo)
+        - [6- Redux [in progress]](#6--redux-in-progress)
+        - [7- Redux 2 [in progress]](#7--redux-2-in-progress)
+        - [8- Add honeycomb to your React app](#8--add-honeycomb-to-your-react-app)
+    - [Katas with Typescript](#katas-with-typescript)
+        - [103- TypeScript react app 3 [todo by [@MikielAgutu](https://github.com/MikielAgutu) ]](#103--typescript-react-app-3-todo-by-mikielagutuhttpsgithubcommikielagutu-)
+        - [104 - TypeScript react app 5 [to research by [@MikielAgutu](https://github.com/MikielAgutu) ]](#104---typescript-react-app-5-to-research-by-mikielagutuhttpsgithubcommikielagutu-)
+        - [105 - TypeScript react app 5 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]](#105---typescript-react-app-5-todo-by--mikielagutuhttpsgithubcommikielagutu-)
+        - [106 - TypeScript react app 6 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]](#106---typescript-react-app-6-todo-by--mikielagutuhttpsgithubcommikielagutu-)
+    - [Future](#future)
     - [Resources](#resources)
 
 <!-- /TOC -->
@@ -73,15 +78,30 @@ Go to `App.js` and change the message. The app should re build itself and reload
 
 [Kata 5](kata5.md)
 
-### 6- Redux [todo]
+### 6- Redux [in progress]
 
 [Kata 6](kata6.md)
 
-### 7 Redux and React-router
+### 7- Redux 2 [in progress]
 
-### 8- ... [todo]
+### 8- Add honeycomb to your React app
 
-### 9- TypeScript  [todo]
+## Katas with Typescript
+
+### 103- TypeScript react app 3 [todo by [@MikielAgutu](https://github.com/MikielAgutu) ]
+
+### 104 - TypeScript react app 5 [to research by [@MikielAgutu](https://github.com/MikielAgutu) ]
+
+### 105 - TypeScript react app 5 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]
+
+### 106 - TypeScript react app 6 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]
+
+## Future
+
+- aspnet core web app MVC calculator (more than one session)
+- server side rendering
+- web sockets / signalr with dotnet core
+- server send events
 
 ## Resources
 
