@@ -225,10 +225,33 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
 [Redux](https://redux.js.org) is alredy installed and working in this application. Your goal is to switch the app code into using Redux.
 
-Write the JavaScript/React code to:
+Write the JavaScript/React code to avoid any use of `state` in the `App.js` component. Use redux instead
 
-1. todo
-1. todo
-1. todo
+1. move all api calls into the `products` reducer
+    1. create a `products.js` reducer under `src/modules` and connect it to the store.
+    1. create the action types for products
+        1. `products/PRODUCTS_REQUESTED`
+        1. `products/PRODUCTS_COMPLETED`
+        1. `products/PRODUCT_REMOVE_REQUESTED`
+        1. `products/PRODUCT_REMOVE_COMPLETED`
+        1. `products/PRODUCT_ADD_REQUESTED`
+        1. `products/PRODUCT_REMOVE_COMPLETED`
+    1. create all api functions
+        1. `fetchProducts`
+        1. `addProduct`
+        1. `removeProduct`
+    1. be sure each function dispatches a `requested` action before calling the server
+    1. be sure each function dispatches a `completed` action when your request succeeds
+1. update the products reducer so that the data of the products list is updated acordingly
+    1. define an initial state
+    1. create a case for each action type
+1. import all dispatch product functions into `App.js`
+    1. be sure to map them to props in the `mapDispatchToProps` section
+1. use the products data from the store
+    1. be sure to map the products data in the `mapStateToProps` section
+1. update your `App.js` code so that you don't use `this.state` anymore. You shoul be using `this.props` instead
+1. check in the browser console that all actions are being fired
 
 ## Resources
+
+* [Redux basics](https://redux.js.org/docs/basics/)
