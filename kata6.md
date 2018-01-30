@@ -29,15 +29,13 @@ You will need **2** terminals
 * follow the instructions in the [README](README.md#run-the-app).
 * your app should be running at port **3000**
 
-## Task
+## Concepts
 
-[Redux](https://redux.js.org) is alredy installed and working in this application. Your goal is to switch the app code into using Redux.
+Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before we start. We have added a simple end to end React Redux example in the code that we will explain first.
 
-Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before we start.
+1. Actions
 
-1. actions
-
-    [Actions](https://redux.js.org/docs/basics/Actions.html) are sets of information that is sent to your application.
+    [Actions](https://redux.js.org/docs/basics/Actions.html) are sets of information that are sent to your application.
     An action has a `type` (mandatory) and a `payload` (optional).
 
     Example of an action with no payload fired:
@@ -55,7 +53,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
     })
     ```
 
-1. reducers
+1. Reducers
 
     [Reducers](https://redux.js.org/docs/basics/Reducers.html) define how the state of our app should change with respect to actions that are fired.
 
@@ -105,7 +103,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
     }
     ```
 
-1. the store
+1. Store
 
     The [store](https://redux.js.org/docs/api/Store.html) contains all the state of your application.
 
@@ -157,7 +155,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
     here is the versions example:
 
-    * define a `fetchWebServerVersion` function in `/src/modules/versions.js`
+    * we define a `fetchWebServerVersion` function in `/src/modules/versions.js`
 
         ```jsx
         export const fetchWebServerVersion = () => {
@@ -183,7 +181,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
         }
         ```
 
-    * import fetch function and connect state to props
+    * we import fetch function and connect state to props
 
         ```jsx
         import { bindActionCreators } from 'redux'
@@ -216,7 +214,17 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
         ```
 1. The versions example
 
-    the versions example gives
+    throuout the Redux concepts with showed how the versions request example work in this app. Have a look at the different pieces to understand how they work:
+    * `src/index.js`
+    * `src/App.js`
+    * `src/store.js`
+    * `src/modules/versions.js`
+    * `src/modules/index.js`
+
+## Task
+
+[Redux](https://redux.js.org) is alredy installed and working in this application. Your goal is to switch the app code into using Redux.
+
 Write the JavaScript/React code to:
 
 1. todo
