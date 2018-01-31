@@ -110,10 +110,11 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
     Ours is defined at `/src/store.js`
 
     ```jsx
+    const initialState = {}
+
     const store = createStore(
         rootReducer,
-        initialState,
-        composedEnhancers
+        initialState
     )
 
     export default store
