@@ -10,20 +10,8 @@ Kata for Single-Page applications. In React, TypeScript and Javascript.
     - [Instructions for any Kata](#instructions-for-any-kata)
         - [Run the app](#run-the-app)
         - [Change some code](#change-some-code)
-    - [Katas](#katas)
-        - [1- Introduction to a simple React App](#1--introduction-to-a-simple-react-app)
-        - [2- Add and remove objects](#2--add-and-remove-objects)
-        - [3- Filter, show and hide objects](#3--filter-show-and-hide-objects)
-        - [4- Add router to an app](#4--add-router-to-an-app)
-        - [5- interaction with backend server through REST API calls](#5--interaction-with-backend-server-through-rest-api-calls)
-        - [6- Redux [in progress]](#6--redux-in-progress)
-        - [7- Redux 2 [in progress]](#7--redux-2-in-progress)
-        - [8- Add honeycomb to your React app](#8--add-honeycomb-to-your-react-app)
+    - [Katas on React and Javascript](#katas-on-react-and-javascript)
     - [Katas with Typescript](#katas-with-typescript)
-        - [103- TypeScript react app 3 [todo by [@MikielAgutu](https://github.com/MikielAgutu) ]](#103--typescript-react-app-3-todo-by-mikielagutuhttpsgithubcommikielagutu-)
-        - [104 - TypeScript react app 5 [to research by [@MikielAgutu](https://github.com/MikielAgutu) ]](#104---typescript-react-app-5-to-research-by-mikielagutuhttpsgithubcommikielagutu-)
-        - [105 - TypeScript react app 5 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]](#105---typescript-react-app-5-todo-by--mikielagutuhttpsgithubcommikielagutu-)
-        - [106 - TypeScript react app 6 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]](#106---typescript-react-app-6-todo-by--mikielagutuhttpsgithubcommikielagutu-)
     - [Future](#future)
     - [Resources](#resources)
 
@@ -56,47 +44,27 @@ This will start the web app development server usually at `http://localhost:3000
 
 Go to `App.js` and change the message. The app should re build itself and reload the content with your changes.
 
-## Katas
+## Katas on React and Javascript
 
-### 1- Introduction to a simple React App
-
-[Kata 1](kata1.md)
-
-### 2- Add and remove objects
-
-[Kata 2](kata2.md)
-
-### 3- Filter, show and hide objects
-
-[Kata 3](kata3.md)
-
-### 4- Add router to an app
-
-[Kata 4](kata4.md)
-
-### 5- interaction with backend server through REST API calls
-
-[Kata 5](kata5.md)
-
-### 6- Redux [in progress]
-
-[Kata 6](kata6.md)
-
-### 7- Redux 2 [in progress]
-
-### 8- Add honeycomb to your React app
+1. Kata 1 - [Introduction to a simple React App](kata1.md)
+1. Kata 2 - [Add and remove objects](kata2.md)
+1. Kata 3 - [Filter, show and hide objects](kata3.md)
+1. Kata 4 - [Add router to an app](kata4.md)
+1. Kata 5 - [Interaction with backend server through REST API calls](kata5.md)
+1. Kata 6 - [Redux basics and change you app to use it](kata6.md)
+1. Kata 7 - Redux 2 [todo]
+1. Kata 8 - Add honeycomb to your React app
 
 ## Katas with Typescript
 
-### 103- TypeScript react app 3 [todo by [@MikielAgutu](https://github.com/MikielAgutu) ]
-
-### 104 - TypeScript react app 5 [to research by [@MikielAgutu](https://github.com/MikielAgutu) ]
-
-### 105 - TypeScript react app 5 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]
-
-### 106 - TypeScript react app 6 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]
+1. Kata 103 - TypeScript react app 3 [todo by [@MikielAgutu](https://github.com/MikielAgutu) ]
+1. Kata 104 - TypeScript react app 5 [to research by [@MikielAgutu](https://github.com/MikielAgutu) ]
+1. Kata 105 - TypeScript react app 5 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]
+1. Kata 106 - TypeScript react app 6 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]
 
 ## Future
+
+Ideas for future sessions
 
 - aspnet core web app MVC calculator (more than one session)
 - server side rendering
