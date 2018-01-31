@@ -195,7 +195,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
         }
         ```
 
-        This to notice here:
+        Things to notice here:
 
         * `fetchWebServerVersion` function returns a `dispatch` function
         * we dispatch `WEB_SERVER_VERSION_REQUESTED` action before the fetch call
