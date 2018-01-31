@@ -106,7 +106,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
     **Note**:
     Everytime you return an object in the `case` statement of the reducer you are defining the **new state** of that section of the application.
 
-    This means that when you update the state of any reducer you need to do it **inmutably**. I.e. use a new object instead of an the existing one.
+    This means that when you update the state of any reducer you need to do it **without changing the exisitng state**. I.e. use a new object instead of an the existing one.
 
     That is the reason  why we use the [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) when returning the new state in each case.
 
