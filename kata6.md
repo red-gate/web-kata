@@ -31,7 +31,7 @@ You will need **2** terminals
 
 ## Concepts
 
-Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before we start. We have added a simple end to end React Redux example in the code that we will explain first.
+Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before we start. We have added a simple end to end React Redux example in the code of `App6` that we will explain first.
 
 1. Actions
 
@@ -127,7 +127,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
 1. give access to the store to all components
 
-    To do this we inject in our `src/index.js` the store using `Provider` component. For more information see: [Passing the Store](https://redux.js.org/docs/basics/UsageWithReact.html#passing-the-store)
+    To do this we inject in our `src/index.js` the `store` using the `Provider` component. For more information see: [Passing the Store](https://redux.js.org/docs/basics/UsageWithReact.html#passing-the-store)
 
     ```jsx
     import React from 'react'
@@ -151,9 +151,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
     )
     ```
 
-1. use the state in our components
-
-    here is the versions example:
+1. create a dispatch function for fetching versions
 
     * we define a `fetchWebServerVersion` function in `/src/modules/versions.js`
 
@@ -181,6 +179,13 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
         }
         ```
 
+        This to notice here:
+
+        * `fetchWebServerVersion` function returns a `dispatch` function
+        * we dispatch `WEB_SERVER_VERSION_REQUESTED` action before the fetch call
+        * we dispatch `WEB_SERVER_VERSION_COMPLETED` action when the fetch call completes
+
+1. Connect your dispatch function and the data present in the store to the `App` component
     * we import fetch function and connect state to props
 
         ```jsx
@@ -204,7 +209,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
         __Remark 2__: Notice the mapDispatchToProps, where we add the `fetchWebServerVersion` function. So that we can call `this.props.fetchWebServerVersion` and that all calls with `dispatch` for example `dispatch({ type: WEB_SERVER_VERSION_REQUESTED })` get properly fired.
 
-    * use the version data in our component
+    * use the version data present in the `store` in our `App` component
 
         ```jsx
         <div className='App-header'>
