@@ -217,6 +217,36 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
             <pre>v{this.props.version}</pre>
         </div>
         ```
+
+1. Check redux actions in the app
+
+    The store we created in `src/store.js` has a `logger` as one of our middleware. This will allow us to check the actions that are fired within the app.
+
+    ```js
+    import logger from 'redux-logger'
+
+    const middleware = [
+        thunk,
+        logger,
+        routerMiddleware(history)
+    ]
+
+    const composedEnhancers = compose(
+        applyMiddleware(...middleware),
+        ...enhancers
+    )
+
+    const store = createStore(
+        rootReducer,
+        initialState,
+        composedEnhancers
+    )
+    ```
+
+    If you check you browser console you should see the actions and the change of each state in the store.
+
+    ![Redux actions in the console](./app6/images/redux-action-logs.png)
+
 1. The versions example
 
     throughout the Redux concepts with showed how the versions request example work in this app. Have a look at the different pieces to understand how they work:
