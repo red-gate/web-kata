@@ -250,7 +250,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
 1. The versions example
 
-    throughout the Redux concepts with showed how the versions request example work in this app. Have a look at the different pieces to understand how they work:
+    Throughout the Redux concepts we showed how the versions request example work in this app. Have a look at the different pieces to understand how they work:
     * `src/index.js`
     * `src/App.js`
     * `src/store.js`
@@ -271,7 +271,7 @@ Write the JavaScript/React code to avoid any use of `state` in the `App.js` comp
         1. `products/PRODUCT_REMOVE_REQUESTED`
         1. `products/PRODUCT_REMOVE_COMPLETED`
         1. `products/PRODUCT_ADD_REQUESTED`
-        1. `products/PRODUCT_REMOVE_COMPLETED`
+        1. `products/PRODUCT_ADD_COMPLETED`
     1. create all api functions
         1. `fetchProducts`
         1. `addProduct`
