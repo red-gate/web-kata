@@ -219,7 +219,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
         ```
 1. The versions example
 
-    throuout the Redux concepts with showed how the versions request example work in this app. Have a look at the different pieces to understand how they work:
+    throughout the Redux concepts with showed how the versions request example work in this app. Have a look at the different pieces to understand how they work:
     * `src/index.js`
     * `src/App.js`
     * `src/store.js`
