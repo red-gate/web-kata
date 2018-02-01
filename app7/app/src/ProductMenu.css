@@ -1,0 +1,33 @@
+.product-menu{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    min-width: 10em;    
+    margin: 1em;
+}
+
+.product-item{
+    display: flex;
+    flex-direction: row;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    justify-content: space-between;
+    min-width: 10em;
+}
+
+.product-item:hover{
+    background: #efefef
+}
+
+.product-item .name{
+    font-weight: bold;
+    font-size: 14pt;
+    display: flex;
+    flex-direction: row;
+}
+
+.product-item-remove{
+    cursor: pointer;
+}
