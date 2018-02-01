@@ -8,9 +8,7 @@
     "react-scripts-ts": "2.13.0"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "eject": "react-scripts-ts eject"
+    "start": "react-scripts-ts start"
   },
   "devDependencies": {
     "@types/node": "^9.4.0",
