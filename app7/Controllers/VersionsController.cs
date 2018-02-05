@@ -15,7 +15,7 @@ namespace app7.Controllers
         [HttpGet]
         public string Get()
         {
-            return new Version(0, 6).ToString();
+            return new Version(0, 7).ToString();
         }
     }
 }
