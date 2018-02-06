@@ -278,24 +278,22 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
 Write the JavaScript/React code to avoid any use of `state` in the `App.js` component. Use redux instead
 
-1. move all api calls into the `products` reducer
-    1. create a `products.js` reducer under `src/modules` and connect it to the store.
+1. move all api calls into the `products` reducer:
+    1. under `src/modules` create file called `products.js` and export an empty reducer. Connect it to the store.
     1. create the action types for products
         1. `products/PRODUCTS_REQUESTED`
         1. `products/PRODUCTS_COMPLETED`
-        1. `products/PRODUCT_REMOVE_REQUESTED`
-        1. `products/PRODUCT_REMOVE_COMPLETED`
         1. `products/PRODUCT_ADD_REQUESTED`
         1. `products/PRODUCT_ADD_COMPLETED`
-    1. create all api functions
+        1. `products/PRODUCT_REMOVE_REQUESTED`
+        1. `products/PRODUCT_REMOVE_COMPLETED`
+    1. create and implement all api functions that currently exist in `App.js`
         1. `fetchProducts`
         1. `addProduct`
-        1. `removeProduct`
-    1. be sure each function dispatches a `requested` action before calling the server
-    1. be sure each function dispatches a `completed` action when your request succeeds
-1. update the products reducer so that the data of the products list is updated acordingly
-    1. define an initial state
-    1. create a case for each action type
+        1. `removeProduct` (passing `newProduct` as an argument)
+    1. be sure each function dispatches a `requested` action before calling the server, and a `completed` action if the request succeeds
+1. update the products reducer so that the data of the products list is updated acordingly:
+    1. create and implement a case for each action type (requested and completed). Set the products returned from server (if applicable)
 1. import all dispatch product functions into `App.js`
     1. be sure to map them to props in the `mapDispatchToProps` section
 1. use the products data from the store

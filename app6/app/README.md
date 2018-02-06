@@ -1,5 +1,5 @@
-kata 5
+kata 6
 ===
 
 * [Run app instruction](../../README.md#instructions-for-any-kata)
-* [Kata Instructions](../../kata5.md)
+* [Kata Instructions](../../kata6.md)
