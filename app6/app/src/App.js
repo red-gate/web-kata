@@ -59,7 +59,7 @@ class App extends Component {
       description: event.target.description.value
     }
 
-    fetch('api/products/add', {
+    fetch('/api/products/add', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
