@@ -300,7 +300,6 @@ Write the JavaScript/React code to avoid any use of `state` in the `App.js` comp
     1. be sure to map the products data in the `mapStateToProps` section
 1. update your `App.js` code so that you don't use `this.state` anymore. You shoul be using `this.props` instead
 1. check in the browser console that all actions are being fired
-1. Make sure you call `fetchProducts` after adding or deleting a product to update the UI
 
 ## Resources
 
