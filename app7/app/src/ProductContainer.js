@@ -1,29 +1,23 @@
 import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
 import './ProductContainer.css'
 import Product from './Product.js'
 
 class ProductContainer extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      productName: this.props.match.params.productName
-    }
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    if (nextProps.match.params.productName !== this.props.match.params.productName) {
-      this.setState({
-        productName: nextProps.match.params.productName
-      })
-    }
-  }
-
   render() {
-    const p = this.props.products.find(p => p.name === this.state.productName)
     return <div className='product-container'>
-      <Product product={p} />
+      {this.props.selectedProduct && <Product product={this.props.selectedProduct} />}
     </div>
   }
 }
 
-export default ProductContainer
+const mapStateToProps = (state, ownProps) => ({
+  selectedProduct: state.products.products && state.products.products.find(p => p.name === ownProps.match.params.productName),
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductContainer)

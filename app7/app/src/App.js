@@ -4,13 +4,15 @@ import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
-import ProductMenu from './ProductMenu.js'
-import ProductContainer from './ProductContainer.js'
+import ProductMenu from './ProductMenu'
+import ProductContainer from './ProductContainer'
+import SelectedProduct from './SelectedProduct'
 import './App.css'
 
 import { fetchWebServerVersion } from './modules/versions'
 
-import { fetchProducts, addProduct, removeProduct} from './modules/products'
+import { fetchProducts, addProduct } from './modules/products'
+
 
 class App extends Component {
 
@@ -23,16 +25,12 @@ class App extends Component {
     this.handleAddProduct = this.handleAddProduct.bind(this)
   }
 
-  onProductRemove(productName){
-    this.props.removeProduct(productName)
-  }
-
-  handleAddProduct(event){
+  handleAddProduct(event) {
     event.preventDefault()
-      const newProduct = {
-        name: event.target.name.value,
-        description: event.target.description.value
-      }
+    const newProduct = {
+      name: event.target.name.value,
+      description: event.target.description.value
+    }
     this.props.addProduct(newProduct)
   }
 
@@ -41,6 +39,7 @@ class App extends Component {
       <div className='App-header'>
         <h2>Kata 7 - Redux</h2>
         <pre>v{this.props.version}</pre>
+        <Route exact path='/products/:productName' component={SelectedProduct} />
       </div>
       <div className='products-add-product'>
         <form onSubmit={this.handleAddProduct}>
@@ -48,18 +47,14 @@ class App extends Component {
             <input type='text' name='name' />
           </label>
           <label>description:
-            <input type='text' name='description'/>
+            <input type='text' name='description' />
           </label>
           <input type='submit' value='add product' />
         </form>
       </div>
       <div className='products-container'>
-        <ProductMenu
-          products={this.props.products}
-          onProductRemove={n => this.onProductRemove(n)} />
-        <Route exact path='/products/:productName' component={
-          props => <ProductContainer {...props} products={this.props.products} />
-        } />
+        <ProductMenu />
+        <Route exact path='/products/:productName' component={ProductContainer} />
       </div>
     </div>
   }
@@ -73,8 +68,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchWebServerVersion,
   fetchProducts,
-  addProduct,
-  removeProduct
+  addProduct
 }, dispatch)
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
