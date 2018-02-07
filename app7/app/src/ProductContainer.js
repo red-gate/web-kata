@@ -7,8 +7,11 @@ import Product from './Product.js'
 
 class ProductContainer extends Component {
   render() {
+    const { selectedProduct } = this.props
     return <div className='product-container'>
-      {this.props.selectedProduct && <Product product={this.props.selectedProduct} />}
+      <div className='product-header'>
+      </div>
+      {selectedProduct && <Product product={this.props.selectedProduct} />}
     </div>
   }
 }
