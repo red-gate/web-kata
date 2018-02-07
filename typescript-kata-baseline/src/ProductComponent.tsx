@@ -12,7 +12,7 @@ interface State {
     showDescription : boolean
 }
 
-class Product extends Component<Props, State> {
+class ProductComponent extends Component<Props, State> {
     constructor(props : Props){
         super(props)
         this.state = { showDescription: false };
@@ -38,4 +38,4 @@ class Product extends Component<Props, State> {
     }
 }
 
-export default Product;
+export default ProductComponent;

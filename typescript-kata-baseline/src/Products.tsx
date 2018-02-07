@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react'
 import './Products.css';
-import Product from './Product';
+import ProductComponent from './ProductComponent';
 import { Product, ProductCollection } from './Interfaces';
 
 interface Props {
@@ -17,7 +17,7 @@ class Products extends Component<Props, {}> {
                 (p : Product, i : number) => {
                     
                     if(this.props.productNameFilter === '') {
-                            return <Product
+                            return <ProductComponent
                             product={p}
                             key={'product-' + i }
                             removeProduct={this.props.removeProduct}
@@ -25,7 +25,7 @@ class Products extends Component<Props, {}> {
                     }
                     else {
                         if(p.name === this.props.productNameFilter){
-                            return <Product
+                            return <ProductComponent
                                 product={p}
                                 key={'product-' + i }
                                 removeProduct={this.props.removeProduct}
