@@ -1,17 +1,17 @@
 import * as React from 'react';
-import { Component } from 'react'
+import { Component } from 'react';
 import './Products.css';
 import ProductComponent from './ProductComponent';
 import { Product, ProductCollection } from './Interfaces';
 
 interface Props {
-    productCollection : ProductCollection,
-    productNameFilter: string,
-    removeProduct : Function;
+    productCollection: ProductCollection;
+    productNameFilter: string;
+    removeProduct: Function;
 }
 
 class Products extends Component<Props, {}> {
-    render(){
+    render(): JSX.Element {
         return <div className='products'>
             {this.props.productCollection.products.map(
                 (p : Product, i : number) => {

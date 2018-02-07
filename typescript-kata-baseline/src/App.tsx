@@ -29,7 +29,7 @@ class App extends Component<{}, State> {
     this.changeProductFilter = this.changeProductFilter.bind(this);
   }
 
-  changeProductFilter(event: any) : void {
+  changeProductFilter(event: any): void {
     event.preventDefault();
     this.setState(new AppState( 
       this.state.productCollection,
@@ -37,7 +37,7 @@ class App extends Component<{}, State> {
     );
   }
 
-  handleAddProduct(event: any) : void {
+  handleAddProduct(event: any): void {
     event.preventDefault();
     const newProductArray = [...this.state.productCollection.products];
 
@@ -52,17 +52,16 @@ class App extends Component<{}, State> {
     );
   }
 
-  removeProduct(product : Product) : void {
+  removeProduct(product: Product): void {
     const newProductArray = this.state.productCollection.products.filter(
-      (p : Product) => p.name === product.name);
+      (p: Product) => p.name === product.name);
     
     this.setState(
-      new AppState(new SoftwareProductCollection(newProductArray),
-      this.state.productNameFilter)
+      new AppState(new SoftwareProductCollection(newProductArray), this.state.productNameFilter)
     );
   }
 
-  render() : JSX.Element {
+  render(): JSX.Element {
     return <div className='App'>
       <div className='App-header'>
         <h2>Kata 3- Filter, show and hide objects</h2>
@@ -92,4 +91,4 @@ class App extends Component<{}, State> {
   }
 }
 
-export default App
+export default App;

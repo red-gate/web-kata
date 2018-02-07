@@ -1,29 +1,29 @@
 import * as React from 'react';
-import { Component } from 'react'
+import { Component } from 'react';
 import './Products.css';
 import { Product } from './Interfaces';
 
 interface Props {
-    product : Product,
-    removeProduct : Function;
+    product: Product;
+    removeProduct: Function;
 }
 
 interface State {
-    showDescription : boolean
+    showDescription: boolean;
 }
 
 class ProductComponent extends Component<Props, State> {
-    constructor(props : Props){
-        super(props)
+    constructor(props: Props) {
+        super(props);
         this.state = { showDescription: false };
         this.toggleShowDescription = this.toggleShowDescription.bind(this);
     }
 
-    toggleShowDescription() : void {
+    toggleShowDescription(): void {
         this.setState({ showDescription: !this.state.showDescription});
     }
 
-    render(){
+    render(): JSX.Element {
         return <div className='product'>
             <div className='details'>
                 <div className='name'>{this.props.product.name}</div>

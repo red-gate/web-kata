@@ -8,7 +8,7 @@ const data = {
         },
         {
             name: 'SQL Data Compare',
-			description : 'Compares and synchronizes SQL Server database contents'
+            description : 'Compares and synchronizes SQL Server database contents'
         },
         {
             name: 'SQL Source Control',
@@ -87,9 +87,9 @@ const data = {
             description : 'Find code issues in an entire SQL Server database or a query window'
         },
     ]
-}
+};
 
-function GetData() : ProductCollection {
+function GetData(): ProductCollection {
     return data;
 }
 
