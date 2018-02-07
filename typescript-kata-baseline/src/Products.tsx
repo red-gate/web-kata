@@ -12,31 +12,32 @@ interface Props {
 
 class Products extends Component<Props, {}> {
     render(): JSX.Element {
-        return <div className='products'>
+        return (
+        <div className='products'>
             {this.props.productCollection.products.map(
-                (p : Product, i : number) => {
-                    
-                    if(this.props.productNameFilter === '') {
-                            return <ProductComponent
-                            product={p}
-                            key={'product-' + i }
-                            removeProduct={this.props.removeProduct}
-                        />;
-                    }
-                    else {
-                        if(p.name === this.props.productNameFilter){
+                (p: Product, i: number) => {                
+                    if (this.props.productNameFilter === '') {
+                        return (
+                            <ProductComponent
+                                product={p}
+                                key={'product-' + i}
+                                removeProduct={this.props.removeProduct}
+                            />
+                        );
+                    } else {
+                        if (p.name === this.props.productNameFilter) {
                             return <ProductComponent
                                 product={p}
-                                key={'product-' + i }
+                                key={'product-' + i}
                                 removeProduct={this.props.removeProduct}
                             />;
                         }
                     }
-
                     return;
                 }
             )}
         </div>
+        );
     }
 }
 

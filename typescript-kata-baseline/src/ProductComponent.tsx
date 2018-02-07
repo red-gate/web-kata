@@ -24,7 +24,8 @@ class ProductComponent extends Component<Props, State> {
     }
 
     render(): JSX.Element {
-        return <div className='product'>
+        return (
+        <div className='product'>
             <div className='details'>
                 <div className='name'>{this.props.product.name}</div>
                 <div className='desc'>{this.state.showDescription ? this.props.product.description : null}</div>
@@ -35,6 +36,7 @@ class ProductComponent extends Component<Props, State> {
                 <div className='remove' onClick={() => this.props.removeProduct(this.props.product)}>x</div>
             </div>
         </div>
+        );
     }
 }
 

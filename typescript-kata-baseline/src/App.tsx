@@ -62,7 +62,7 @@ class App extends Component<{}, State> {
   }
 
   render(): JSX.Element {
-    return <div className='App'>
+    return (<div className='App'>
       <div className='App-header'>
         <h2>Kata 3- Filter, show and hide objects</h2>
       </div>
@@ -84,10 +84,14 @@ class App extends Component<{}, State> {
         </form>
       </div>
       <div className='products-container'>
-        <Products productNameFilter={this.state.productNameFilter}
-         productCollection={this.state.productCollection} removeProduct={this.removeProduct} />
+        <Products
+          productNameFilter={this.state.productNameFilter} 
+          productCollection={this.state.productCollection} 
+          removeProduct={this.removeProduct} 
+        />
       </div>
     </div>
+    );
   }
 }
 
