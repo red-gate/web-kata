@@ -7,3 +7,9 @@
     margin: 1em;
     background: #F4F4F4;
 }
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+    font-size: 20pt;
+}
