@@ -48,29 +48,29 @@ export default (state = initialState, action) => {
 }
 
 export const fetchProducts = () => {
-    return dispatch => {
-      dispatch( { type: PRODUCT_REQUESTED})
-      fetch('/api/products/get',{
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        credentials: 'same-origin'
-      }).then(r => {
-        return r.json()
-      }).then(json => {
-        dispatch({
-          type: PRODUCTS_COMPLETED,
-          payload: { products: json }
-        })
+  return dispatch => {
+    dispatch({ type: PRODUCT_REQUESTED })
+    fetch('/api/products/get', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin'
+    }).then(r => {
+      return r.json()
+    }).then(json => {
+      dispatch({
+        type: PRODUCTS_COMPLETED,
+        payload: { products: json }
       })
-    }
+    })
   }
+}
 
 export const removeProduct = (productName) => {
   return dispatch => {
-    dispatch({ type: PRODUCT_REMOVE_REQUESTED})
-    fetch('/api/products/delete/'+productName, {
+    dispatch({ type: PRODUCT_REMOVE_REQUESTED })
+    fetch('/api/products/delete/' + productName, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
@@ -81,16 +81,16 @@ export const removeProduct = (productName) => {
     }).then(json => {
       dispatch({
         type: PRODUCT_REMOVE_COMPLETED,
-        payload: { products: json}
+        payload: { products: json }
       })
     })
-    }
   }
+}
 
 export const addProduct = (newProduct) => {
   return dispatch => {
-    dispatch({type: PRODUCT_ADD_REQUESTED})
-    fetch('api/products/add', {
+    dispatch({ type: PRODUCT_ADD_REQUESTED })
+    fetch('/api/products/add', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -102,7 +102,8 @@ export const addProduct = (newProduct) => {
     }).then(json => {
       dispatch({
         type: PRODUCT_ADD_COMPLETED,
-        payload: {products: json}})
+        payload: { products: json }
+      })
     })
   }
 }
