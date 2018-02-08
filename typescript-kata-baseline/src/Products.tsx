@@ -6,7 +6,6 @@ import { Product, ProductCollection } from './Interfaces';
 
 interface Props {
     productCollection: ProductCollection;
-    productNameFilter: string;
     removeProduct: Function;
 }
 
@@ -16,24 +15,11 @@ class Products extends Component<Props, {}> {
         <div className='products'>
             {this.props.productCollection.products.map(
                 (p: Product, i: number) => {                
-                    if (this.props.productNameFilter === '') {
-                        return (
-                            <ProductComponent
-                                product={p}
-                                key={'product-' + i}
-                                removeProduct={this.props.removeProduct}
-                            />
-                        );
-                    } else {
-                        if (p.name === this.props.productNameFilter) {
-                            return <ProductComponent
-                                product={p}
-                                key={'product-' + i}
-                                removeProduct={this.props.removeProduct}
-                            />;
-                        }
-                    }
-                    return;
+                    return <ProductComponent
+                        product={p}
+                        key={'product-' + i}
+                        removeProduct={this.props.removeProduct}
+                    />;
                 }
             )}
         </div>

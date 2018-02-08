@@ -7,71 +7,42 @@ import { Product, ProductCollection, SoftwareProduct, SoftwareProductCollection 
 
 const data = GetData();
 
-interface State {
-  productCollection: ProductCollection;
-  productNameFilter: string;
-}
 
-class AppState implements State {
-  constructor(
-    public productCollection: ProductCollection,
-    public productNameFilter: string
-  ) {}
-}
-
-class App extends Component<{}, State> {
+class App extends Component<{}, ProductCollection> {
   constructor() {
     super({});
-    this.state = new AppState(data, '');
+    this.state = data;
 
     this.handleAddProduct = this.handleAddProduct.bind(this);
     this.removeProduct = this.removeProduct.bind(this);
-    this.changeProductFilter = this.changeProductFilter.bind(this);
-  }
-
-  changeProductFilter(event: any): void {
-    event.preventDefault();
-    this.setState(new AppState( 
-      this.state.productCollection,
-      event.target.name.value)
-    );
   }
 
   handleAddProduct(event: any): void {
     event.preventDefault();
-    const newProductArray = [...this.state.productCollection.products];
+    const newProductArray = [...this.state.products];
 
     newProductArray.push(new SoftwareProduct(
       event.target.name.value,
       event.target.description.value
     ));
 
-    this.setState(new AppState(
-        new SoftwareProductCollection(newProductArray),
-        this.state.productNameFilter)
-    );
+    this.setState(new SoftwareProductCollection(newProductArray));
   }
 
   removeProduct(product: Product): void {
-    const newProductArray = this.state.productCollection.products.filter(
+    const newProductArray = this.state.products.filter(
       (p: Product) => p.name === product.name);
-    
-    this.setState(
-      new AppState(new SoftwareProductCollection(newProductArray), this.state.productNameFilter)
-    );
+
+    this.setState(new SoftwareProductCollection(newProductArray));
   }
 
   render(): JSX.Element {
-    return (<div className='App'>
+    return (
+    <div className='App'>
       <div className='App-header'>
         <h2>Kata 3- Filter, show and hide objects</h2>
       </div>
       <div className='filter-products'>Filter products here...</div>
-      <form onSubmit={this.changeProductFilter}>
-        <label>Product to filter:
-            <input type='text' name='name' />
-        </label>
-      </form>
       <div className='add-product'>
         <form onSubmit={this.handleAddProduct}>
           <label>product name:
@@ -85,8 +56,7 @@ class App extends Component<{}, State> {
       </div>
       <div className='products-container'>
         <Products
-          productNameFilter={this.state.productNameFilter} 
-          productCollection={this.state.productCollection} 
+          productCollection={this.state} 
           removeProduct={this.removeProduct} 
         />
       </div>

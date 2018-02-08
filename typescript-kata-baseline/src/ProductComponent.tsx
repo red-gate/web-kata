@@ -29,8 +29,8 @@ class ProductComponent extends Component<Props, State> {
             <div className='details'>
                 <div className='name'>{this.props.product.name}</div>
                 <div className='desc'>{this.state.showDescription ? this.props.product.description : null}</div>
-                {this.state.showDescription ? null : (<button onClick={this.toggleShowDescription}>+</button>) }
-                {this.state.showDescription ? (<button onClick={this.toggleShowDescription}>-</button>) : null }
+                {this.state.showDescription ? null : (<button onClick={this.toggleShowDescription}>+</button>)}
+                {this.state.showDescription ? (<button onClick={this.toggleShowDescription}>-</button>) : null}
             </div>
             <div className='actions'>
                 <div className='remove' onClick={() => this.props.removeProduct(this.props.product)}>x</div>
