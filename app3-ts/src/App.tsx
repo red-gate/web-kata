@@ -7,33 +7,48 @@ import { Product, ProductCollection, SoftwareProduct, SoftwareProductCollection 
 
 const data = GetData();
 
+interface AppState {
+  products: ProductCollection;
+  productToAdd: Product;
+}
 
-class App extends Component<{}, ProductCollection> {
-  constructor() {
-    super({});
-    this.state = data;
+class App extends Component<{}, AppState> {
+  constructor(props: {}) {
+    super(props);
+    this.state = { products: data, productToAdd: new SoftwareProduct('', '')};
 
     this.handleAddProduct = this.handleAddProduct.bind(this);
     this.removeProduct = this.removeProduct.bind(this);
+    this.handleProductNameChange = this.handleProductNameChange.bind(this);
+    this.handleProductDescriptionChange = this.handleProductDescriptionChange.bind(this);
+    
   }
 
-  handleAddProduct(event: any): void {
+  handleProductNameChange(event: React.FormEvent<HTMLInputElement>) {
+    this.setState(
+      {... this.state, productToAdd: {...this.state.productToAdd, name: event.currentTarget.value} }
+    );
+  }
+
+  handleProductDescriptionChange(event: React.FormEvent<HTMLInputElement>) {
+    this.setState(
+      {... this.state, productToAdd: {...this.state.productToAdd, description: event.currentTarget.value} }
+    );
+  }
+
+  handleAddProduct(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
-    const newProductArray = [...this.state.products];
+    const newProductCollection = new SoftwareProductCollection([...this.state.products.products]);
+    newProductCollection.products.push(this.state.productToAdd);
 
-    newProductArray.push(new SoftwareProduct(
-      event.target.name.value,
-      event.target.description.value
-    ));
-
-    this.setState(new SoftwareProductCollection(newProductArray));
+    this.setState({ products: newProductCollection, productToAdd: new SoftwareProduct('', '')});
   }
 
   removeProduct(product: Product): void {
-    const newProductArray = this.state.products.filter(
-      (p: Product) => p.name === product.name);
+    const newProductArray = this.state.products.products.filter(
+      (p: Product) => p.name !== product.name);
 
-    this.setState(new SoftwareProductCollection(newProductArray));
+    this.setState({ products: new SoftwareProductCollection(newProductArray), productToAdd: this.state.productToAdd });
   }
 
   render(): JSX.Element {
@@ -46,17 +61,27 @@ class App extends Component<{}, ProductCollection> {
       <div className='add-product'>
         <form onSubmit={this.handleAddProduct}>
           <label>product name:
-            <input type='text' name='name' />
-          </label>
+            <input 
+              type='text'
+              name='name'
+              onChange={this.handleProductNameChange}
+              value={this.state.productToAdd.name}
+            />
+          </label><br/><br/>
           <label>description:
-            <input type='text' name='description'/>
-          </label>
+            <input
+              type='text'
+              name='description' 
+              onChange={this.handleProductDescriptionChange} 
+              value={this.state.productToAdd.description}
+            />
+          </label><br/><br/>
           <input type='submit' value='add product' />
         </form>
       </div>
       <div className='products-container'>
         <Products
-          productCollection={this.state} 
+          productCollection={this.state.products} 
           removeProduct={this.removeProduct} 
         />
       </div>

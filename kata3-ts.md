@@ -17,20 +17,17 @@ Write the JavaScript/React code to:
 1. Add a `<form>` to filter products within the `filter-products` div. It should contain:
     * `label` for product name
     * `input` for filtering by name
-1. Create a new `interface` called `IState`. It should have:
-    * an `IProductCollection`
-    * a `string` for filtering by product name
-1. Add a handler function for the `onChange` event of the form.
-    * save the product `name` from the event in an object that `implements IState`. You can do this by creating a new `class` that `implements` `IState`, or by creating an object that matches `IState`.
+1. Add a field containing the product name to filter to `AppState` in `App.tsx`
+1. Add a handler function for the `onChange` event of the input of the form.
+    * save the product `name` from the event in `AppState`
 1. Filter products in the `render` method based on filter input.
     * you could do [filter with Typescript array object](https://www.tutorialspoint.com/typescript/typescript_array_filter.htm)
 
 ### Show / Hide products:
 
 The idea is to have products be collapsible. 
-1. Change the `Product` component so that descriptions are not shown.
+1. Change `ProductComponent` so that descriptions are not shown.
     * do this by checking a product state property (for example: `showDescription`)
-    * you can create a new `IState` `interface` for `Product`, or by simply passing a `boolean` to the `Product` interface; `class Product extends Component<Props, boolean>`
     * a very common pattern in React is [conditional rendering](https://facebook.github.io/react/docs/conditional-rendering.html), here are some examples:
         * `{condition? <div>foo</div>: null}`
         * `{condition? <div>foo</div>: <div>bar</div>}`
