@@ -8,12 +8,13 @@ The idea here is to keep learning the concept of `state`, `props`, `callbacks` a
 
 ## Task
 
-Write the JavaScript/React code to: 
+Write the JavaScript/React code to:
 
 * Filter products by name
 * Show/Hide product descriptions
 
-### Filter products:
+### Filter products
+
 1. Add a `<form>` to filter products within the `filter-products` div. It should contain:
     * `label` for product name
     * `input` for filtering by name
@@ -22,9 +23,10 @@ Write the JavaScript/React code to:
 3. Filter products in the `render` method based on filter input.
     * you could do [filter with javascript array object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) or [filter with underscore](http://underscorejs.org/#filter) to do this.
 
-### Show / Hide products:
+### Show / Hide products
 
-The idea is to have products be collapsible. 
+The idea is to have products be collapsible.
+
 1. Change the `Product` component so that descriptions are not shown.
     * do this by checking a product state property (for example: `showDescription`)
     * a very common pattern in React is [conditional rendering](https://facebook.github.io/react/docs/conditional-rendering.html), here are some examples:
@@ -35,6 +37,6 @@ The idea is to have products be collapsible.
     * it should show or hide the product description.
 3. listen to `onClick` on the component you just created and update your flag accordingly.
 
-# Resources:
+## Resources
 
 * [conditional rendering](https://facebook.github.io/react/docs/conditional-rendering.html)
