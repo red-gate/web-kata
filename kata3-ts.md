@@ -1,14 +1,14 @@
-# React App Kata 103
+# React App Kata 103 in TypeScript
 
 Code for **Kata 103** is available in the [app3-ts](app3-ts) folder.
 
 ## Learning aims
 
-Learn about how to use Typescript with React.
+Learn about how to use TypeScript with React.
 
 ## Task
 
-Write the JavaScript/React code to:
+Write the TypeScript/React code to:
 
 * Filter products by name
 * Show/Hide product descriptions
