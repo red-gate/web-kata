@@ -31,7 +31,7 @@ You will need **2** terminals
 
 ## Single source of truth
 
-One of the main reasons Redux can be very usefull in complex applications is that you can share the same data across multiple components in a simple way. Without Redux you would have to pass down props, copy of data and/or callbacks in order to update data for every component.
+One of the main reasons Redux can be very useful in complex applications is that you can share the same data across multiple components in a simple way. Without Redux you would have to pass down props, copy of data and/or callbacks in order to update data for every component.
 
 The way Redux helps you with this is that you can define a single source of truth for your data.
 The state of your whole application is store in a single object tree within a single store AND hopefuly you are not duplicating data content anywhere.
@@ -44,16 +44,17 @@ Our goal is to share and display data in multiple components while following the
 
 Write the JavaScript/React code to:
 
-1. sharing Actions across components
+1. sharing Actions across components:
     1. in the `ProductContainer` component add the necessary code to remove the current product.
         1. add a button/div inside the `product-header` section
-        1. dispatch an action that will make the product get deleted from the server
-        1. **Note**:you should only need to change `ProductContainer` component
-1. create a voting button/div next to the remove div in the `ProductMenu` component
+        1. create and dispatch an action that will make the product get deleted from the server
+        1. **Note** You should only need to change `ProductContainer` component
+1. create a voting button/div next to the remove div in the `ProductItem` component
     1. add a voting button/div in the `ProductItem` component
     1. dispatch a voting action to increment a vote
-    1. in the products reducer add a `votes` dictionary next to the `product` array in the products state.
+    1. in the products reducer add a `votes` dictionary next to the `product` array in the products state
         1. each key will be the a product and the value will be the vote count
+        1. **Note** Redux maintains an immutable state, therefore you will need to create a new dictionary object each time, e.g. via `Object.assign` or `{...state, key: value}`
     1. make sure the votes object of each product gets incremented when the user votes
     1. add a voting count in the `ProductItem` component
 1. show a voting count also in the `ProductContainer`
