@@ -8,12 +8,13 @@ Learn about how to use Typescript with React.
 
 ## Task
 
-Write the JavaScript/React code to: 
+Write the JavaScript/React code to:
 
 * Filter products by name
 * Show/Hide product descriptions
 
-### Filter products:
+### Filter products
+
 1. Add a `<form>` to filter products within the `filter-products` div. It should contain:
     * `label` for product name
     * `input` for filtering by name
@@ -23,9 +24,10 @@ Write the JavaScript/React code to:
 1. Filter products in the `render` method based on filter input.
     * you could do [filter with Typescript array object](https://www.tutorialspoint.com/typescript/typescript_array_filter.htm)
 
-### Show / Hide products:
+### Show / Hide products
 
-The idea is to have products be collapsible. 
+The idea is to have products be collapsible.
+
 1. Change `ProductComponent` so that descriptions are not shown.
     * do this by checking a product state property (for example: `showDescription`)
     * a very common pattern in React is [conditional rendering](https://facebook.github.io/react/docs/conditional-rendering.html), here are some examples:
@@ -36,7 +38,8 @@ The idea is to have products be collapsible.
     * it should show or hide the product description.
 1. listen to `onClick` on the component you just created and update your flag accordingly.
 
-# Resources:
+## Resources
+
 * [Typescript with React](https://mikebridge.github.io/articles/getting-started-typescript-react-2/)
 * [Typescript cheat sheet](https://www.sitepen.com/blog/2013/12/31/typescript-cheat-sheet/)
 * [conditional rendering](https://facebook.github.io/react/docs/conditional-rendering.html)
