@@ -1,4 +1,4 @@
-import { ProductCollection } from './Interfaces';
+import { Product } from './Interfaces';
 
 const data = {
     products: [
@@ -89,8 +89,8 @@ const data = {
     ]
 };
 
-function GetData(): ProductCollection {
-    return data;
+function GetData(): Product[] {
+    return data.products;
 }
 
 export { GetData };
