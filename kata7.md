@@ -40,7 +40,10 @@ This is called the [single source of truth principle](https://github.com/reactjs
 
 ## Task
 
-Our goal is to share and display data in multiple components while following the single source of truth principle.
+Our goal is:
+
+* to share and display data in multiple components while following the single source of truth principle.
+* to reuse existing actions to manipulate data in multiple components.
 
 Write the JavaScript/React code to:
 
@@ -61,6 +64,8 @@ Write the JavaScript/React code to:
     1. get the vote count information from the _same place_ than in the previous step
     1. show the votes count in the `product-header`
     1. notice that both vote counts get updated at the same time and should reference the same data
+
+**Note** for the purpose of this exercice the code written will be only in the frontend. A more elegant solution could involve an API call in order to update the store in the backend to keep track of votes.
 
 ## Resources
 
