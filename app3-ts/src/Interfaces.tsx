@@ -3,12 +3,4 @@ interface Product {
   description: string;
 }
 
-
-class SoftwareProduct implements Product {
-  constructor(
-    public name: string,
-    public description: string
-  ) { }
-}
-
-export { SoftwareProduct, Product };
+export { Product };

@@ -3,55 +3,63 @@ import { Component } from 'react';
 import './App.css';
 import { GetData } from './data';
 import Products from './Products';
-import { Product, SoftwareProduct } from './Interfaces';
+import { Product } from './Interfaces';
 
 const data = GetData();
 
+interface AppProps { }
 interface AppState {
   products: Product[];
-  productToAdd: Product;
+  productToAdd: Product | undefined;
 }
 
-class App extends Component<{}, AppState> {
-  constructor(props: {}) {
+export default class App extends Component<AppProps, AppState> {
+  constructor(props: AppProps) {
     super(props);
-    this.state = { products: data, productToAdd: new SoftwareProduct('', '') };
+    this.state = { products: data, productToAdd: undefined };
 
     this.handleAddProduct = this.handleAddProduct.bind(this);
     this.removeProduct = this.removeProduct.bind(this);
     this.handleProductNameChange = this.handleProductNameChange.bind(this);
     this.handleProductDescriptionChange = this.handleProductDescriptionChange.bind(this);
-
   }
 
   handleProductNameChange(event: React.FormEvent<HTMLInputElement>) {
-    this.setState(
-      { ... this.state, productToAdd: { ...this.state.productToAdd, name: event.currentTarget.value } }
-    );
+    const name = event.currentTarget.value;
+    const productToAdd = Object.assign({}, this.state.productToAdd, { name });
+
+    this.setState({ productToAdd });
   }
 
   handleProductDescriptionChange(event: React.FormEvent<HTMLInputElement>) {
-    this.setState(
-      { ... this.state, productToAdd: { ...this.state.productToAdd, description: event.currentTarget.value } }
-    );
+    const description = event.currentTarget.value;
+    const productToAdd = Object.assign({}, this.state.productToAdd, { description });
+
+    this.setState({ productToAdd });
   }
 
   handleAddProduct(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
-    const newProductCollection = [...this.state.products];
-    newProductCollection.push(this.state.productToAdd);
+    const products = [...this.state.products];
 
-    this.setState({ products: newProductCollection, productToAdd: new SoftwareProduct('', '') });
+    products.push(this.state.productToAdd as Product);
+
+    this.setState({ products, productToAdd: undefined });
   }
 
   removeProduct(product: Product): void {
-    const newProductArray = this.state.products.filter(
+
+    const products = this.state.products.filter(
       (p: Product) => p.name !== product.name);
 
-    this.setState({ products: newProductArray, productToAdd: this.state.productToAdd });
+    this.setState({ products });
   }
 
-  render(): JSX.Element {
+  render() {
+
+    const productName = (this.state.productToAdd && this.state.productToAdd.name) || '';
+    const productDescription = (this.state.productToAdd && this.state.productToAdd.description) || '';
+
     return (
       <div className='App'>
         <div className='App-header'>
@@ -60,28 +68,28 @@ class App extends Component<{}, AppState> {
         <div className='filter-products'>Filter products here...</div>
         <div className='add-product'>
           <form onSubmit={this.handleAddProduct}>
-            <label>product name:
+            <label>product name:</label>
             <input
-                type='text'
-                name='name'
-                onChange={this.handleProductNameChange}
-                value={this.state.productToAdd.name}
-              />
-            </label><br /><br />
-            <label>description:
+              type='text'
+              name='name'
+              onChange={this.handleProductNameChange}
+              value={productName}
+            />
+            <br /><br />
+            <label>description:</label>
             <input
-                type='text'
-                name='description'
-                onChange={this.handleProductDescriptionChange}
-                value={this.state.productToAdd.description}
-              />
-            </label><br /><br />
+              type='text'
+              name='description'
+              onChange={this.handleProductDescriptionChange}
+              value={productDescription}
+            />
+            <br /><br />
             <input type='submit' value='add product' />
           </form>
         </div>
         <div className='products-container'>
           <Products
-            productCollection={this.state.products}
+            products={this.state.products}
             removeProduct={this.removeProduct}
           />
         </div>
@@ -89,5 +97,3 @@ class App extends Component<{}, AppState> {
     );
   }
 }
-
-export default App;
