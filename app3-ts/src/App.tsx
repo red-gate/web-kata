@@ -55,7 +55,7 @@ export default class App extends Component<AppProps, AppState> {
     this.setState({ products });
   }
 
-  render() {
+  render(): JSX.Element {
 
     const productName = (this.state.productToAdd && this.state.productToAdd.name) || '';
     const productDescription = (this.state.productToAdd && this.state.productToAdd.description) || '';

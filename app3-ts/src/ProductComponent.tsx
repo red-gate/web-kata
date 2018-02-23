@@ -14,7 +14,7 @@ class ProductComponent extends Component<Props, {}> {
     this.state = { showDescription: false };
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <div className='product'>
         <div className='details'>
