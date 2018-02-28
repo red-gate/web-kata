@@ -26,7 +26,7 @@ Write the JavaScript/React code to:
 5. Show the product name given by the URL in the `<ProductContainer>`
     * [Access Route Params in React Router v4](https://jaketrent.com/post/access-route-params-react-router-v4/)
     * [Using parameters in Route path](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md#component)
-6. Inside `<ProductContainer>` find the correct product from `data.produdcts` and display it using the `<Product>` component.
+6. Inside `<ProductContainer>` find the correct product from `data.products` and display it using the `<Product>` component.
 
 ## Resources
 
