@@ -1,0 +1,32 @@
+
+.products{
+    display: flex;
+    flex-direction: column;
+}
+
+.product{
+    display: flex;
+    flex-direction: row;
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    justify-content: space-between;
+}
+
+.product:hover{
+    background: #efefef
+}
+
+.product .name{
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.product .desc{
+    font-size: 10pt;
+}
+
+.product .actions .remove{
+    cursor: pointer;
+}
