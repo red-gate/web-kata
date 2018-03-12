@@ -2,14 +2,14 @@ import * as React from 'react';
 import { Component } from 'react';
 import './Products.css';
 import ProductComponent from './ProductComponent';
-import { Product } from './Interfaces';
+import { Product } from './Models/Product';
 
 interface Props {
     products: Product[];
     removeProduct: Function;
 }
 
-class Products extends Component<Props, {}> {
+class ProductsComponent extends Component<Props, {}> {
     render(): JSX.Element {
         return (
             <div className='products'>
@@ -27,4 +27,4 @@ class Products extends Component<Props, {}> {
     }
 }
 
-export default Products;
+export default ProductsComponent;

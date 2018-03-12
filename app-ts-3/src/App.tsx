@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Component } from 'react';
 import './App.css';
 import { GetData } from './data';
-import Products from './Products';
-import { Product } from './Interfaces';
+import ProductsComponent from './ProductsComponent';
+import { Product } from './Models/Product';
 
 const data = GetData();
 
@@ -88,7 +88,7 @@ export default class App extends Component<AppProps, AppState> {
           </form>
         </div>
         <div className='products-container'>
-          <Products
+          <ProductsComponent
             products={this.state.products}
             removeProduct={this.removeProduct}
           />

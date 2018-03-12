@@ -13,14 +13,21 @@ Write the TypeScript/React code to:
 * Filter products by name
 * Show/Hide product descriptions
 
+**Note:** Remember you can run `yarn lint` as you develop to see all linting errors as you work:
+
+![linting](/images/yarn-lint-error.png)
+
 ### Filter products
 
-1. Add a `<form>` to filter products within the `filter-products` div. It should contain:
+1. Add a `string` field for the product name filter to `AppState` in `App.tsx`
+    * Remember to update the initial state object to contain the product name filter
+1. Add a `<form>` for the product name filter in `filter-products` div. It should contain:
     * `label` for product name
     * `input` for filtering by name
-1. Add a field containing the product name to filter to `AppState` in `App.tsx`
+1. Set the `value` attribute of the product filter method to the value in the state object
+    * e.g: `<input ... value={this.state.productNameFilter}/>`
 1. Add a handler function for the `onChange` event of the input of the form.
-    * save the product `name` from the event in `AppState`
+    * Save the product name from the event in the component's state object
 1. Filter products in the `render` method based on filter input.
     * you could do [filter with Typescript array object](https://www.tutorialspoint.com/typescript/typescript_array_filter.htm)
 
@@ -29,7 +36,7 @@ Write the TypeScript/React code to:
 The idea is to have products be collapsible.
 
 1. Change `ProductComponent` so that descriptions are not shown.
-    * do this by checking a product state property (for example: `showDescription`)
+    * do this by adding a `boolean` flag to `ProductComponentState` (for example: `showDescription`)
     * a very common pattern in React is [conditional rendering](https://facebook.github.io/react/docs/conditional-rendering.html), here are some examples:
         * `{condition? <div>foo</div>: null}`
         * `{condition? <div>foo</div>: <div>bar</div>}`

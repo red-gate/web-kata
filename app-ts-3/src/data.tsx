@@ -1,4 +1,4 @@
-import { Product } from './Interfaces';
+import { Product } from './Models/Product';
 
 const data = {
     products: [

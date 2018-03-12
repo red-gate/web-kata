@@ -1,17 +1,18 @@
 import * as React from 'react';
 import { Component } from 'react';
 import './Products.css';
-import { Product } from './Interfaces';
+import { Product } from './Models/Product';
 
 interface Props {
   product: Product;
   removeProduct: Function;
 }
 
-class ProductComponent extends Component<Props, {}> {
+interface ProductComponentState {}
+
+class ProductComponent extends Component<Props, ProductComponentState> {
   constructor(props: Props) {
     super(props);
-    this.state = { showDescription: false };
   }
 
   render(): JSX.Element {
