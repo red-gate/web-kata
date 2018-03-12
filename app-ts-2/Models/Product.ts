@@ -1,6 +1,6 @@
 interface Product {
-    name: string;
-    description: string;
-  }
-  
-  export { Product };
+  name: string;
+  description: string;
+}
+
+export { Product };
