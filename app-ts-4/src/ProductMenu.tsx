@@ -1,8 +1,14 @@
-import React, { Component } from 'react'
-import './ProductMenu.css'
+import * as React from 'react';
+import { Component } from 'react';
+import { Product } from './Models/Product'
 import ProductItem from './ProductItem'
+import './ProductMenu.css'
 
-class ProductMenu extends Component {
+interface ProductMenuProps {
+  products: Product[]
+}
+
+class ProductMenu extends Component<ProductMenuProps, {}> {
   render() {
     return <div className='product-menu'>
       {this.props.products.map(
