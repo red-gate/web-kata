@@ -1,6 +1,6 @@
-# React App Kata 1-Typescript
+# React App Kata 1 Typescript
 
-Code for **Kata 1-Typescript** is available in the [app1-ts](app1-ts) folder.
+Code for **Kata 1 Typescript** is available in the [app-ts-1](app-ts-1) folder.
 
 ## Learning aims
 
@@ -62,29 +62,24 @@ By itself, the Typescript transpiler will accept any valid Javascript or Typescr
 
 Upon running `yarn start`, linting errors will cause the build to fail.
 
-**Note:** You can run `yarn lint` as you develop to see all linting errors as you work:
-
-![linting](/images/yarn-lint-error.png)
+**Note:** You can run `yarn lint` as you develop to see all linting errors as you work
 
 ## Task
 
-Write the Typescript code to:
-
+1. Run `yarn start` to see the webpage in the browser
+1. Inspect the console to find and fix any errors or warnings
 1. Show a list of Redgate products in `App.tsx`.
-    * Import `.\data.ts` to do this
-    * Make a call to `GetData()`
-    * You can find the `Product` interface in `Models/Product.ts`
-    * [Rendering Multiple Components](https://facebook.github.io/react/docs/lists-and-keys.html#rendering-multiple-components)
-1. Check the `console.log` and fix any warning you might have.
-1. In `App.tsx` create a `<ProductList />` component to extract the responsibility into a separate component.
-1. Pass the array of products as [props](https://facebook.github.io/react/docs/components-and-props.html) into the `ProductList` component
-    * You'll need to define a type for the props to be passed in to `ProductList` component. You can find the `Product` interface in `Models/Product.ts`
-    * Here is an [example of a stateful component class in TypeScript](https://github.com/piotrwitek/react-redux-typescript-guide#stateful-components---class)
+    * Import `.\data.ts`
+    * Make a call to the `GetData()` method exported from `data.ts`
+    * Display a list of the products in `App.tsx` ([Rendering Multiple Components](https://facebook.github.io/react/docs/lists-and-keys.html#rendering-multiple-components))
+1. Next, in `App.tsx` create a `<ProductList />` component to extract the responsibility into a separate component.
+    * The array of products needs to be passed as [props](https://facebook.github.io/react/docs/components-and-props.html)
+    * Becasue we're in Typescript, you'll need to define a type for the props to be passed in to `ProductList` component. The type, `Product`, is provided as an interface in `Models/Product.ts`
+    * The definition of the component should therefore be something like `export class ProductList extends React.Component<Product, {}>`
+    * The second item in `<Product, {}>` is the state -- we aren't using state yet, so this is the empty object
+    * [More information](https://github.com/piotrwitek/react-redux-typescript-guide#stateful-components---class)
 1. Move the `<ProductList />` component into a `ProductList.tsx` and call it from `App.tsx`
 1. Create a `<ProductItem />` component inside `ProductList.tsx` file and use it in the `<ProductList />` component.
-1. Some of the products are **free** others are **new**. Be sure to show this information in the product list.
+    * This should be used to display information about each individual item. Think of the `props` you might need for this component
+1. Some of the products are **free** others are **new**. Be sure to show this information in `<ProductList />` or `<ProductItem />`.
 1. Add some styles to your app, add your css classes to `App.css` and `Products.css`
-
-## Resources
-
-* [Typescript React component example](https://github.com/piotrwitek/react-redux-typescript-guide#stateful-components---class)
