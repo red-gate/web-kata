@@ -1,0 +1,7 @@
+.product-menu{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    min-width: 10em;    
+    margin: 1em;
+}
