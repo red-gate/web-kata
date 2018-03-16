@@ -57,7 +57,9 @@ Go to `App.js` and change the message. The app should re build itself and reload
 
 ## Katas with Typescript
 
-1. Kata 103 - TypeScript react app 3 [todo by [@MikielAgutu](https://github.com/MikielAgutu) ]
+1. Kata TS 1 - [Introduction to a simple React App](kata-ts-1.md)
+1. Kata TS 2 - [Add and remove objects](kata-ts-2.md)
+1. Kata TS 3 - [Filter, show and hide objects](kata-ts-3.md)
 1. Kata 104 - TypeScript react app 5 [to research by [@MikielAgutu](https://github.com/MikielAgutu) ]
 1. Kata 105 - TypeScript react app 5 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]
 1. Kata 106 - TypeScript react app 6 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]
