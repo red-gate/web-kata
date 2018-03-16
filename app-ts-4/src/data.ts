@@ -87,7 +87,7 @@ const data = {
             description: 'Find code issues in an entire SQL Server database or a query window'
         },
     ]
-}
+};
 
 function GetData(): Product[] {
     return data.products;
