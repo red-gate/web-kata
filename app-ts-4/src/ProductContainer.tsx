@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Component } from 'react';
-import _ from 'underscore'
 import { GetData } from './data';
 import { Product } from './Models/Product'
 import './ProductContainer.css'
