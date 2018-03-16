@@ -1,6 +1,12 @@
-import React, { Component } from 'react'
+import * as React from 'react';
+import { Component } from 'react';
+import { Product } from './Models/Product'
 
-class Product extends Component {
+interface ProductComponentProps {
+  product: Product
+}
+
+class ProductComponent extends Component<ProductComponentProps, {}> {
   render() {
     return <div className='product'>
       <div className='details'>
@@ -11,4 +17,4 @@ class Product extends Component {
   }
 }
 
-export default Product
+export default ProductComponent
