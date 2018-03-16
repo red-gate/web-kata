@@ -1,18 +1,23 @@
-import React, { Component } from 'react'
+import * as React from 'react';
+import { Component } from 'react';
 import _ from 'underscore'
-import data from './data.js'
+import { GetData } from './data';
+import { Product } from './Models/Product'
 import './ProductContainer.css'
-import Product from './Product.js'
 
-class ProductContainer extends Component {
-  constructor(props) {
-    super(props)
+interface ProductContainerState {
+  products: Product[]
+}
+
+class ProductContainer extends Component<{}, ProductContainerState> {
+  constructor({ }) {
+    super({})
     this.state = {
-      products: data.products
+      products: GetData()
     }
   }
 
-  render() {    
+  render() {
     return <div className='product-container'>
       Product container
     </div>
