@@ -9,7 +9,7 @@ interface ProductMenuProps {
 }
 
 class ProductMenu extends Component<ProductMenuProps, {}> {
-  render() {
+  render(): JSX.Element {
     return <div className='product-menu'>
       {this.props.products.map(
         (p, i) => <ProductItem product={p} key={'product-' + i} />

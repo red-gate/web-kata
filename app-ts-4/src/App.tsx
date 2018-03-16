@@ -16,7 +16,7 @@ class App extends Component<{}, AppState> {
     this.state = { products: GetData() }
   }
 
-  render() {
+  render(): JSX.Element {
     return <div className="App">
       <div className="App-header">
         <h2>Kata 4- Add router to an app</h2>

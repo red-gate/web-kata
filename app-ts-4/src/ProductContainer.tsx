@@ -17,7 +17,7 @@ class ProductContainer extends Component<{}, ProductContainerState> {
     }
   }
 
-  render() {
+  render(): JSX.Element {
     return <div className='product-container'>
       Product container
     </div>

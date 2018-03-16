@@ -8,7 +8,7 @@ interface ProductItemProps {
 }
 
 class ProductItem extends Component<ProductItemProps, {}> {
-  render() {
+  render(): JSX.Element {
     const name = this.props.product.name
     return <div className='product-item'>
       <div className='name'>{name}</div>
