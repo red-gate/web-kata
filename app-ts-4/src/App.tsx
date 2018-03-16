@@ -1,15 +1,19 @@
-import React, { Component } from 'react'
-import data from './data.js'
-
-import ProductMenu from './ProductMenu.js'
-import ProductContainer from './ProductContainer.js'
+import * as React from 'react';
+import { Component } from 'react';
+import { GetData } from './data';
+import ProductMenu from './ProductMenu'
+import ProductContainer from './ProductContainer'
+import { Product } from './Models/Product'
 import './App.css'
 
-class App extends Component {
+interface AppState {
+  products: Product[]
+}
 
-  constructor(props) {
-    super(props)
-    this.state = { products: data.products }
+class App extends Component<{}, AppState> {
+  constructor({ }) {
+    super({})
+    this.state = { products: GetData() }
   }
 
   render() {
