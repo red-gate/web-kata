@@ -8,9 +8,9 @@ interface Props {
   removeProduct: Function;
 }
 
-interface ProductComponentState {}
+interface State { }
 
-class ProductComponent extends Component<Props, ProductComponentState> {
+class ProductComponent extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
   }

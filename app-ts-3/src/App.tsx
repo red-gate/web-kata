@@ -7,14 +7,15 @@ import { Product } from './Models/Product';
 
 const data = GetData();
 
-interface AppProps { }
-interface AppState {
+interface Props { }
+
+interface State {
   products: Product[];
   productToAdd: Product | undefined;
 }
 
-export default class App extends Component<AppProps, AppState> {
-  constructor(props: AppProps) {
+export default class App extends Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = { products: data, productToAdd: undefined };
 
