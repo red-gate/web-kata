@@ -4,7 +4,7 @@ Code for **Kata 3 Typescript** is available in the [app3-ts](app3-ts) folder.
 
 ## Learning aims
 
-Learn about how to use TypeScript with React.
+The idea here is to keep learning the concept of `state`, `props`, `callbacks` and React lifecycles in React.
 
 ## Task
 
@@ -14,13 +14,14 @@ Write the TypeScript/React code to:
 * Show/Hide product descriptions
 
 **Note:** Remember you can run `yarn lint` as you develop to see all linting errors as you work
+
 ### Filter products
 
-1. Add `productNameToFilter` to `AppState` near the top of `App.tsx`
-    * Remember to update the initial state object to initialise `productNameToFilter`
 1. Add a `<form>` for the product name filter in `filter-products` div. It should contain:
     * `label` for product name
     * `input` for filtering by name
+1. Add `productNameToFilter` to `AppState` near the top of `App.tsx`
+    * Remember to update the initial state object to initialise `productNameToFilter`
 1. Add a handler function for the `onChange` event of the input of the form.
     * Set `productNameToFilter` in `App`'s state to the value from the input field
 1. The input filed for setting the product name to filter must be synced with the component's state
