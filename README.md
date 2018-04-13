@@ -53,16 +53,16 @@ Go to `App.js` and change the message. The app should re build itself and reload
 1. Kata 5 - [Interaction with backend server through REST API calls](kata5.md)
 1. Kata 6 - [Redux basics and change you app to use it](kata6.md)
 1. Kata 7 - [Redux single source of truth](kata7.md)
-1. Kata 8 - Add honeycomb to your React app
+1. Kata 8 - todo Add honeycomb to your React app
 
 ## Katas with Typescript
 
 1. Kata TS 1 - [Introduction to a simple React App](kata-ts-1.md)
 1. Kata TS 2 - [Add and remove objects](kata-ts-2.md)
 1. Kata TS 3 - [Filter, show and hide objects](kata-ts-3.md)
-1. Kata 104 - TypeScript react app 5 [to research by [@MikielAgutu](https://github.com/MikielAgutu) ]
-1. Kata 105 - TypeScript react app 5 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]
-1. Kata 106 - TypeScript react app 6 [todo by  [@MikielAgutu](https://github.com/MikielAgutu) ]
+1. Kata    4 - [Add router to an app](kata-ts-4.md)
+1. Kata    5 - TypeScript react app 5
+1. Kata    6 - TypeScript react app 6
 
 ## Future
 
