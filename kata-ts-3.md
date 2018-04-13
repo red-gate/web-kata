@@ -14,6 +14,7 @@ Write the TypeScript/React code to:
 * Show/Hide product descriptions
 
 **Note:** Remember you can run `yarn lint` as you develop to see all linting errors as you work
+
 ### Filter products
 
 1. Add a `<form>` for the product name filter in `filter-products` div. It should contain:
