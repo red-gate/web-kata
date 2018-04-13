@@ -4,7 +4,9 @@ import './ProductContainer.css';
 
 interface Props { }
 
-class ProductContainer extends Component<Props, {}> {
+interface State { }
+
+class ProductContainer extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
   }
