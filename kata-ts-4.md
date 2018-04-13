@@ -10,7 +10,7 @@ The idea here is learn how to add a router to our react app.
 
 You are given an app that lists all redgate products by name.
 
-Write the JavaScript/React code to:
+Write the TypeScript/React code to:
 
 * Navigate to each product page
 * Be able to share hard links of any product page
