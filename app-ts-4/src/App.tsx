@@ -22,7 +22,7 @@ class App extends Component<Props, State> {
     return (
       <div className='App'>
         <div className='App-header'>
-          <h2>Kata 4- Add router to an app</h2>
+          <h2>Kata 4 TypeScript - Add router to an app</h2>
         </div>
         <div className='products-container'>
           <ProductMenu products={this.state.products} />
