@@ -1,6 +1,6 @@
 # React App Kata 4 Typescript
 
-Code for **Kata 4 Typescript** is available in the [app4-ts](app4-ts) folder.
+Code for **Kata 4 Typescript** is available in the [app-ts-4](app-ts-4) folder.
 
 ## Learning aims
 
