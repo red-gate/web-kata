@@ -41,6 +41,11 @@ export default class App extends Component<Props, State> {
 
   handleAddProduct(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
+
+    if (this.state.productToAdd === undefined) {
+      return;
+    }
+
     const products = [...this.state.products];
 
     products.push(this.state.productToAdd as Product);
