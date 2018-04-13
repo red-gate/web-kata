@@ -4,7 +4,7 @@ Code for **Kata 3 Typescript** is available in the [app3-ts](app3-ts) folder.
 
 ## Learning aims
 
-Learn about how to use TypeScript with React.
+The idea here is to keep learning the concept of `state`, `props`, `callbacks` and React lifecycles in React.
 
 ## Task
 
