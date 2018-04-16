@@ -10,11 +10,11 @@ class App extends Component {
           <h2>Welcome Introduction to <code>web-kata#1-Typescript</code></h2>
         </div>
         <p className='App-intro'>
-          To get started change this text and save save to reload.
-      </p>
+          To get started change this text and then save to reload.
+        </p>
         <div className='products'>
           ... your code here
-      </div>
+        </div>
       </div>);
   }
 }
