@@ -71,7 +71,7 @@ Upon running `yarn start`, linting errors will cause the build to fail.
     * Display a list of the products in `<App />` ([Rendering Multiple Components](https://facebook.github.io/react/docs/lists-and-keys.html#rendering-multiple-components))
 1. Next, in `App.tsx` create a `<ProductList />` component to extract the responsibility into a separate component.
     * The array of products needs to be passed as [props](https://facebook.github.io/react/docs/components-and-props.html)
-1. Becasue we're in Typescript, you'll need to define a type for the props and state to be passed in to `<ProductList />` component
+1. Because we're in Typescript, you'll need to define a type for the props and state to be passed in to `<ProductList />` component
     * Import the type `Product` from `Models/Product.ts`. This is the interface to be used for the props
     * `<ProductList />` can be defined like so: `class ProductList extends React.Component<Product, {}>`
     * The second item '`{}`' is the state -- we aren't using state yet, so this is the empty object
