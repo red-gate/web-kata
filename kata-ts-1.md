@@ -63,7 +63,7 @@ Upon running `yarn start`, linting errors will cause the build to fail.
 ## Task
 
 1. Navigate to `app-ts-1`
-1. Run `yarn start` to see the webpage in the browser
+1. Run `yarn`, then `yarn start` to see the webpage in the browser
 1. Inspect the console to find and fix any errors or warnings
 1. Show a list of Redgate products in `App.tsx`.
     * To get the list of products, import the `GetData()` method from `data.ts` [importing in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
@@ -72,14 +72,29 @@ Upon running `yarn start`, linting errors will cause the build to fail.
 1. Next, in `App.tsx` create a `<ProductList />` component to extract the responsibility into a separate component.
     * The array of products needs to be passed as [props](https://facebook.github.io/react/docs/components-and-props.html)
 1. Because we're in Typescript, you'll need to define a type for the props and state to be passed in to `<ProductList />` component
-    * Import the type `Product` from `Models/Product.ts`. This is the interface to be used for the props
-    * `<ProductList />` can be defined like so: `class ProductList extends React.Component<Product, {}>`
+    * Import the type `Product` from `Models/Product.ts`
+    * Create an interface for the props for ProductList:
+
+    ``` typescript
+    interface ProductListProps {
+        products: Product[];
+    }
+    ```
+
+    * `<ProductList />` can be defined like so: `class ProductList extends React.Component<ProductListProps, {}>`
     * The second item '`{}`' is the state -- we aren't using state yet, so this is the empty object
     * [More information](https://github.com/piotrwitek/react-redux-typescript-guide#stateful-components---class)
     * Access the `props` object to display the relevant information
 1. Move `<ProductList />` into a new file `ProductList.tsx` and call it from `<App />`
 1. Create a `<ProductItem />` component inside `ProductList.tsx` and use it in `<ProductList />`
     * This should be used to display information about each individual item
-    * Using `Product` as an example, create and use a new `interface` for the props of `<ProductItem />` 
+    * Using `Product` as an example, create and use a new `interface` for the props of `<ProductItem />`:
+
+    ``` typescript
+    interface ProductItemProps {
+        product: Product;
+    }
+    ```
+
 1. Some of the products are **free** others are **new**. Be sure to show this information in `<ProductList />` or `<ProductItem />`.
 1. Add some styles to your app, add your css classes to `App.css` and `Products.css`
