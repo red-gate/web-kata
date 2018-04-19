@@ -88,7 +88,7 @@ Upon running `yarn start`, linting errors will cause the build to fail.
 1. Move `<ProductList />` into a new file `ProductList.tsx` and call it from `<App />`
 1. Create a `<ProductItem />` component inside `ProductList.tsx` and use it in `<ProductList />`
     * This should be used to display information about each individual item
-    * Using `Product` as an example, create and use a new `interface` for the props of `<ProductItem />`:
+    * Create and use a new `interface` for the props of `<ProductItem />`:
 
     ``` typescript
     interface ProductItemProps {
