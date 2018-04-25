@@ -49,7 +49,7 @@ Notes:
 
 ## Task
 
-Write the JavaScript/React code to:
+Write the TypeScript/React code to:
 
 1. List all products in the homepage when the app is loaded using the REST api.
     * you can use technologies like [fetch](https://github.github.io/fetch/) or [jQuery.ajax](http://api.jquery.com/jquery.ajax/)
