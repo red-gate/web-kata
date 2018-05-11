@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Product } from './Models/Product';
 import './ProductItem.css';
 
@@ -13,7 +14,7 @@ class ProductItem extends Component<ProductItemProps, {}> {
 
     return (
       <div className='product-item'>
-        <div className='name'>{name}</div>
+        <div className='name'><Link to={`/products/${name}`}>{name}</Link></div>
       </div>
     );
   }
