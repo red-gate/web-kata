@@ -60,12 +60,12 @@ Write the TypeScript/React code to:
         * Have hard links on products names
 1. Add a remove button so that the user can remove a product from the list.
     * you should use the REST api for this, `/api/products/delete/productname` (see above for details)
-1. Add a form so that user is able to add a new product to the list.
+1. Add a form so that user is able to add a new product (name and description) to the list.
     * you should use the REST api for this `/api/products/add` (see above for details)
 1. Changes to the data should persist through sessions:
     * delete a product
     * add a new product
-    * open a new tab with the app
+    * open a **new tab** with the app
     * verify the removed product is not present
     * verify the added product is present
 
