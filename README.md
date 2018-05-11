@@ -72,6 +72,7 @@ Ideas for future sessions
 - server side rendering
 - web sockets / signalr with dotnet core
 - server send events
+- sqlops, vscode extensions
 
 ## Resources
 
