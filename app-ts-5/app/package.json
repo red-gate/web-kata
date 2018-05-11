@@ -1,0 +1,23 @@
+{
+  "name": "kata-5-typescript",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/react-router-dom": "^4.2.6",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts-ts": "2.13.0"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "lint": "tslint --exclude **/*.d.ts src/**/*.ts src/**/*.tsx"
+  },
+  "devDependencies": {
+    "@types/node": "^9.4.0",
+    "@types/react": "^16.0.35",
+    "@types/react-dom": "^16.0.3",
+    "typescript": "^2.6.2"
+  },
+  "proxy": "http://localhost:5000"
+}

@@ -61,7 +61,7 @@ Go to `App.js` and change the message. The app should re build itself and reload
 1. Kata TS 2 - [Add and remove objects](kata-ts-2.md)
 1. Kata TS 3 - [Filter, show and hide objects](kata-ts-3.md)
 1. Kata TS 4 - [Add router to an app](kata-ts-4.md)
-1. Kata TS 5 - TypeScript react app 5
+1. Kata TS 5 - [Interaction with backend server through REST API calls](kata-ts-5.md)
 1. Kata TS 6 - TypeScript react app 6
 
 ## Future
@@ -72,6 +72,7 @@ Ideas for future sessions
 - server side rendering
 - web sockets / signalr with dotnet core
 - server send events
+- sqlops, vscode extensions
 
 ## Resources
 
