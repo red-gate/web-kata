@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
+import { Route } from 'react-router-dom';
+
 import { GetData } from './data';
 import ProductMenu from './ProductMenu';
 import ProductContainer from './ProductContainer';
@@ -26,7 +28,11 @@ class App extends Component<Props, State> {
         </div>
         <div className='products-container'>
           <ProductMenu products={this.state.products} />
-          <ProductContainer />
+          <Route
+            exact={true}
+            path='/products/:productName'
+            render={(props) => <ProductContainer {...props} products={this.state.products} />}
+          />
         </div>
       </div>
     );
