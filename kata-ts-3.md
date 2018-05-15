@@ -17,13 +17,14 @@ Write the TypeScript/React code to:
 
 ### Filter products
 
-1. Add a `<form>` for the product name filter in `filter-products` div. It should contain:
+1. In `App.tsx` Add a `<form>` for the product name filter in `filter-products` div. It should contain:
     * `label` for product name
     * `input` for filtering by name
 1. Add `productNameToFilter` to `AppState` near the top of `App.tsx`
     * Remember to update the initial state object to initialise `productNameToFilter`
 1. Add a handler function for the `onChange` event of the input of the form.
     * Set `productNameToFilter` in `App`'s state to the value from the input field
+    * It might be helpful to look at the existing input fields as an example
 1. The input filed for setting the product name to filter must be synced with the component's state
     * Set the product filter's input field value to `productNameToFilter` in `App`'s state
     * e.g: `<input ... value={this.state.productNameFilter}/>`
