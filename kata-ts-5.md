@@ -60,6 +60,7 @@ Write the TypeScript/React code to:
         * Have hard links on products names
 1. Add a remove button so that the user can remove a product from the list.
     * you should use the REST api for this, `/api/products/delete/productname` (see above for details)
+    * Remember that `onSubmit` and `onChange` are [form events](https://reactjs.org/docs/events.html#form-events) this means that in TypeScript you should define the types of those events as `React.FormEvent<HTMLFormElement>` or `React.FormEvent<HTMLInputElement>`.
 1. Add a form so that user is able to add a new product (name and description) to the list.
     * you should use the REST api for this `/api/products/add` (see above for details)
 1. Changes to the data should persist through sessions:
