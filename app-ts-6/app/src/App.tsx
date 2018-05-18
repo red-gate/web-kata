@@ -25,7 +25,7 @@ class App extends Component<Props, State> {
     return (
       <div className='App'>
         <div className='App-header'>
-          <h2>Kata 6 TypeScript - Redux basics and change you app to use it</h2>
+          <h2>Kata 6 - TypeScript - Redux</h2>
         </div>
         <div className='products-container'>
           <ProductMenu products={this.state.products} />
