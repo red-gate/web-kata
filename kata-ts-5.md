@@ -4,7 +4,7 @@ Code for **Kata 5** is available in the [app-ts-5](app-ts-5) folder.
 
 ## Learning aims
 
-Up to now all data manipulation used the `data.js` file to focus on frontend work.
+Up to now all data manipulation used the `data.ts` file to focus on frontend work.
 We are now moving the data to a backend server in [aspnet core](https://www.microsoft.com/net/core).
 
 The idea here is to learn how a web app can interact with a backend server through REST API calls.
