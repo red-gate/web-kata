@@ -62,7 +62,7 @@ Go to `App.js` and change the message. The app should re build itself and reload
 1. Kata TS 3 - [Filter, show and hide objects](kata-ts-3.md)
 1. Kata TS 4 - [Add router to an app](kata-ts-4.md)
 1. Kata TS 5 - [Interaction with backend server through REST API calls](kata-ts-5.md)
-1. Kata TS 6 - TypeScript react app 6
+1. Kata TS 6 - [Redux basics and change you app to use it](kata-ts-6.md)
 
 ## Future
 
