@@ -25,7 +25,7 @@ class App extends Component<Props, State> {
     return (
       <div className='App'>
         <div className='App-header'>
-          <h2>Kata 5 TypeScript - Add router to an app</h2>
+          <h2>Kata 5 TypeScript - Interaction with backend server through REST API calls</h2>
         </div>
         <div className='products-container'>
           <ProductMenu products={this.state.products} />
