@@ -20,7 +20,6 @@ You will need **2** terminals
 1. Web API server
     * go to `./app-ts-5`
     * verify dotnet version `dotnet --version` is `2.0.0`
-    * run `dotnet restore`
     * run `dotnet build`
     * run `dotnet run`
 
