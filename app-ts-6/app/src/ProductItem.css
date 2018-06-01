@@ -19,3 +19,11 @@
     display: flex;
     flex-direction: row;
 }
+
+.product-item .remove{
+    padding-left: 1em;
+}
+
+.product-item .remove:hover{
+    cursor: pointer;
+}

@@ -9,6 +9,13 @@
 .products-container{
   display: flex;
   justify-content: center;
-  padding-top: 3em;
+  padding-top: 1em;
 }
 
+
+.add-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 2em;
+}
