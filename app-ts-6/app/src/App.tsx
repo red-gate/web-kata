@@ -1,13 +1,26 @@
 import * as React from 'react';
 import { Component } from 'react';
+import { Dispatch, bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 
 import ProductMenu from './ProductMenu';
 import ProductContainer from './ProductContainer';
 import { Product } from './Models/Product';
+
+import { RootState, RootAction } from './modules';
+import { fetchVersion } from './modules/versions';
+
 import './App.css';
 
-interface Props { }
+interface AppStateProps {
+  version: string | undefined;
+}
+
+interface AppDispatchProps {
+  // tslint:disable-next-line:no-any
+  fetchVersion: () => any;
+}
 
 interface State {
   products: Product[];
@@ -15,14 +28,15 @@ interface State {
   newProductDescription: string;
 }
 
-class App extends Component<Props, State> {
-  constructor(props: Props) {
+class App extends Component<AppStateProps & AppDispatchProps, State> {
+  constructor(props: AppStateProps & AppDispatchProps) {
     super(props);
     // Access the REST API instead of grabbing products from data.ts
     this.state = {
       products: [],
       newProductName: '',
-      newProductDescription: ''
+      newProductDescription: '',
+
     };
     this.fetchProducts = this.fetchProducts.bind(this);
     this.addProduct = this.addProduct.bind(this);
@@ -32,6 +46,7 @@ class App extends Component<Props, State> {
     this.onNewProductNameChange = this.onNewProductNameChange.bind(this);
 
     this.fetchProducts();
+    this.props.fetchVersion();
   }
 
   fetchProducts() {
@@ -105,6 +120,7 @@ class App extends Component<Props, State> {
       <div className='App'>
         <div className='App-header'>
           <h2>Kata 6 - TypeScript - Redux</h2>
+          <small>v{this.props.version}</small>
         </div>
         <div className='add-form'>
           <form onSubmit={this.handleAddProduct}>
@@ -131,4 +147,16 @@ class App extends Component<Props, State> {
   }
 }
 
-export default App;
+const mapStateToProps = (state: RootState) => ({
+  version: state.versions.version,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch<RootAction>) => bindActionCreators(
+  {
+    fetchVersion,
+  },
+  dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps, null, {
+  pure: false // https://stackoverflow.com/a/44565602/989227
+})(App);

@@ -6,19 +6,27 @@
     "@types/react-router-dom": "^4.2.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scripts-ts": "2.13.0",
-    "whatwg-fetch": "^2.0.4"
+    "whatwg-fetch": "^2.0.4",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "2.2.0",
+    "typesafe-actions": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",
     "lint": "tslint --exclude **/*.d.ts src/**/*.ts src/**/*.tsx"
   },
   "devDependencies": {
-    "@types/node": "^9.4.0",
-    "@types/react": "^16.0.35",
-    "@types/react-dom": "^16.0.3",
-    "typescript": "^2.6.2"
+    "@types/node": "^10.3.2",
+    "@types/react": "^16.3.17",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-redux": "^6.0.2",
+    "@types/redux-logger": "^3.0.6",
+    "typescript": "^2.9.1",
+    "utility-types": "^1.0.0"
   },
   "proxy": "http://localhost:5000"
 }
