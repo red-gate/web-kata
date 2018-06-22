@@ -30,7 +30,7 @@ You will need **2** terminals
 
 ## Concepts
 
-Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before we start. We have added a simple end to end React Redux example in the code of `App6` that we will explain first.
+Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before we start. We have added a simple end to end React Redux example in the code of `app-ts-6` that we will explain first.
 
 1. Actions
 
@@ -39,67 +39,87 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
     Example of an action with no payload fired:
 
-    ```jsx
-    dispatch({ type: WEB_SERVER_VERSION_REQUESTED })
+    ```ts
+    dispatch(VersionActions.versionRequested());
     ```
 
     Example of an action with payload fired:
 
-    ```jsx
-    dispatch({
-        type: WEB_SERVER_VERSION_COMPLETED,
-        payload: { version: json }
-    })
+    ```ts
+    dispatch(VersionActions.versionCompleted(version));
+    ```
+
+    Here is an example of the definition of `versionRequested` an actions:
+
+    ```ts
+    export const VersionActions = {
+        versionRequested: createAction(TypeKeys.WEB_SERVER_VERSION_REQUESTED, () => ({
+            type: TypeKeys.WEB_SERVER_VERSION_REQUESTED
+        })),
+    };
     ```
 
 1. Reducers
 
     [Reducers](https://redux.js.org/docs/basics/Reducers.html) define how the state of our app should change with respect to actions that are fired.
 
-    All of our reducers are combined in `/src/modules/index.js`
+    All of our reducers are combined in `/src/modules/index.ts`
 
-    ```jsx
-    import { combineReducers } from 'redux'
-    import { routerReducer } from 'react-router-redux'
+    ```ts
+    import { combineReducers } from 'redux';
+    import versions, { VersionsState, VersionActionTypes } from './versions';
 
-    import versions from './versions'
+    interface StoreEnhancerState { }
 
-    export default combineReducers({
-        routing: routerReducer,
-        versions
-    })
+    export interface RootState extends StoreEnhancerState {
+    versions: VersionsState;
+    }
+
+    export default combineReducers<RootState>({
+    versions,
+    });
+
+    type AppAction =
+    | VersionActionTypes;
+
+    export type RootAction = AppAction;
     ```
 
     Our `versions` reducer shows examples of how the state of our app changed based on the actions that are fired:
 
-    `/src/modules/versions.js`
+    `/src/modules/versions.ts`
 
     ```jsx
-    export const WEB_SERVER_VERSION_REQUESTED = 'versions/WEB_SERVER_VERSION_REQUESTED'
-    export const WEB_SERVER_VERSION_COMPLETED = 'versions/WEB_SERVER_VERSION_COMPLETED'
-
-    const initialState = {
+    const createEmptyMember = (): VersionsState => ({
         inProgress: false,
-        version: null,
-    }
+        version: undefined,
+        error: undefined,
+    });
 
-    export default (state = initialState, action) => {
+    export default (state = createEmptyMember(), action: VersionActionTypes) => {
         switch (action.type) {
-            case WEB_SERVER_VERSION_REQUESTED:
+            case TypeKeys.WEB_SERVER_VERSION_REQUESTED:
             return {
                 ...state,
-                inProgress: true
-            }
-            case WEB_SERVER_VERSION_COMPLETED:
+                inProgress: true,
+            };
+            case TypeKeys.WEB_SERVER_VERSION_COMPLETED:
             return {
                 ...state,
                 inProgress: false,
                 version: action.payload.version
-            }
+            };
+            case TypeKeys.WEB_SERVER_VERSION_FAILED:
+            return {
+                ...state,
+                inProgress: false,
+                version: undefined,
+                error: action.payload.error
+            };
             default:
-            return state
+            return state;
         }
-    }
+    };
     ```
 
     **Note**:
@@ -123,18 +143,19 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
     Ours is defined at `/src/store.js`
 
-    ```jsx
+    ```ts
     const initialState = {}
 
-    const store = createStore(
+    const store: Store<any> = createStore(
         rootReducer,
-        initialState
-    )
+        initialState,
+        composedEnhancers
+    );
 
-    export default store
+    export default store;
     ```
 
-    It already uses a `rootReducer` where our app defines the reducers it needs under `/src/modules/index.js`
+    It already uses a `rootReducer` where our app defines the reducers it needs under `/src/modules/index.ts`
 
     ```jsx
     import rootReducer from './modules'
@@ -142,28 +163,26 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
 1. give access to the store to all components
 
-    To do this we inject in our `src/index.js` the `store` using the `Provider` component. For more information see: [Passing the Store](https://redux.js.org/docs/basics/UsageWithReact.html#passing-the-store)
+    To do this we inject in our `src/index.ts` the `store` using the `Provider` component. For more information see: [Passing the Store](https://redux.js.org/docs/basics/UsageWithReact.html#passing-the-store)
 
     ```jsx
-    import React from 'react'
-    import ReactDOM from 'react-dom'
-    import { Provider } from 'react-redux'
-    import { ConnectedRouter } from 'react-router-redux'
-    import store, { history } from './store'
+    import * as React from 'react';
+    import * as ReactDOM from 'react-dom';
+    import './index.css';
+    import App from './App';
+    import { BrowserRouter } from 'react-router-dom';
+    import { Provider } from 'react-redux';
 
-    import './index.css'
-    import App from './App'
+    import store from './store';
 
     ReactDOM.render(
-        <Provider store={store}>
-            <ConnectedRouter history={history}>
-                <div>
-                    <App />
-                </div>
-            </ConnectedRouter>
-        </Provider>,
-        document.getElementById('root')
-    )
+    <Provider store={store}>
+        <BrowserRouter>
+        <App />
+        </BrowserRouter>
+    </Provider>,
+    document.getElementById('root')
+    );
     ```
 
 1. create a dispatch function for fetching versions
@@ -171,58 +190,72 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
     * we define a `fetchWebServerVersion` function in `/src/modules/versions.js`
 
         ```jsx
-        export const fetchWebServerVersion = () => {
-            return dispatch => {
-                dispatch({ type: WEB_SERVER_VERSION_REQUESTED })
-                const url = '/api/versions/get'
-                fetch(url, {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    credentials: 'same-origin'
-                }).then(response => {
-                    return response.json()
-                }).then(json => {
-                    dispatch({
-                        type: WEB_SERVER_VERSION_COMPLETED,
-                        payload: { version: json }
-                    })
-                })
-            }
+        function fetchWebServerVersion() {
+            const url = '/api/versions/get';
+            return fetch(url, {
+                method: 'GET',
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                credentials: 'same-origin'
+            }).then(response => {
+                if (response.ok) {
+                return response.json();
+                }
+                const error = new Error(response.statusText);
+                throw error;
+            });
         }
+
+        type VersionThunkAsync = ActionCreator<ThunkAction<Promise<void>, VersionsState, void>>;
+
+        export const fetchVersion: VersionThunkAsync = () => {
+            return async (dispatch: Dispatch<VersionsState>): Promise<void> => {
+                dispatch(VersionActions.versionRequested());
+                await fetchWebServerVersion()
+                .then((version: string) => dispatch(VersionActions.versionCompleted(version)))
+                .catch(e => {
+                    dispatch(VersionActions.versionFailed(e.error));
+                });
+            };
+        };
         ```
 
         Things to notice here:
 
-        * `fetchWebServerVersion` function returns a `dispatch` function
-        * we dispatch `WEB_SERVER_VERSION_REQUESTED` action before the fetch call
-        * we dispatch `WEB_SERVER_VERSION_COMPLETED` action when the fetch call completes
+        * `fetchWebServerVersion` function returns a Promise.
+        * we dispatch `WEB_SERVER_VERSION_REQUESTED` with `dispatch(VersionActions.versionRequested())` action before the fetch call
+        * we dispatch `WEB_SERVER_VERSION_COMPLETED` with `dispatch(VersionActions.versionCompleted(version))` action when the fetch call completes
 
 1. Connect your dispatch function and the data present in the store to the `App` component
     * we import fetch function and connect state to props
 
         ```jsx
-        import { bindActionCreators } from 'redux'
-        import { connect } from 'react-redux'
-        import { withRouter } from 'react-router'
+        import { Dispatch, bindActionCreators } from 'redux';
+        import { connect } from 'react-redux';
 
-        import { fetchWebServerVersion } from './modules/versions'
-        const mapStateToProps = state => ({
-            version: state.versions.version
-        })
+        import { RootState, RootAction } from './modules';
+        import { fetchVersion } from './modules/versions';
 
-        const mapDispatchToProps = dispatch => bindActionCreators({
-            fetchWebServerVersion
-        }, dispatch)
+        const mapStateToProps = (state: RootState) => ({
+            version: state.versions.version,
+        });
 
-        export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
+        const mapDispatchToProps = (dispatch: Dispatch<RootAction>) => bindActionCreators(
+        {
+            fetchVersion,
+        },
+        dispatch);
+
+        export default connect(mapStateToProps, mapDispatchToProps, null, {
+            pure: false
+        })(App);
         ```
 
         __Remark 1__: Notice the line `version: state.versions.version` where we connect the data from the store as a property of the component so that it can be used as `this.props.version` directly.
 
-        __Remark 2__: Notice the mapDispatchToProps, where we add the `fetchWebServerVersion` function. So that we can call `this.props.fetchWebServerVersion` and that all calls with `dispatch` for example `dispatch({ type: WEB_SERVER_VERSION_REQUESTED })` get properly fired.
+        __Remark 2__: Notice the `mapDispatchToProps`, where we add the `fetchWebServerVersion` function. So that we can call `this.props.fetchWebServerVersion` and that all calls with `dispatch` for example `dispatch(VersionActions.versionRequested())` get properly fired.
 
     * use the version data present in the `store` in our `App` component
 
@@ -235,41 +268,29 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
 1. Check redux actions in the app
 
-    The store we created in `src/store.js` has a `logger` as one of our middleware. This will allow us to check the actions that are fired within the app.
+    The store we created in `src/store.ts` has a `logger` as one of our middleware. This will allow us to check the actions that are fired within the app.
 
     ```js
-    import logger from 'redux-logger'
+    import logger from 'redux-logger';
 
     const middleware = [
         thunk,
-        logger,
-        routerMiddleware(history)
-    ]
-
-    const composedEnhancers = compose(
-        applyMiddleware(...middleware),
-        ...enhancers
-    )
-
-    const store = createStore(
-        rootReducer,
-        initialState,
-        composedEnhancers
-    )
+        logger
+    ];
     ```
 
     If you check you browser console you should see the actions and the change of each state in the store.
 
-    ![Redux actions in the console](./app6/images/redux-action-logs.png)
+    ![Redux actions in the console](./app-ts-6/images/redux-action-logs.png)
 
 1. The versions example
 
     Throughout the Redux concepts we showed how the versions request example work in this app. Have a look at the different pieces to understand how they work:
-    * `src/index.js`
-    * `src/App.js`
-    * `src/store.js`
-    * `src/modules/versions.js`
-    * `src/modules/index.js`
+    * `src/index.ts`
+    * `src/App.ts`
+    * `src/store.ts`
+    * `src/modules/versions.ts`
+    * `src/modules/index.ts`
 
 ## Task
 
@@ -286,18 +307,18 @@ Write the JavaScript/React code to avoid any use of `state` in the `App.js` comp
         1. `products/PRODUCT_ADD_COMPLETED`
         1. `products/PRODUCT_REMOVE_REQUESTED`
         1. `products/PRODUCT_REMOVE_COMPLETED`
-    1. create and implement all api functions that currently exist in `App.js`
+    1. create and implement all api functions that currently exist in `App.ts`
         1. `fetchProducts`
         1. `addProduct`
         1. `removeProduct` (passing `newProduct` as an argument)
     1. be sure each function dispatches a `requested` action before calling the server, and a `completed` action if the request succeeds
 1. update the products reducer so that the data of the products list is updated acordingly:
     1. create and implement a case for each action type (requested and completed). Set the products returned from server (if applicable)
-1. import all dispatch product functions into `App.js`
+1. import all dispatch product functions into `App.ts`
     1. be sure to map them to props in the `mapDispatchToProps` section
 1. use the products data from the store
     1. be sure to map the products data in the `mapStateToProps` section
-1. update your `App.js` code so that you don't use `this.state` anymore. You shoul be using `this.props` instead
+1. update your `App.ts` code so that you don't use `this.state` anymore. You shoul be using `this.props` instead
 1. check in the browser console that all actions are being fired
 
 ## Resources
