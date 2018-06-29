@@ -170,16 +170,16 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
     import * as ReactDOM from 'react-dom';
     import './index.css';
     import App from './App';
-    import { BrowserRouter } from 'react-router-dom';
+    import { ConnectedRouter } from 'react-router-redux';
     import { Provider } from 'react-redux';
 
-    import store from './store';
+    import store, { history } from './store';
 
     ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter>
+        <ConnectedRouter history={history}>
         <App />
-        </BrowserRouter>
+        </ConnectedRouter>
     </Provider>,
     document.getElementById('root')
     );
@@ -268,14 +268,15 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
 1. Check redux actions in the app
 
-    The store we created in `src/store.ts` has a `logger` as one of our middleware. This will allow us to check the actions that are fired within the app.
+    The store we created in `src/store.ts` has a `logger` as one of our middleware as well as `react-router-redux`. This will allow us to check the actions that are fired within the app.
 
     ```js
     import logger from 'redux-logger';
 
     const middleware = [
         thunk,
-        logger
+        logger,
+        routerMiddleware(history)
     ];
     ```
 
@@ -296,7 +297,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 
 [Redux](https://redux.js.org) is alredy installed and working in this application. Your goal is to switch the app code into using Redux.
 
-Write the JavaScript/React code to avoid any use of `state` in the `App.js` component. Use redux instead
+Write the TypeScript/JavaScript/React code to avoid any use of `state` in the `App.tsx` component. Use redux instead
 
 1. move all api calls into the `products` reducer:
     1. under `src/modules` create file called `products.js` and export an empty reducer. Connect it to the store.
@@ -307,18 +308,18 @@ Write the JavaScript/React code to avoid any use of `state` in the `App.js` comp
         1. `products/PRODUCT_ADD_COMPLETED`
         1. `products/PRODUCT_REMOVE_REQUESTED`
         1. `products/PRODUCT_REMOVE_COMPLETED`
-    1. create and implement all api functions that currently exist in `App.ts`
+    1. create and implement all api functions that currently exist in `App.tsx`
         1. `fetchProducts`
         1. `addProduct`
         1. `removeProduct` (passing `newProduct` as an argument)
     1. be sure each function dispatches a `requested` action before calling the server, and a `completed` action if the request succeeds
 1. update the products reducer so that the data of the products list is updated acordingly:
     1. create and implement a case for each action type (requested and completed). Set the products returned from server (if applicable)
-1. import all dispatch product functions into `App.ts`
+1. import all dispatch product functions into `App.tsx`
     1. be sure to map them to props in the `mapDispatchToProps` section
 1. use the products data from the store
     1. be sure to map the products data in the `mapStateToProps` section
-1. update your `App.ts` code so that you don't use `this.state` anymore. You shoul be using `this.props` instead
+1. update your `App.tsx` code so that you don't use `this.state` anymore. You shoul be using `this.props` instead
 1. check in the browser console that all actions are being fired
 
 ## Resources
