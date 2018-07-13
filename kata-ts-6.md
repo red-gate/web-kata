@@ -300,7 +300,7 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 Write the TypeScript/JavaScript/React code to avoid any use of `state` in the `App.tsx` component. Use redux instead
 
 1. move all api calls into the `products` reducer:
-    1. under `src/modules` create file called `products.js` and export an empty reducer. Connect it to the store.
+    1. under `src/modules` create file called `products.ts` and export an empty reducer. Connect it to the store.
     1. create the action types for products
         1. `products/PRODUCTS_REQUESTED`
         1. `products/PRODUCTS_COMPLETED`
