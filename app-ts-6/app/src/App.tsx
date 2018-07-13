@@ -18,8 +18,7 @@ interface AppStateProps {
 }
 
 interface AppDispatchProps {
-  // tslint:disable-next-line:no-any
-  fetchVersion: () => any;
+  fetchVersion: () => void;
 }
 
 interface State {
