@@ -300,8 +300,9 @@ Let's go through some [basic concepts](https://redux.js.org/docs/basics/) before
 Write the TypeScript/JavaScript/React code to avoid any use of `state` in the `App.tsx` component. Use redux instead
 
 1. move all api calls into the `products` reducer:
-    1. under `src/modules` create file called `products.ts` and export an empty reducer. Connect it to the store.
-    1. create the action types for products
+    1. under `src/modules` create file called `products.ts` and export an empty reducer.
+    1. Connect the reducter to the store by updating `index.ts`.
+    1. create the action types for products in `products.ts`
         1. `products/PRODUCTS_REQUESTED`
         1. `products/PRODUCTS_COMPLETED`
         1. `products/PRODUCT_ADD_REQUESTED`
@@ -310,8 +311,8 @@ Write the TypeScript/JavaScript/React code to avoid any use of `state` in the `A
         1. `products/PRODUCT_REMOVE_COMPLETED`
     1. create and implement all api functions that currently exist in `App.tsx`
         1. `fetchProducts`
-        1. `addProduct`
-        1. `removeProduct` (passing `newProduct` as an argument)
+        1. `addProduct` (passing `newProduct` as argument)
+        1. `removeProduct` (passing `productName` as argument)
     1. be sure each function dispatches a `requested` action before calling the server, and a `completed` action if the request succeeds
 1. update the products reducer so that the data of the products list is updated acordingly:
     1. create and implement a case for each action type (requested and completed). Set the products returned from server (if applicable)
