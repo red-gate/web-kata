@@ -21,6 +21,7 @@ class ProductContainer extends Component<Props, State> {
       this.props.products.find(p => p.name.toLocaleLowerCase() === productName.toLocaleLowerCase());
     return (
       <div className='product-container'>
+        <div className='product-header'></div>
         <div>{product && product.name}</div>
         <div>{product && product.description}</div>
       </div>
