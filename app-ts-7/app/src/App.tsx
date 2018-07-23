@@ -16,10 +16,10 @@ import './App.css';
 
 interface AppStateProps {
   version: string | undefined;
+  products: Product[];
 }
 
 interface AppDispatchProps {
-  products: Product[];
   fetchVersion: () => void;
   fetchProducts: () => void;
   removeProduct: (productName: string) => void;
