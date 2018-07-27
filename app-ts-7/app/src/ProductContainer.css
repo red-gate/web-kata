@@ -14,3 +14,7 @@
   padding-bottom: 1em;
   font-size: 20pt;
 }
+
+.product-header-menu{
+  cursor: pointer;
+}
