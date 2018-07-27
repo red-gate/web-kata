@@ -1,0 +1,21 @@
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.products-container{
+  display: flex;
+  justify-content: center;
+  padding-top: 1em;
+}
+
+
+.add-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 2em;
+}

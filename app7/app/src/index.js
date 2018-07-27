@@ -8,12 +8,12 @@ import './index.css'
 import App from './App'
 
 ReactDOM.render(
-  <Provider store={store}>
-      <ConnectedRouter history={history}>
-          <div>
-              <App />
-          </div>
-      </ConnectedRouter>
-  </Provider>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <div>
+                <App />
+            </div>
+        </ConnectedRouter>
+    </Provider>,
+    document.getElementById('root')
 )
