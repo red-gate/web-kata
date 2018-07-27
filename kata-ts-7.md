@@ -1,6 +1,6 @@
-# React App Kata 7
+# React App Kata 7 TypeScript
 
-Code for **Kata 7** is available in the [app7](app7) folder.
+Code for **Kata 7** is available in the [app-ts-7](app-ts-7) folder.
 
 ## Learning aims
 
@@ -15,7 +15,7 @@ The idea here is to learn with Redux is useful and how it can help you build a b
 You will need **2** terminals
 
 1. Web API server
-    * go to `./app7`
+    * go to `./app-ts-7`
     * verify dotnet version `dotnet --version` is higher than `2.0.0`
     * run `dotnet restore`
     * run `dotnet build`
@@ -25,7 +25,7 @@ You will need **2** terminals
 1. Web app
 
 * in another terminal
-* go to `./app7/app/`
+* go to `./app-ts-7/app/`
 * follow the instructions in the [README](README.md#run-the-app).
 * your app should be running at port **3000**
 
@@ -49,7 +49,7 @@ Write the JavaScript/React code to:
 
 1. sharing Actions across components:
     1. in the `ProductContainer` component add the necessary code to remove the current product.
-        1. add a button/div inside the `product-header` section
+        1. add a button/div inside the `product-header-menu` section
         1. create and dispatch an action that will make the product get deleted from the server
         1. **Note** You should only need to change `ProductContainer` component
 1. create a voting button/div next to the remove div in the `ProductItem` component
