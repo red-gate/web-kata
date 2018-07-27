@@ -23,7 +23,7 @@ class ProductContainer extends Component<Props, State> {
       <div className='product-container'>
         <div className='product-header'>
           <div>{product && product.name}</div>
-          <div className='product-header-menu'>
+          <div className='product-header-menu'>product actions here</div>
         </div>
         <div>{product && product.description}</div>
       </div>
