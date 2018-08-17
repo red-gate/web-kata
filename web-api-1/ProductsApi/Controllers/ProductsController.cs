@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ProductsApi.Model;
 
 namespace ProductsApi.Controllers
 {
@@ -10,9 +8,10 @@ namespace ProductsApi.Controllers
     public class ProductsController : Controller
     {
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Product> Get()
         {
-            return new string[] { "SQL Source Control" };
+            var product = new Product("SQL Source Control", "Source control your SQL Server databases.");
+            return new[] { product };
         }
     }
 }
