@@ -22,5 +22,11 @@ namespace ProductsApi.Controllers
         {
             return _mProducts;
         }
+
+        [HttpPost]
+        public void Post([FromBody] Product value)
+        {
+            _mProducts.Add(value);
+        }
     }
 }

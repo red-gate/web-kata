@@ -50,3 +50,25 @@ Create a parameterless ctor for `ProductsController` and initialize your collect
 Return your collection in `Get()`
 
 Navigate to `http://localhost:5000/api/Products` to check it works
+
+Create a new method on `ProductsController` to handle Post requests:
+
+```C#
+[HttpPost]
+public void Post([FromBody] Product value) { }
+```
+
+Add the product from the post request to your collection
+
+In order to test a POST request you'll need some tooling. I recommend Postman: https://www.getpostman.com/
+
+Send a POST request with a Content-Type of `application/json` and body of:
+
+```
+{
+	"Name": "Readyroll",
+	"Description": "Ready to roll"
+}
+```
+
+Navigate to `http://localhost:5000/api/Products` to check it works
