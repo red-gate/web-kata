@@ -34,7 +34,7 @@ You will need **2** terminals
 One of the main reasons Redux can be very useful in complex applications is that you can share the same data across multiple components in a simple way. Without Redux you would have to pass down props, copy of data and/or callbacks in order to update data for every component.
 
 The way Redux helps you with this is that you can define a single source of truth for your data.
-The state of your whole application is store in a single object tree within a single store AND hopefuly you are not duplicating data content anywhere.
+The state of your whole application is store in a single object tree within a single store AND hopefully you are not duplicating data content anywhere.
 
 This is called the [single source of truth principle](https://github.com/reactjs/redux/blob/master/docs/introduction/ThreePrinciples.md)
 
@@ -54,6 +54,7 @@ Write the JavaScript/React code to:
         1. **Note** You should only need to change `ProductContainer` component
 1. create a voting button/div next to the remove div in the `ProductItem` component
     1. add a voting button/div in the `ProductItem` component
+    1. add support for a voting action in `products.ts`
     1. dispatch a voting action to increment a vote
     1. in the products reducer add a `votes` dictionary next to the `product` array in the products state
         1. each key will be the a product and the value will be the vote count
@@ -65,7 +66,7 @@ Write the JavaScript/React code to:
     1. show the votes count in the `product-header`
     1. notice that both vote counts get updated at the same time and should reference the same data
 
-**Note** for the purpose of this exercice the code written will be only in the frontend. A more elegant solution could involve an API call in order to update the store in the backend to keep track of votes.
+**Note** for the purpose of this exercise the code written will be only in the frontend. A more elegant solution could involve an API call in order to update the store in the backend to keep track of votes.
 
 ## Resources
 
