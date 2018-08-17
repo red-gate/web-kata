@@ -62,7 +62,7 @@ Add the product from the post request to your collection
 
 In order to test a POST request you'll need some tooling. I recommend Postman: https://www.getpostman.com/
 
-Send a POST request to `http://localhost:5000/api/Products` with a Content-Type of `application/json` and body of:
+Send a POST request to `http://localhost:5000/api/Products` with a Content-Type of `application/json` and body:
 
 ```
 {
@@ -90,7 +90,7 @@ public IEnumerable<Product> GetAll();
 public void Add(Product product);
 ```
 
-Now make ProductsController depend on the new `ProductStore` by passing it in the constructor and assigning it to a field.
+Now make ProductsController depend on the new `ProductStore` by passing it in the constructor and assigning it to a field
 
 Finally, in `Startup`, find `ConfigureServices()` and add the following line:
 
@@ -98,6 +98,43 @@ Finally, in `Startup`, find `ConfigureServices()` and add the following line:
 
 This will register `ProductStore` with the dependency injection system.
 
-Because we're using singleton scope, all controller instances that ask for a product store will now have access to the same one.
+Because we're using singleton scope, all controller instances that ask for a product store will now have access to the same one
 
 Now make the POST request again, and navigate to `http://localhost:5000/api/Products` to see if it works
+
+## How does it work?
+Look at the signature for `Post` again
+
+```C#
+public void Post([FromBody] Product value)
+```
+
+Notice the `[FromBody]` attribute. This means the value will be automatically parsed from JSON in the request body into the C# type
+
+This process is known as 'Parameter binding'
+
+Parameters can be bound from the request URI also.
+
+For instance, given: 
+
+`GET http://localhost:5000/api/Products/SQL%20Source%20Control`
+
+`Name` can be bound to an argument for your `Get` method
+
+On ProductsController change the signature for `Get` to take a `string name`
+
+```C#
+public IEnumerable<Product> Get(string name)
+```
+
+At the top of `ProductsController` and a new `Route` attribute
+
+```C#
+[Route("api/[controller]/{name}")]
+```
+
+If no name is specified in the URI, then `name` will be `null`.
+
+Add logic to return products by name if the supplied `name` isn't `null`.
+
+Navigate to `http://localhost:5000/api/Products` to check it works

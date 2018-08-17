@@ -6,6 +6,7 @@ using ProductsApi.Store;
 namespace ProductsApi.Controllers
 {
     [Route("api/[controller]")]
+    [Route("api/[controller]/{name}")]
     public class ProductsController : Controller
     {
         private readonly ProductStore _mProductStore;
@@ -16,9 +17,9 @@ namespace ProductsApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public IEnumerable<Product> Get(string name)
         {
-            return _mProductStore.GetAll();
+            return name == null ? _mProductStore.GetAll() : _mProductStore.GetByName(name);
         }
 
         [HttpPost]

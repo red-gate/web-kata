@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using ProductsApi.Model;
 
 namespace ProductsApi.Store
@@ -18,6 +19,11 @@ namespace ProductsApi.Store
         public IEnumerable<Product> GetAll()
         {
             return _mProducts;
+        }
+
+        public IEnumerable<Product> GetByName(string name)
+        {
+            return _mProducts.Where(p => p.Name == name);
         }
 
         public void Add(Product product)
