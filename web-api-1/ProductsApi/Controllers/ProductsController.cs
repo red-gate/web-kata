@@ -7,11 +7,20 @@ namespace ProductsApi.Controllers
     [Route("api/[controller]")]
     public class ProductsController : Controller
     {
+        private readonly List<Product> _mProducts;
+
+        public ProductsController()
+        {
+            _mProducts = new List<Product>
+            {
+                new Product("SQL Source Control", "Source control your SQL Server databases.")
+            };
+        }
+
         [HttpGet]
         public IEnumerable<Product> Get()
         {
-            var product = new Product("SQL Source Control", "Source control your SQL Server databases.");
-            return new[] { product };
+            return _mProducts;
         }
     }
 }

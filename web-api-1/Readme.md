@@ -7,6 +7,8 @@
 You can write code in Visual Studio by opening the `.csproj`.
 When saving files you will be prompted to create a `.sln` and a launch settings file. You only want the `.sln` file.
 
+You can now run by debugging in VS, or from the command line.
+
 Delete auto generated `ValuesController` and add new class `EventsController` with contents:
 
 ``` C#
@@ -38,5 +40,13 @@ public string Description { get; }
 ```
 
 Alter `Get()` in `ProductsController` to return an instance of `Product`
+
+Navigate to `http://localhost:5000/api/Products` to check it works
+
+Amend `ProductsController` to maintain a collection of products.
+
+Create a parameterless ctor for `ProductsController` and initialize your collection
+
+Return your collection in `Get()`
 
 Navigate to `http://localhost:5000/api/Products` to check it works
