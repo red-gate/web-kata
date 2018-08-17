@@ -62,7 +62,7 @@ Add the product from the post request to your collection
 
 In order to test a POST request you'll need some tooling. I recommend Postman: https://www.getpostman.com/
 
-Send a POST request with a Content-Type of `application/json` and body of:
+Send a POST request to `http://localhost:5000/api/Products` with a Content-Type of `application/json` and body of:
 
 ```
 {
@@ -72,3 +72,32 @@ Send a POST request with a Content-Type of `application/json` and body of:
 ```
 
 Navigate to `http://localhost:5000/api/Products` to check it works
+
+## It doesn't work!
+
+This is because controllers are instantiated per request.
+
+In order to persist data across requests we need to use dependency injection
+
+First create a new directory `Store`, and in there a class, `ProductStore`
+
+Move the logic for persisting the `Product` collection to `ProductStore`.
+
+E.g. it should have a contract like:
+
+```C#
+public IEnumerable<Product> GetAll();
+public void Add(Product product);
+```
+
+Now make ProductsController depend on the new `ProductStore` by passing it in the constructor and assigning it to a field.
+
+Finally, in `Startup`, find `ConfigureServices()` and add the following line:
+
+`services.AddSingleton<ProductStore>();`
+
+This will register `ProductStore` with the dependency injection system.
+
+Because we're using singleton scope, all controller instances that ask for a product store will now have access to the same one.
+
+Now make the POST request again, and navigate to `http://localhost:5000/api/Products` to see if it works

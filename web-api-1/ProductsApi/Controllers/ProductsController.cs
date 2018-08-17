@@ -1,32 +1,30 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using ProductsApi.Model;
+using ProductsApi.Store;
 
 namespace ProductsApi.Controllers
 {
     [Route("api/[controller]")]
     public class ProductsController : Controller
     {
-        private readonly List<Product> _mProducts;
+        private readonly ProductStore _mProductStore;
 
-        public ProductsController()
+        public ProductsController(ProductStore productStore)
         {
-            _mProducts = new List<Product>
-            {
-                new Product("SQL Source Control", "Source control your SQL Server databases.")
-            };
+            _mProductStore = productStore;
         }
 
         [HttpGet]
         public IEnumerable<Product> Get()
         {
-            return _mProducts;
+            return _mProductStore.GetAll();
         }
 
         [HttpPost]
         public void Post([FromBody] Product value)
         {
-            _mProducts.Add(value);
+            _mProductStore.Add(value);
         }
     }
 }
