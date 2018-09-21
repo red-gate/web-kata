@@ -1,7 +1,7 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using ProductsApi.Model;
 using ProductsApi.Store;
-using Microsoft.AspNetCore.Http;
 
 namespace ProductsApi.Controllers
 {
@@ -16,79 +16,16 @@ namespace ProductsApi.Controllers
             _mProductStore = productStore;
         }
 
-        [HttpDelete]
-        public IActionResult Delete(string name)
-        {
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                return NotFound(name);
-            }
-
-            if (_mProductStore.GetByName(name) == null)
-            {
-                return NotFound(name);
-            }
-
-            _mProductStore.Remove(name);
-
-            return Ok(name);
-        }
-
-        [HttpPut]
-        public IActionResult Put([FromBody] Product value)
-        {
-            var result = _mProductStore.GetByName(value.Name);
-
-            if (result == null)
-            {
-                return NotFound(value);
-            }
-
-            _mProductStore.Remove(result.Name);
-            _mProductStore.Add(value);
-
-            return Ok(value);
-        }
-
         [HttpGet]
-        public IActionResult Get(string name)
+        public IEnumerable<Product> Get(string name)
         {
-            if (name == null)
-            {
-                return Ok(_mProductStore.GetAll());
-            }
-
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                return NotFound(name);
-            }
-
-            var result = _mProductStore.GetByName(name);
-
-            if (result == null)
-            {
-                return NotFound(name);
-            }
-
-            return Ok(result);
+            return name == null ? _mProductStore.GetAll() : _mProductStore.GetByName(name);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Product value)
+        public void Post([FromBody] Product value)
         {
-            if (string.IsNullOrWhiteSpace(value.Name))
-            {
-                return NotFound(value);
-            }
-
-            if (_mProductStore.GetByName(value.Name) != null)
-            {
-                return StatusCode(StatusCodes.Status409Conflict, value);
-            }
-
             _mProductStore.Add(value);
-
-            return Created("api/Products", value);
         }
     }
 }

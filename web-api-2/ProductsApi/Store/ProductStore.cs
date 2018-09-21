@@ -30,11 +30,5 @@ namespace ProductsApi.Store
         {
             _mProducts.Add(product);
         }
-
-        public void Remove(string name)
-        {
-            var product = GetByName(name);
-            _mProducts.Remove(product);
-        }
     }
 }
