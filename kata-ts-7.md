@@ -45,16 +45,27 @@ Our goal is:
 * to share and display data in multiple components while following the single source of truth principle.
 * to reuse existing actions to manipulate data in multiple components.
 
+You may need to refer to kata 6 to refresh on how to use Redux in Typescript
+
 Write the JavaScript/React code to:
 
-1. sharing Actions across components:
-    1. in the `ProductContainer` component add the necessary code to remove the current product.
-        1. add a button/div inside the `product-header-menu` section
-        1. create and dispatch an action that will make the product get deleted from the server
-        1. **Note** You should only need to change `ProductContainer` component
 1. create a voting button/div next to the remove div in the `ProductItem` component
     1. add a voting button/div in the `ProductItem` component
-    1. add support for a voting action in `products.ts`
+    1. add support for a voting action in `products.ts`. This is quite involved, so to guide you, you'll need to do the following:
+        1. Add a votes variable to `interface ProductsState`
+        1. Add a vote action type to `enum TypeKeys`
+        1. Export a new `interface` for your product vote action type in `TypeKeys`
+        1. Add your new `interface` to `ProductsActionTypes`
+        1. Add an action to `ProductsActions`
+        1. Amend `createEmptyMember` to satisfy `interface ProductsState`
+        1. export an action creator which takes the name of the product to vote for. e.g:
+        ```typescript
+            export const addVote = (productName: string) => {
+            return (dispatch: Dispatch<ProductsState>)  => {
+                dispatch(ProductsActions.productVote(productName));
+            };
+        ```
+        1. Pass through the action creator (e.g. `addVote`) to the `ProductItem` through it's props
     1. dispatch a voting action to increment a vote
     1. in the products reducer add a `votes` dictionary next to the `product` array in the products state
         1. each key will be the a product and the value will be the vote count
