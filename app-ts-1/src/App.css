@@ -18,3 +18,15 @@
     display: flex;
     justify-content: center;
   }
+
+  .free{
+    font-weight: bold;
+    padding-left: 10px;
+    color: green;
+  }
+
+  .new{
+    font-weight: bold;
+    padding-left: 10px;
+    color: blue;
+  }

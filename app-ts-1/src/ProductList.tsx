@@ -13,8 +13,14 @@ interface ProductItemProps {
 
 class ProductItem extends Component<ProductItemProps, {}> {
 render(): JSX.Element {
+    let isFree = this.props.product.free;
+    let isNew = this.props.product.new;
     return (
-        <li key={this.props.product.name}>{this.props.product.name}</li>
+    <li key={this.props.product.name}>
+    {this.props.product.name}
+    {isFree !== null ? <a className='free'>#Free</a> : null}
+    {isNew !== null ? <a className='new'>#New</a> : null} 
+    </li>
     );
 }
 }
