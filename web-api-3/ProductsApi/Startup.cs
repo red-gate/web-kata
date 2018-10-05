@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore;
 using ProductsApi.Store;
 
 namespace ProductsApi
@@ -19,6 +20,7 @@ namespace ProductsApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ProductStore>();
+            services.AddCors();
             services.AddMvc();
         }
 
@@ -29,6 +31,13 @@ namespace ProductsApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()
+            ); 
 
             app.UseMvc();
         }
