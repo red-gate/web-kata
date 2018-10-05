@@ -12,7 +12,9 @@ namespace ProductsApi.Store
         {
             _mProducts = new List<Product>
             {
-                new Product("SQL Source Control", "Source control your SQL Server databases.")
+                new Product("SQL Source Control", "Source control your SQL Server databases"),
+                new Product("SQL Clone", "Rapid provisioning of databases"),
+                new Product("SQL Compare", "Compare and deploy the structure of Microsoft SQL Server databases")
             };
         }
 
