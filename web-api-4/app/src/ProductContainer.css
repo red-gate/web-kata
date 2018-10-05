@@ -1,0 +1,9 @@
+.product-container{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    min-width: 10em;
+    padding: 1em;
+    margin: 1em;
+    background: #F4F4F4;
+}
