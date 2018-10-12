@@ -25,7 +25,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
 This Kata will introduce you to writing asynchronous JavaScript using Promises. We're going to access the web API we developed in the previous Kata from a front using JavaScript Promises.
 
-This is similar to [React Kata 5](kata5.md). However this time you must use Promises. We also care more about 
+This is similar to [React Kata 5](kata5.md). However this time we are focussed on using well-defined CRUD operations and error handling. You must also use Promises to complete the Kata.
 
 ### Promises 
 
@@ -102,12 +102,57 @@ fetch('http://example.com/movies',
 
 ### Task
 
-1. Display a list of products from the `ProductsApi`
-  - You'll want to populate `products` in `App`'s state
+We're going to use the CRUD operations on the API in the front-end.
+
+- Create
+- Read
+- Update
+- Delete
+
+#### Read
+
+Read uses `HTTP GET` requests.
+
+- Display a list of products from the products API
   - Access the API using `fetch`
+  - You'll want to populate `products` in `App`'s state
   - When the promise is fulfilled, set `App`'s state to be populated from the HTTP response json
-1. Create a form to add products
+
+#### Create
+
+Create uses `HTTP POST` requests.
+
+- Create a form to add products
   - Create a new `ProductForm` component and add it to `App`
   - On `ProductForm` have input fields for new product name and description, along with a submit button
     - https://reactjs.org/docs/forms.html#controlled-components might help
-1. Using the product form, send `HTTP POST` requests to the end point to add products
+
+#### Update
+
+Update uses `HTTP PUT` requests.
+
+- Amend the form to add products with an 'update' button
+  - Update the product with the name inputted in the form
+
+#### Delete
+
+Update uses `HTTP DELETE` requests.
+
+- Amend the 'add product' form with a 'delete' button
+  - Delete the product with the name inputted in the form
+
+## Error handling
+
+We want the front end to display appropriate error messages when operations fail.
+
+Amend the the 'add product' form to display errors for the following HTTP response codes per CRUD operation:
+
+- Create
+  - `404 NOT FOUND` - when name is invalid
+  - `409 CONFLICT` - when product already exists
+- Update
+  - `404 NOT FOUND` - when product doesn't exist
+- Delete
+  - `404 NOT FOUND` - when product doesn't exist
+
+Test that the form displays the correct error messages.
