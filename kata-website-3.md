@@ -25,6 +25,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
 This Kata will introduce you to writing asynchronous JavaScript using Promises. We're going to access the web API we developed in the previous Kata from a front using JavaScript Promises.
 
+This is similar to [React Kata 5](kata5.md). However this time you must use Promises. We also care more about 
+
 ### Promises 
 
 JS Promises introduce a common pattern for executing operations on the result of an asynchronous operation. They also allow you to cope with error cases with ease.
@@ -101,12 +103,11 @@ fetch('http://example.com/movies',
 ### Task
 
 1. Display a list of products from the `ProductsApi`
-- You'll want to populate `products` in `App`'s state
-- Access the API using `fetch`
-- When the promise is fulfilled, set `App`'s state to be populated from the HTTP response json
+  - You'll want to populate `products` in `App`'s state
+  - Access the API using `fetch`
+  - When the promise is fulfilled, set `App`'s state to be populated from the HTTP response json
 1. Create a form to add products
-- Create a new `ProductForm` component and add it to `App`
-- On `ProductForm` have input fields for new product name and description, along with a submit button
+  - Create a new `ProductForm` component and add it to `App`
+  - On `ProductForm` have input fields for new product name and description, along with a submit button
     - https://reactjs.org/docs/forms.html#controlled-components might help
-1. Using the product form, send HTTP POST requests to the end point to add products
-    - The API considers `POST` requests with product name of empty string to be invalid. Display an appropriate error message next to the form.
+1. Using the product form, send `HTTP POST` requests to the end point to add products

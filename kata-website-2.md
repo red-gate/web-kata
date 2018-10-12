@@ -1,4 +1,4 @@
-# ASP.Net Core Web API 2.0 Kata 2
+# Website Kata 2
 
 This Kata is designed to introduce you to all the HTTP Verbs that are necessary to implement a CRUD API.
 

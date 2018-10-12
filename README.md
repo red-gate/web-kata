@@ -65,6 +65,11 @@ Go to `App.js` and change the message. The app should re build itself and reload
 1. Kata TS 6 - [Redux basics and change you app to use it](kata-ts-6.md)
 1. Kata TS 7 - [Redux single source of truth](kata-ts-7.md)
 
+## Katas on ASP.Net Core API development + JS Promises
+1. Kata Website 1 - [Creating the web API with Asp.Net Core](kata-website-1.md)
+1. Kata Website 2 - [CRUD operations](kata-website-2.md)
+1. Kata Website 3 - [Use API in front end using JS Promises + some light React](kata-website-3.md)
+
 ## Future
 
 Ideas for future sessions
@@ -79,3 +84,4 @@ Ideas for future sessions
 
 - [create your own React app](https://github.com/facebookincubator/create-react-app)
 - [React docs](https://facebook.github.io/react/docs/hello-world.html)
+- [ASP.Net Core web API with .Net Core SDK CLI](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-vsc?view=aspnetcore-2.1)

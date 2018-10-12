@@ -1,6 +1,6 @@
-# ASP.Net Core Web API 2.0 kata 1
+# Website Kata 1
 
-This kata is desinged to introduce you to creating a web API using ASP.Net Core.
+This kata is designed to introduce you to creating a web API using ASP.Net Core.
 
 ## Resources
 https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-2.1
