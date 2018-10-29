@@ -18,8 +18,8 @@ render(): JSX.Element {
     return (
     <li key={this.props.product.name}>
     {this.props.product.name}
-    {isFree !== null ? <a className='free'>#Free</a> : null}
-    {isNew !== null ? <a className='new'>#New</a> : null} 
+    {isFree === true ? <a className='free'>#Free</a> : null}
+    {isNew === true ? <a className='new'>#New</a> : null} 
     </li>
     );
 }
