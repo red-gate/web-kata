@@ -7,7 +7,7 @@ This Kata is designed to TODO
 ## Prepare
 ### The server
 1. verify dotnet version `dotnet --version` is higher than 2.0.0
-1. navigate to `.\web-api-3\ProductsApi`
+1. navigate to `.\app-website-4\ProductsApi`
 1. run `dotnet restore`
 1. run `dotnet build`
 1. run `dotnet run`
@@ -15,7 +15,7 @@ This Kata is designed to TODO
 
 ### The front-end app
 1. open a new terminal window
-1. navigate to `.\web-api-3\app`
+1. navigate to `.\app-website-4\app`
 1. yarn
 1. yarn start
 

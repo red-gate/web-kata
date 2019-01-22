@@ -9,7 +9,7 @@ This Kata is designed to introduce you to all the HTTP Verbs that are necessary 
 
 ## Prepare
 1. verify dotnet version `dotnet --version` is higher than 2.0.0
-1. navigate to `.\web-api-2\ProductsApi`
+1. navigate to `.\app-website-2\ProductsApi`
 1. run `dotnet restore`
 1. run `dotnet build`
 1. run `dotnet run`

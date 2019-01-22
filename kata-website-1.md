@@ -12,8 +12,9 @@ https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-2.1
 In this kata you will create a web API that can return a list of products
 
 In a terminal:
-1. Navigate to `.\web-api-1`
+1. Navigate to `.\app-website-1`
 1. run `dotnet new webapi -n "ProductsApi"`
+1. `cd ProductsApi`
 1. run `dotnet restore`
 1. run `dotnet build`
 1. run `dotnet run`
@@ -50,6 +51,7 @@ namespace ProductsApi.Controllers
 
 Navigate to `http://localhost:5000/api/Products` to check it works. You should see `SQL Source Control` in your browser.
 
+**Note**: Remember to restart the server each time you change the code
 
 ## Creating a data model for products
 
