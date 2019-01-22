@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProductsApi.Store
 {
@@ -18,6 +17,11 @@ namespace ProductsApi.Store
         public void Add(Product product)
         {
             m_Products.Add(product);
+        }
+
+        public Product GetByName(string name)
+        {
+            return m_Products.First(p => p.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
         }
     }
 }

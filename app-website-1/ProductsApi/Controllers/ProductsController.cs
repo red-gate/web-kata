@@ -6,25 +6,29 @@ using ProductsApi.Store;
 namespace ProductsApi.Controllers
 {
     [Route("api/[controller]")]
+    [Route("api/[controller]/{name}")]
     public class ProductsController : Controller
     {
-        public ProductStore ProductStore { get; }
+        private readonly ProductStore m_ProductStore;
 
         public ProductsController(ProductStore productStore)
         {
-            ProductStore = productStore;
+            m_ProductStore = productStore;
         }
 
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public IEnumerable<Product> Get(string name)
         {
-            return ProductStore.GetAll();
+            if (name == null)
+                return m_ProductStore.GetAll();
+
+            return new List<Product> { m_ProductStore.GetByName(name) };
         }
 
         [HttpPost]
         public void Post([FromBody] Product value)
         {
-            ProductStore.Add(value);
+            m_ProductStore.Add(value);
         }
     }
 }
