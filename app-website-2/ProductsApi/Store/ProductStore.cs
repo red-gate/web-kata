@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using ProductsApi.Model;
 
 namespace ProductsApi.Store
@@ -29,6 +30,16 @@ namespace ProductsApi.Store
         public void Add(Product product)
         {
             _mProducts.Add(product);
+        }
+
+        public void Delete(string name)
+        {
+            var product = GetByName(name);
+            _mProducts.Remove(product);
+        }
+
+        public void Update(Product product)
+        {
         }
     }
 }

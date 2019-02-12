@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProductsApi.Model;
 using ProductsApi.Store;
@@ -17,15 +19,78 @@ namespace ProductsApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Product> Get(string name)
+        public IActionResult Get(string name)
         {
-            return name == null ? _mProductStore.GetAll() : _mProductStore.GetByName(name);
+            if (name == null)
+            {
+                return Ok(_mProductStore.GetAll());
+            }
+
+            if (String.IsNullOrWhiteSpace(name))
+            {
+                return NotFound();
+            }
+
+            var product = _mProductStore.GetByName(name);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(product);
         }
 
         [HttpPost]
-        public void Post([FromBody] Product value)
+        public IActionResult Post([FromBody] Product value)
         {
+            if (String.IsNullOrWhiteSpace(value.Name))
+            {
+                return NotFound(value);
+            }
+
+            if (_mProductStore.GetByName(value.Name) != null)
+            {
+                return StatusCode(StatusCodes.Status409Conflict, value);
+            }
+            
             _mProductStore.Add(value);
+            return Created("api/Products", value);
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(string name)
+        {
+            if (String.IsNullOrWhiteSpace(name))
+            {
+                return NotFound();
+            }
+
+            var product = _mProductStore.GetByName(name);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+            
+            _mProductStore.Delete(name);
+            return Ok();
+        }
+        
+        [HttpPut]
+        public IActionResult Put([FromBody] Product value)
+        {
+            var product = _mProductStore.GetByName(value.Name);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            product.Description = value.Description;
+            
+            _mProductStore.Update(product);
+            return Ok();
         }
     }
 }
