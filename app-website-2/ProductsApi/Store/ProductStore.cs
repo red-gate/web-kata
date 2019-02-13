@@ -35,5 +35,10 @@ namespace ProductsApi.Store
         {
             return _mProducts.Exists(x => x.Name == product.Name);
         }
+
+        public bool IsNameInvalid(string name)
+        {
+            return name.GetType() != typeof(string) || name == "";
+        }
     }
 }
