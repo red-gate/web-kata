@@ -19,7 +19,7 @@ namespace ProductsApi.Controllers
         [HttpGet]
         public IEnumerable<Product> Get(string name)
         {
-            return name == null ? _mProductStore.GetAll() : _mProductStore.GetByName(name);
+            return name == null ? _mProductStore.GetAll() : new List<Product> {_mProductStore.GetByName(name)};
         }
 
         [HttpPost]
