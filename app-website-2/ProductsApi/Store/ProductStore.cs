@@ -6,11 +6,11 @@ namespace ProductsApi.Store
 {
     public class ProductStore
     {
-        private readonly List<Product> _mProducts;
+        private readonly List<Product> m_Products;
 
         public ProductStore()
         {
-            _mProducts = new List<Product>
+            m_Products = new List<Product>
             {
                 new Product("SQL Source Control", "Source control your SQL Server databases.")
             };
@@ -18,17 +18,22 @@ namespace ProductsApi.Store
 
         public IEnumerable<Product> GetAll()
         {
-            return _mProducts;
+            return m_Products;
         }
 
         public Product GetByName(string name)
         {
-            return _mProducts.Exists(p => p.Name == name) ? _mProducts.Single(p => p.Name == name) : null;
+            return Exists(name) ? m_Products.Single(p => p.Name == name) : null;
+        }
+
+        public bool Exists(string name)
+        {
+            return m_Products.Exists(p => p.Name == name);
         }
 
         public void Add(Product product)
         {
-            _mProducts.Add(product);
+            m_Products.Add(product);
         }
     }
 }

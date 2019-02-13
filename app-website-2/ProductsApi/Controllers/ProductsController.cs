@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProductsApi.Model;
 using ProductsApi.Store;
@@ -23,9 +24,21 @@ namespace ProductsApi.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody] Product value)
+        public IActionResult Post([FromBody] Product value)
         {
+            if (string.IsNullOrWhiteSpace(value.Name))
+            {
+                return StatusCode(StatusCodes.Status404NotFound, value);
+            }
+
+            if (m_ProductStore.Exists(value.Name))
+            {
+                return StatusCode(StatusCodes.Status409Conflict, value);
+            }
+            
             m_ProductStore.Add(value);
+
+            return Created("api/Products", value);
         }
     }
 }
