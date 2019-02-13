@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProductsApi.Model;
 using ProductsApi.Store;
@@ -23,9 +24,16 @@ namespace ProductsApi.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody] Product value)
+        public IActionResult Post([FromBody] Product value)
         {
+            if (_mProductStore.CheckForConflict(value))
+                return StatusCode(StatusCodes.Status409Conflict, value);
+
+            if (value.Name.GetType() != typeof(string) || value.Name == "")
+                return StatusCode(StatusCodes.Status422UnprocessableEntity, value);
+
             _mProductStore.Add(value);
+            return StatusCode(StatusCodes.Status201Created, value);
         }
     }
 }

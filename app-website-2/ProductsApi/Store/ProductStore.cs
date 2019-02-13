@@ -30,5 +30,10 @@ namespace ProductsApi.Store
         {
             _mProducts.Add(product);
         }
+
+        public bool CheckForConflict(Product product)
+        {
+            return _mProducts.Exists(x => x.Name == product.Name);
+        }
     }
 }
