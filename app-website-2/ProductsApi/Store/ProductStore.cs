@@ -35,5 +35,17 @@ namespace ProductsApi.Store
         {
             m_Products.Add(product);
         }
+
+        public void Delete(string name)
+        {
+            var toDelete = m_Products.Find(s => s.Name == name);
+            m_Products.Remove(toDelete);
+        }
+
+        public void Update(Product value)
+        {
+            Delete(value.Name);
+            Add(value);
+        }
     }
 }
