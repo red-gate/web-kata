@@ -9,23 +9,23 @@ namespace ProductsApi.Controllers
     [Route("api/[controller]/{name}")]
     public class ProductsController : Controller
     {
-        private readonly ProductStore _mProductStore;
+        private readonly ProductStore m_ProductStore;
 
         public ProductsController(ProductStore productStore)
         {
-            _mProductStore = productStore;
+            m_ProductStore = productStore;
         }
 
         [HttpGet]
         public IEnumerable<Product> Get(string name)
         {
-            return name == null ? _mProductStore.GetAll() : _mProductStore.GetByName(name);
+            return name == null ? m_ProductStore.GetAll() : new List<Product> { m_ProductStore.GetByName(name) };
         }
 
         [HttpPost]
         public void Post([FromBody] Product value)
         {
-            _mProductStore.Add(value);
+            m_ProductStore.Add(value);
         }
     }
 }
