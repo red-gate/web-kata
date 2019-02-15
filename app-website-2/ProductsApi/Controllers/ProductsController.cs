@@ -55,5 +55,15 @@ namespace ProductsApi.Controllers
             _mProductStore.Delete(name);
             return StatusCode(StatusCodes.Status204NoContent, name);
         }
+
+        [HttpPut]
+        public IActionResult Put([FromBody] Product value)
+        {
+            if (!_mProductStore.DoesExist(value.Name))
+                return StatusCode(StatusCodes.Status404NotFound, value);
+
+            _mProductStore.Update(value);
+            return StatusCode(StatusCodes.Status200OK, value);
+        }
     }
 }

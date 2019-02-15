@@ -49,5 +49,12 @@ namespace ProductsApi.Store
         {
             return name.GetType() != typeof(string) || name == "";
         }
+
+        public void Update(Product productToAdd)
+        {
+            var productToReplace = _mProducts.Single(x => x.Name == productToAdd.Name);
+            Delete(productToReplace.Name);
+            Add(productToAdd);
+        }
     }
 }
