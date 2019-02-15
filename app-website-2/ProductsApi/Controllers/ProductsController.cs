@@ -33,7 +33,7 @@ namespace ProductsApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Product value)
         {
-            if (_mProductStore.CheckForConflict(value))
+            if (_mProductStore.DoesExist(value.Name))
                 return StatusCode(StatusCodes.Status409Conflict, value);
 
             if (_mProductStore.IsNameInvalid(value.Name))
@@ -41,6 +41,19 @@ namespace ProductsApi.Controllers
 
             _mProductStore.Add(value);
             return StatusCode(StatusCodes.Status201Created, value);
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(string name)
+        {
+            if (_mProductStore.IsNameInvalid(name))
+                return StatusCode(StatusCodes.Status422UnprocessableEntity, name);
+
+            if (!_mProductStore.DoesExist(name))
+                return StatusCode(StatusCodes.Status404NotFound, name);
+
+            _mProductStore.Delete(name);
+            return StatusCode(StatusCodes.Status204NoContent, name);
         }
     }
 }

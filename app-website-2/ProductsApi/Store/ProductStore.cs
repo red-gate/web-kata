@@ -31,9 +31,18 @@ namespace ProductsApi.Store
             _mProducts.Add(product);
         }
 
-        public bool CheckForConflict(Product product)
+        public void Delete(string name)
         {
-            return _mProducts.Exists(x => x.Name == product.Name);
+            var product = _mProducts.SingleOrDefault(x => x.Name == name);
+            if (product != null)
+            {
+                _mProducts.Remove(product);
+            }
+        }
+
+        public bool DoesExist(string name)
+        {
+            return _mProducts.Exists(x => x.Name == name);
         }
 
         public bool IsNameInvalid(string name)
