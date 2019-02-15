@@ -30,5 +30,20 @@ namespace ProductsApi.Store
         {
             _mProducts.Add(product);
         }
+
+        public bool TryAdd(Product product)
+        {
+            if (_mProducts.Any(p => p.Name == product.Name))
+            {
+                return false;
+            }
+            _mProducts.Add(product);
+            return true;
+        }
+
+        public void Remove(string name)
+        {
+            _mProducts.RemoveAll(product => product.Name == name);
+        }
     }
 }

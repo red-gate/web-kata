@@ -10,6 +10,6 @@ namespace ProductsApi.Model
         }
 
         public string Name { get; }
-        public string Description { get; }
+        public string Description { get; set; }
     }
 }
