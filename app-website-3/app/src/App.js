@@ -5,11 +5,24 @@ import ProductMenu from './ProductMenu.js'
 import ProductContainer from './ProductContainer.js'
 import './App.css'
 
+const API = 'http://localhost:1786/api/'
+const GET_PRODUCTS = 'products'
+
 class App extends Component {
 
   constructor(props) {
     super(props)
     this.state = { products: [] }
+  }
+
+  componentDidMount() {
+    fetch(API + GET_PRODUCTS)
+      .then(response => {
+        if (response.ok) return response.json()
+        else throw new Error("Something went wrong...")
+      })
+      .then(products => this.setState({products}))
+      .catch(error => this.setState({error}))
   }
 
   render() {
