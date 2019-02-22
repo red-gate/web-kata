@@ -27,17 +27,18 @@ class App extends Component {
     this.fetchProducts()
   }
 
-  fetchProducts() {
-    fetch(API + PRODUCTS)
-      .then(response => {
-        if (response.ok) return response.json()
-        else throw new Error("Something went wrong...")
-      })
-      .then(products => this.setState({products: products, error: ''}))
-      .catch(error => this.setState({error}))
+  async fetchProducts() {
+    const response = await fetch(API + PRODUCTS)
+    if (response.ok) {
+      const products = await response.json()
+      this.setState({products: products, error: ''})
+    } else {
+      const error = 'Something went wrong...'
+        this.setState({error})
+    }
   }
 
-  addProduct(product) {
+  async addProduct(product) {
     const request = {
       method: 'POST',
       mode: 'cors',
@@ -47,19 +48,18 @@ class App extends Component {
       body: JSON.stringify(product)
     }
 
-    fetch(API + PRODUCTS, request)
-      .then(response => {
-        if (response.status === NOT_FOUND) {
-          this.setState({error: 'Product name invalid'})
-        } else if (response.status === CONFLICT) {
-          this.setState({error: 'Product already exists'})
-        } else {
-          this.fetchProducts()
-        }
-      })
+    const response = await fetch(API + PRODUCTS, request)
+
+    if (response.status === NOT_FOUND) {
+      this.setState({error: 'Product name invalid'})
+    } else if (response.status === CONFLICT) {
+      this.setState({error: 'Product already exists'})
+    } else {
+      this.fetchProducts()
+    }
   }
 
-  updateProduct(product) {
+  async updateProduct(product) {
     const request = {
       method: 'PUT',
       mode: 'cors',
@@ -69,17 +69,16 @@ class App extends Component {
       body: JSON.stringify(product)
     }
 
-    fetch(API + PRODUCTS, request)
-      .then(response => {
-        if (response.status === NOT_FOUND) {
-          this.setState({error: 'Can\'t update a product that doesn\'t exist'})
-        } else {
-          this.fetchProducts()
-        }
-      })
+    const response = await fetch(API + PRODUCTS, request)
+
+    if (response.status === NOT_FOUND) {
+      this.setState({error: 'Can\'t update a product that doesn\'t exist'})
+    } else {
+      this.fetchProducts()
+    }
   }
 
-  deleteProduct(name) {
+  async deleteProduct(name) {
     const request = {
       method: 'DELETE',
       mode: 'cors',
@@ -88,14 +87,13 @@ class App extends Component {
       }
     }
 
-    fetch(API + PRODUCTS + '/' + name, request)
-      .then(response => {
-        if (response.status === NOT_FOUND) {
-          this.setState({error: 'Can\'t delete a product that doesn\'t exist'})
-        } else {
-          this.fetchProducts()
-        }
-      })
+    const response = fetch(API + PRODUCTS + '/' + name, request)
+
+    if (response.status === NOT_FOUND) {
+      this.setState({error: 'Can\'t delete a product that doesn\'t exist'})
+    } else {
+      this.fetchProducts()
+    }
   }
 
   render() {
