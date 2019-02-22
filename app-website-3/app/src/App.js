@@ -17,6 +17,7 @@ class App extends Component {
 
     this.fetchProducts = this.fetchProducts.bind(this)
     this.addProduct = this.addProduct.bind(this)
+    this.updateProduct = this.updateProduct.bind(this)
   }
 
   componentDidMount() {
@@ -47,12 +48,29 @@ class App extends Component {
       .then(() => this.fetchProducts())
   }
 
+  updateProduct(product) {
+    const request = {
+      method: 'PUT',
+      mode: 'cors',
+      headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+      },
+      body: JSON.stringify(product)
+    }
+
+    fetch(API + PRODUCTS, request)
+      .then(() => this.fetchProducts())
+  }
+
   render() {
     return <div className="App">
       <div className="App-header">
         <h2>Redgate products</h2>
       </div>
-      <ProductForm addProduct = {this.addProduct} />
+      <ProductForm
+        addProduct = {this.addProduct}
+        updateProduct = {this.updateProduct}
+      />
       <div className='products-container'>
         <ProductMenu products={this.state.products} />
         <Route exact path='/products/:productName' component={

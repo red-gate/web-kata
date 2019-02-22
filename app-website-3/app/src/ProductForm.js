@@ -11,6 +11,7 @@ export default class ProductForm extends Component {
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
         this.handleAddProduct = this.handleAddProduct.bind(this)
+        this.handleUpdateProduct = this.handleUpdateProduct.bind(this)
     }
 
     handleNameChange(event) {
@@ -28,6 +29,11 @@ export default class ProductForm extends Component {
         this.clearForm()
     }
 
+    handleUpdateProduct() {
+        const product = { name: this.state.name, description: this.state.description }
+        this.props.updateProduct(product)
+    }
+
     clearForm() {
         this.setState({name: '', description: ''})
     }
@@ -43,7 +49,8 @@ export default class ProductForm extends Component {
                 Description:
                 <input type='text' value={this.state.description} onChange={this.handleDescriptionChange} />
             </label>
-            <input type='submit' value='Submit' />
+            <input type='submit' value='Submit'/>
+            <button type='button' onClick={this.handleUpdateProduct}>Update</button>
             </form>
         )
     }
