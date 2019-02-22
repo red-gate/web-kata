@@ -12,6 +12,7 @@ export default class ProductForm extends Component {
         this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
         this.handleAddProduct = this.handleAddProduct.bind(this)
         this.handleUpdateProduct = this.handleUpdateProduct.bind(this)
+        this.handleDeleteProduct = this.handleDeleteProduct.bind(this)
     }
 
     handleNameChange(event) {
@@ -34,6 +35,10 @@ export default class ProductForm extends Component {
         this.props.updateProduct(product)
     }
 
+    handleDeleteProduct() {
+        this.props.deleteProduct(this.state.name)
+    }
+
     clearForm() {
         this.setState({name: '', description: ''})
     }
@@ -51,6 +56,7 @@ export default class ProductForm extends Component {
             </label>
             <input type='submit' value='Submit'/>
             <button type='button' onClick={this.handleUpdateProduct}>Update</button>
+            <button type='button' onClick={this.handleDeleteProduct}>Delete</button>
             </form>
         )
     }

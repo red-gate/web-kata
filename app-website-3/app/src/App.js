@@ -18,6 +18,7 @@ class App extends Component {
     this.fetchProducts = this.fetchProducts.bind(this)
     this.addProduct = this.addProduct.bind(this)
     this.updateProduct = this.updateProduct.bind(this)
+    this.deleteProduct = this.deleteProduct.bind(this)
   }
 
   componentDidMount() {
@@ -62,6 +63,19 @@ class App extends Component {
       .then(() => this.fetchProducts())
   }
 
+  deleteProduct(name) {
+    const request = {
+      method: 'DELETE',
+      mode: 'cors',
+      headers: {
+          'Content-Type': 'application/json; charset=utf-8'
+      }
+    }
+
+    fetch(API + PRODUCTS + '/' + name, request)
+      .then(() => this.fetchProducts())
+  }
+
   render() {
     return <div className="App">
       <div className="App-header">
@@ -70,6 +84,7 @@ class App extends Component {
       <ProductForm
         addProduct = {this.addProduct}
         updateProduct = {this.updateProduct}
+        deleteProduct = {this.deleteProduct}
       />
       <div className='products-container'>
         <ProductMenu products={this.state.products} />
