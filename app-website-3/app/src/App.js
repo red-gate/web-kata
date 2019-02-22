@@ -8,7 +8,8 @@ import './App.css'
 
 const API = 'http://localhost:1786/api/'
 const PRODUCTS = 'products'
-
+const NOT_FOUND = 404
+const CONFLICT = 409
 class App extends Component {
 
   constructor(props) {
@@ -31,7 +32,7 @@ class App extends Component {
         if (response.ok) return response.json()
         else throw new Error("Something went wrong...")
       })
-      .then(products => this.setState({products}))
+      .then(products => this.setState({products: products, error: ''}))
       .catch(error => this.setState({error}))
   }
 
@@ -46,7 +47,15 @@ class App extends Component {
     }
 
     fetch(API + PRODUCTS, request)
-      .then(() => this.fetchProducts())
+      .then(response => {
+        if (response.status === NOT_FOUND) {
+          this.setState({error: 'Product name invalid'})
+        } else if (response.status === CONFLICT) {
+          this.setState({error: 'Product already exists'})
+        } else {
+          this.fetchProducts()
+        }
+      })
   }
 
   updateProduct(product) {
@@ -60,7 +69,13 @@ class App extends Component {
     }
 
     fetch(API + PRODUCTS, request)
-      .then(() => this.fetchProducts())
+      .then(response => {
+        if (response.status === NOT_FOUND) {
+          this.setState({error: 'Can\'t update a product that doesn\'t exist'})
+        } else {
+          this.fetchProducts()
+        }
+      })
   }
 
   deleteProduct(name) {
@@ -73,7 +88,13 @@ class App extends Component {
     }
 
     fetch(API + PRODUCTS + '/' + name, request)
-      .then(() => this.fetchProducts())
+      .then(response => {
+        if (response.status === NOT_FOUND) {
+          this.setState({error: 'Can\'t delete a product that doesn\'t exist'})
+        } else {
+          this.fetchProducts()
+        }
+      })
   }
 
   render() {
@@ -85,6 +106,7 @@ class App extends Component {
         addProduct = {this.addProduct}
         updateProduct = {this.updateProduct}
         deleteProduct = {this.deleteProduct}
+        error = {this.state.error}
       />
       <div className='products-container'>
         <ProductMenu products={this.state.products} />

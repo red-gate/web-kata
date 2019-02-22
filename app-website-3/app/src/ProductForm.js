@@ -44,20 +44,19 @@ export default class ProductForm extends Component {
     }
 
     render() {
-        return (
-            <form onSubmit={this.handleAddProduct}>
-                <label>
-                    Name:
-                    <input type='text' value={this.state.name} onChange={this.handleNameChange} />
-                </label>
-                <label>
-                    Description:
-                    <input type='text' value={this.state.description} onChange={this.handleDescriptionChange} />
-                </label>
-                <input type='submit' value='Submit'/>
-                <button type='button' onClick={this.handleUpdateProduct}>Update</button>
-                <button type='button' onClick={this.handleDeleteProduct}>Delete</button>
-            </form>
-        )
+        return <form onSubmit={this.handleAddProduct}>
+            <label>
+                Name:
+                <input type='text' value={this.state.name} onChange={this.handleNameChange} />
+            </label>
+            <label>
+                Description:
+                <input type='text' value={this.state.description} onChange={this.handleDescriptionChange} />
+            </label>
+            <input type='submit' value='Submit'/>
+            <button type='button' onClick={this.handleUpdateProduct}>Update</button>
+            <button type='button' onClick={this.handleDeleteProduct}>Delete</button>
+            {this.props.error && <div>{this.props.error}</div>}
+        </form>
     }
 }
