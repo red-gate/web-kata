@@ -4,6 +4,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore;
 using ProductsApi.Store;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using ProductsApi.Auth;
 
 namespace ProductsApi
 {
@@ -20,6 +24,21 @@ namespace ProductsApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ProductStore>();
+            services.AddSingleton<TokenProvider>();
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = "Products API",
+                    ValidAudience = "Products App",
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is a secret key"))
+                };
+            });
+
             services.AddCors();
             services.AddMvc();
         }
@@ -37,8 +56,9 @@ namespace ProductsApi
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials()
-            ); 
+            );
 
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

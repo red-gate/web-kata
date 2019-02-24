@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using ProductsApi.Model;
 using ProductsApi.Store;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ProductsApi.Controllers
 {
@@ -16,6 +17,7 @@ namespace ProductsApi.Controllers
             _mProductStore = productStore;
         }
 
+        [Authorize]
         [HttpDelete]
         public IActionResult Delete(string name)
         {
@@ -34,6 +36,7 @@ namespace ProductsApi.Controllers
             return Ok(name);
         }
 
+        [Authorize]
         [HttpPut]
         public IActionResult Put([FromBody] Product value)
         {
@@ -73,6 +76,7 @@ namespace ProductsApi.Controllers
             return Ok(result);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Post([FromBody] Product value)
         {
