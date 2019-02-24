@@ -15,7 +15,8 @@ class ProductForm extends Component {
           method: "POST",
           mode: "cors",
           headers: {
-            "Content-Type": "application/json;"
+            "Content-Type": "application/json;",
+            "Authorization": `Bearer ${this.props.token}`
           },
           body: JSON.stringify(data)
       })
