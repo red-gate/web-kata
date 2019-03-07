@@ -46,6 +46,7 @@ class ProductForm extends Component {
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   handleNameChange(event) {
@@ -63,7 +64,18 @@ class ProductForm extends Component {
       headers: {
           "Content-Type": "application/json; charset=utf-8"
       },
-      body: JSON.stringify({name: this.state.newProductName, desciption: this.state.newProductDescription})
+      body: JSON.stringify({name: this.state.newProductName, description: this.state.newProductDescription})
+    })
+  }
+
+  handleUpdate(event) {
+    fetch('http://localhost:1786/api/Products', {
+      method: "PUT",
+      mode: "cors",
+      headers: {
+          "Content-Type": "application/json; charset=utf-8"
+      },
+      body: JSON.stringify({name: this.state.newProductName, description: this.state.newProductDescription})
     })
   }
 
@@ -72,6 +84,7 @@ class ProductForm extends Component {
       <input name="new-product-name" value={this.state.newProductName} onChange={this.handleNameChange} />
       <input name="new-product-description" value={this.state.newProductDescription} onChange={this.handleDescriptionChange}  />
       <button type="submit" value="Submit">Submit</button>
+      <button onClick={this.handleUpdate} value="Update">Update</button>
     </form>
   }
 }
