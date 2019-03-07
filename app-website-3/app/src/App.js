@@ -40,13 +40,14 @@ class ProductForm extends Component {
   constructor(props)
   {
     super(props);
-    this.state = {newProductName: '', newProductDescription: ''};
+    this.state = {newProductName: '', newProductDescription: '', error: ''};
 
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleNameChange(event) {
@@ -79,13 +80,28 @@ class ProductForm extends Component {
     })
   }
 
+  handleDelete(event) {
+    fetch('http://localhost:1786/api/Products/' + this.state.newProductName, {
+      method: "DELETE",
+      mode: "cors",
+      headers: {
+          "Content-Type": "application/json; charset=utf-8"
+      },
+      body: JSON.stringify({name: this.state.newProductName})
+    }).then(response => response.json())
+    .then(response => this.setState({error: JSON.stringify(response)}))
+    .catch(error => console.log(error))
+  }
+
   render() {
-    return <form onSubmit={this.handleSubmit}>
+    return <div>
       <input name="new-product-name" value={this.state.newProductName} onChange={this.handleNameChange} />
       <input name="new-product-description" value={this.state.newProductDescription} onChange={this.handleDescriptionChange}  />
-      <button type="submit" value="Submit">Submit</button>
+      <button onClick={this.handleSubmit} value="Submit">Submit</button>
       <button onClick={this.handleUpdate} value="Update">Update</button>
-    </form>
+      <button onClick={this.handleDelete} value="Delete">Delete</button>
+      <div>{this.state.error}</div>
+    </div>
   }
 }
 
