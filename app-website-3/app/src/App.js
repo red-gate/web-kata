@@ -24,6 +24,7 @@ class App extends Component {
       <div className="App-header">
         <h2>Redgate products</h2>
       </div>
+      <ProductForm />
       <div className='products-container'>
         <ProductMenu products={this.state.products} />
         <Route exact path='/products/:productName' component={
@@ -31,6 +32,16 @@ class App extends Component {
         } />
       </div>
     </div>
+  }
+}
+
+class ProductForm extends Component {
+  render() {
+    return <form>
+      <input name="new-product-name" />
+      <input name="new-product-description" />
+      <button type="submit">Submit</button>
+    </form>
   }
 }
 
